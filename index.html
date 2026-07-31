@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>EconPulse</title>
+<meta name="theme-color" content="#0e1116">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="EconPulse">
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxODAiIGhlaWdodD0iMTgwIiB2aWV3Qm94PSIwIDAgMTgwIDE4MCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjMjJjM2I4Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjNGM4ZGZmIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjE4MCIgaGVpZ2h0PSIxODAiIHJ4PSI0MCIgZmlsbD0iIzBlMTExNiIvPjxwb2x5bGluZSBwb2ludHM9IjM0LDExNiA2Niw4NCA5MiwxMDAgMTIwLDU4IDE0OCw3MiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ1cmwoI2cpIiBzdHJva2Utd2lkdGg9IjEwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48Y2lyY2xlIGN4PSIxMjAiIGN5PSI1OCIgcj0iOSIgZmlsbD0iI2UzYjM0MSIvPjwvc3ZnPg==">
+<link rel="manifest" href='data:application/manifest+json,{"name":"EconPulse — Economics Brief","short_name":"EconPulse","start_url":".","display":"standalone","background_color":"%230e1116","theme_color":"%230e1116","icons":[{"src":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiB2aWV3Qm94PSIwIDAgMTgwIDE4MCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjMjJjM2I4Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjNGM4ZGZmIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjE4MCIgaGVpZ2h0PSIxODAiIHJ4PSI0MCIgZmlsbD0iIzBlMTExNiIvPjxwb2x5bGluZSBwb2ludHM9IjM0LDExNiA2Niw4NCA5MiwxMDAgMTIwLDU4IDE0OCw3MiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ1cmwoI2cpIiBzdHJva2Utd2lkdGg9IjEwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48Y2lyY2xlIGN4PSIxMjAiIGN5PSI1OCIgcj0iOSIgZmlsbD0iI2UzYjM0MSIvPjwvc3ZnPg==","sizes":"192x192","type":"image/svg+xml"}]}'>
+<style>
+  :root{
+    --bg:#0e1116; --panel:#161b22; --panel-2:#1c232d; --line:#28313d;
+    --ink:#e8edf3; --muted:#93a1b3; --faint:#647184;
+    --up:#2fbf71; --down:#f0616d; --accent:#4c8dff; --accent-2:#22c3b8; --gold:#e3b341;
+    --agri:#3fb27f; --bank:#4c8dff; --macro:#b07cf0; --tech:#22c3b8; --intl:#f0885a; --mkt:#e3b341;
+    --shadow:0 6px 18px rgba(0,0,0,.35);
+    --topbar:60px; --tabbar:64px; --bnr:0px;
+  }
+  [data-theme="light"]{
+    --bg:#eef1f6; --panel:#ffffff; --panel-2:#f6f8fc; --line:#e2e7ef;
+    --ink:#141a22; --muted:#5a6675; --faint:#8794a5;
+    --shadow:0 6px 18px rgba(20,30,50,.10);
+  }
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent}
+  html,body{margin:0; padding:0; overscroll-behavior:none}
+  body{background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased; line-height:1.45;}
+  a{color:inherit; text-decoration:none}
+
+  .topbar{position:fixed; top:0; left:0; right:0; height:calc(var(--topbar) + env(safe-area-inset-top));
+    padding-top:env(safe-area-inset-top); z-index:60;
+    background:color-mix(in srgb,var(--bg) 88%,transparent); backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line); display:flex; align-items:center; gap:10px; padding-left:16px; padding-right:12px}
+  .brand{display:flex; align-items:center; gap:9px; font-weight:800; font-size:18px; letter-spacing:-.02em}
+  .brand .ic{width:26px; height:26px; border-radius:8px; background:#0e1116; display:grid; place-items:center; box-shadow:inset 0 0 0 1px var(--line)}
+  .brand small{display:block; font-size:10.5px; font-weight:500; color:var(--muted); margin-top:-2px}
+  .spacer{flex:1}
+  .tbtn{width:38px; height:34px; border-radius:10px; border:1px solid var(--line); background:var(--panel); color:var(--ink); font-size:15px}
+  .tbtn:active{transform:scale(.94)}
+  #refreshBtn.spin svg{animation:spin .9s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  main{position:fixed; top:calc(var(--topbar) + env(safe-area-inset-top)); left:0; right:0;
+    bottom:calc(var(--tabbar) + var(--bnr) + env(safe-area-inset-bottom)); overflow-y:auto; -webkit-overflow-scrolling:touch}
+  .page{display:none; padding:14px 14px 30px; max-width:640px; margin:0 auto}
+  .page.active{display:block}
+  .ptitle{font-size:20px; font-weight:800; letter-spacing:-.02em; margin:4px 2px 2px}
+  .pwhen{font-size:12.5px; color:var(--faint); margin:0 2px 12px}
+
+  .livebar{display:flex; align-items:center; gap:8px; margin:0 2px 14px; font-size:11.5px; color:var(--muted)}
+  .dot{width:8px; height:8px; border-radius:50%; background:var(--faint)}
+  .dot.on{background:var(--up); box-shadow:0 0 0 0 rgba(47,191,113,.6); animation:pulse 2s infinite}
+  .dot.err{background:var(--gold)}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(47,191,113,.5)}70%{box-shadow:0 0 0 7px rgba(47,191,113,0)}100%{box-shadow:0 0 0 0 rgba(47,191,113,0)}}
+
+  .kpis{display:grid; grid-template-columns:1fr 1fr; gap:11px}
+  .kpi{background:var(--panel); border:1px solid var(--line); border-radius:15px; padding:13px 13px 12px;
+    position:relative; overflow:hidden; box-shadow:var(--shadow)}
+  .kpi .name{font-size:10.5px; text-transform:uppercase; letter-spacing:.03em; color:var(--muted); font-weight:700; display:flex; align-items:center; gap:5px}
+  .kpi .lv{font-size:8px; font-weight:800; letter-spacing:.05em; color:var(--up); border:1px solid color-mix(in srgb,var(--up) 45%,transparent); border-radius:4px; padding:0 4px; line-height:1.5}
+  .kpi .lv.snap{color:var(--faint); border-color:var(--line)}
+  .kpi .val{font-size:21px; font-weight:800; letter-spacing:-.02em; margin-top:6px; font-variant-numeric:tabular-nums}
+  .kpi .chg{font-size:11.5px; font-weight:700; margin-top:2px; font-variant-numeric:tabular-nums}
+  .kpi .meta{font-size:10px; color:var(--faint); margin-top:7px; line-height:1.3}
+  .kpi .spark{position:absolute; right:10px; top:11px}
+  .kpi .strip{height:3px; border-radius:3px; margin-top:9px}
+  .up{color:var(--up)} .down{color:var(--down)} .flat{color:var(--muted)}
+
+  .sechead{font-size:12px; text-transform:uppercase; letter-spacing:.05em; color:var(--faint); font-weight:700; margin:20px 2px 10px}
+  .summary{background:var(--panel-2); border:1px solid var(--line); border-radius:14px; padding:13px 14px; font-size:13.5px; color:var(--muted); margin-bottom:16px}
+  .summary b{color:var(--ink)}
+
+  .topic{margin-bottom:20px}
+  .topic-h{display:flex; align-items:center; gap:9px; margin:0 2px 10px}
+  .topic-h .chip{width:9px; height:9px; border-radius:50%}
+  .topic-h h3{font-size:14px; margin:0; font-weight:700}
+  .topic-h .count{margin-left:auto; font-size:10.5px; color:var(--faint); border:1px solid var(--line); border-radius:999px; padding:2px 8px}
+  .item{display:block; background:var(--panel); border:1px solid var(--line); border-left:3px solid var(--c,var(--accent));
+    border-radius:13px; padding:13px 14px; margin-bottom:10px; box-shadow:var(--shadow)}
+  .item:active{transform:scale(.99)}
+  .item .k{font-size:10px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--c); display:flex; align-items:center; gap:7px; flex-wrap:wrap}
+  .item .k .src{color:var(--faint); font-weight:600}
+  .item .op{font-size:9px; font-weight:800; color:var(--gold); letter-spacing:.05em; border:1px solid color-mix(in srgb,var(--gold) 45%,transparent); border-radius:5px; padding:1px 5px}
+  .item h4{font-size:14.5px; margin:7px 0 5px; line-height:1.32; letter-spacing:-.01em}
+  .item p{font-size:12.5px; color:var(--muted); margin:0}
+  .item .go{font-size:11px; color:var(--c); font-weight:700; margin-top:7px; display:inline-block}
+
+  .foot{color:var(--faint); font-size:11.5px; margin-top:18px; padding:0 2px}
+  .foot a{color:var(--muted); text-decoration:underline}
+
+  .tabbar{position:fixed; left:0; right:0; bottom:var(--bnr); height:calc(var(--tabbar) + env(safe-area-inset-bottom));
+    padding-bottom:env(safe-area-inset-bottom); z-index:70; background:color-mix(in srgb,var(--bg) 96%,transparent);
+    backdrop-filter:blur(14px); border-top:1px solid var(--line); display:grid; grid-template-columns:repeat(4,1fr)}
+  .tab{display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3px; color:var(--faint); font-size:10.5px; font-weight:600; cursor:pointer}
+  .tab svg{width:22px; height:22px; stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round}
+  .tab.active{color:var(--accent)}
+
+  .installhint{background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 16%,var(--panel)),var(--panel));
+    border:1px solid color-mix(in srgb,var(--accent) 35%,var(--line)); border-radius:14px; padding:12px 14px;
+    font-size:12.5px; color:var(--muted); margin-bottom:16px; display:flex; gap:10px; align-items:flex-start}
+  .installhint b{color:var(--ink)} .installhint .x{margin-left:auto; color:var(--faint); font-weight:800; font-size:16px; padding:0 4px}
+</style>
+</head>
+<body data-theme="dark">
+
+<div class="topbar">
+  <div class="brand">
+    <span class="ic"><svg width="17" height="17" viewBox="0 0 180 180"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22c3b8"/><stop offset="1" stop-color="#4c8dff"/></linearGradient></defs><polyline points="34,116 66,84 92,100 120,58 148,72" fill="none" stroke="url(#lg)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/><circle cx="120" cy="58" r="12" fill="#e3b341"/></svg></span>
+    <div>EconPulse<small>Economics · live &amp; daily</small></div>
+  </div>
+  <div class="spacer"></div>
+  <button class="tbtn" id="refreshBtn" title="Refresh quotes"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg></button>
+  <button class="tbtn" id="themeBtn" title="Light / dark">◐</button>
+</div>
+
+<main id="scroller">
+
+  <!-- HOME -->
+  <section class="page active" id="home">
+    <div class="ptitle">Markets &amp; Macro</div>
+    <div class="livebar"><span class="dot" id="liveDot"></span><span id="liveMsg">Fetching live quotes…</span></div>
+
+    <div class="installhint" id="installHint">
+      <span>📲</span>
+      <div><b>Add to Home Screen</b> to run EconPulse like an app — iPhone: Share → “Add to Home Screen”; Android: ⋮ → “Install app”.</div>
+      <span class="x" onclick="document.getElementById('installHint').style.display='none'">×</span>
+    </div>
+
+    <div class="sechead" style="margin-top:4px">India</div>
+    <div class="kpis" id="kpiIndia"></div>
+    <div class="sechead">Global</div>
+    <div class="kpis" id="kpiGlobal"></div>
+    <div class="foot" id="homeFoot"></div>
+  </section>
+
+  <!-- TODAY -->
+  <section class="page" id="today">
+    <div class="ptitle">Today's Brief</div>
+    <div class="pwhen">Friday, 31 July 2026 · news &amp; editorials by topic</div>
+    <div id="todayTopics"></div>
+    <div class="foot" id="sourcesFoot"></div>
+  </section>
+
+  <!-- WEEKLY -->
+  <section class="page" id="weekly">
+    <div class="ptitle">Weekly Wrap-up</div>
+    <div class="pwhen">Week of 27 – 31 July 2026</div>
+    <div class="summary">🔎 <b>The week in one line:</b> The Fed held at 3.50–3.75% and the RBI stayed at 5.25% as a weak monsoon, a rupee near ₹96/$ and an unresolved India–US tariff track kept policymakers cautious; the IMF trimmed 2026 global growth to 3.0%.</div>
+    <div id="weeklyTopics"></div>
+  </section>
+
+  <!-- MONTHLY -->
+  <section class="page" id="monthly">
+    <div class="ptitle">Monthly Wrap-up</div>
+    <div class="pwhen">July 2026</div>
+    <div class="summary">🔎 <b>The month in one line:</b> July ran on "crosscurrents of war and technology" — an oil-driven inflation scare pushed India's CPI to 4.38% and the rupee past ₹96/$, even as bank credit growth hit a two-year high of 18.6% and the AI debate reshaped India's IT sector.</div>
+    <div id="monthlyTopics"></div>
+  </section>
+
+</main>
+
+<nav class="tabbar">
+  <div class="tab active" data-page="home"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>Home</div>
+  <div class="tab" data-page="today"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>Today</div>
+  <div class="tab" data-page="weekly"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16M8 15v-4M12 15V8M16 15v-6"/></svg>Weekly</div>
+  <div class="tab" data-page="monthly"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Monthly</div>
+</nav>
+
+<script>
+/* ============ CONFIG ============ */
+/* Live quotes are fetched client-side from Yahoo Finance via a public CORS proxy.
+   Optional: paste a free Twelve Data API key below for a more robust real-time feed. */
+const CONFIG = { PROXIES:["https://api.allorigins.win/raw?url=","https://corsproxy.io/?url="], TWELVEDATA_KEY:"" };
+
+/* ============ INDICATOR DATA (snapshot fallback; live symbols patch these) ============ */
+const KPI_INDIA=[
+  {id:"sensex", sym:"^BSESN", fmt:"int", name:"BSE Sensex", val:"78,095", chg:"+166 (0.21%)", dir:"up", meta:"31 Jul close · BSE", spark:[3,4,3,5,6,5,7], c:"--mkt"},
+  {id:"nifty", sym:"^NSEI", fmt:"int", name:"Nifty 50", val:"24,384", chg:"+66 (0.27%)", dir:"up", meta:"31 Jul close · NSE", spark:[2,3,3,4,4,5,6], c:"--mkt"},
+  {id:"repo", sym:null, name:"RBI Repo Rate", val:"5.25%", chg:"Unchanged", dir:"flat", meta:"Held 3rd mtg · neutral", spark:[5,5,5,5,5,5,5], c:"--bank"},
+  {id:"cpi", sym:null, name:"India CPI (Jun)", val:"4.38%", chg:"↑ vs forecast", dir:"down", meta:"Food 5.32% · oil-led", spark:[2,2,3,3,4,4,5], c:"--macro"},
+  {id:"usdinr", sym:"INR=X", fmt:"inr", name:"USD / INR", val:"₹95.83", chg:"Rupee at 2-wk high", dir:"flat", meta:"30 Jul · live FX", spark:[7,7,6,6,5,5,4], c:"--intl"},
+  {id:"in10y", sym:null, name:"India 10Y Yield", val:"6.81%", chg:"+6 bps m/m", dir:"flat", meta:"31 Jul · G-sec", spark:[4,5,6,5,6,6,6], c:"--macro"},
+];
+const KPI_GLOBAL=[
+  {id:"fed", sym:null, name:"US Fed Funds", val:"3.50–3.75%", chg:"Held Jul 29", dir:"flat", meta:"Divided Fed holds", spark:[6,6,5,5,4,4,4], c:"--bank"},
+  {id:"imf", sym:null, name:"IMF Growth '26", val:"3.0%", chg:"Revised down", dir:"down", meta:"Global infl. 4.7%", spark:[6,5,5,4,4,3,3], c:"--intl"},
+  {id:"spx", sym:"^GSPC", fmt:"int", name:"S&P 500", val:"7,471", chg:"US large-cap", dir:"flat", meta:"US equities · live", spark:[3,4,4,5,5,6,6], c:"--bank"},
+  {id:"brent", sym:"BZ=F", fmt:"usd", name:"Brent Crude", val:"$88.49", chg:"+1.85%", dir:"up", meta:"$/bbl · +24% m/m", spark:[5,5,6,6,7,7,8], c:"--intl"},
+];
+
+const T={agri:{label:"Agriculture & Rural",c:"--agri"},bank:{label:"Banking, Monetary & Markets",c:"--bank"},
+  macro:{label:"Macro & International",c:"--macro"},tech:{label:"Technology, AI & Industry",c:"--tech"}};
+
+const TODAY={
+ agri:[
+  {src:"S&P / The Tribune",op:0,h:"Weak monsoon may weigh on rural demand and credit growth",p:"S&P Global Ratings flags that a patchy monsoon could soften farm incomes and rural consumption in coming months.",u:"https://www.tribuneindia.com/news/agriculture-sector/weak-monsoon-may-weigh-on-rural-demand-credit-growth-in-coming-months-sp-global-ratings"},
+  {src:"FactNews India",op:0,h:"Weak rains could dent farm incomes and inflation outlook",p:"Deficient rainfall in key belts risks lifting food prices just as headline CPI was cooling — an MPC watch item.",u:"https://factnewsindia.com/top-story/southwest-monsoon-india-weak-rains-could-dent-farm-incomes-consumption-and-inflation-outlook-sp/"},
+ ],
+ bank:[
+  {src:"Business Standard",op:0,h:"Sensex ends up 3rd day at ~77,996; Nifty at 24,384",p:"Auto stocks led a broad advance amid positive global cues and steady Q1 earnings flow.",u:"https://www.business-standard.com/markets/news/stock-market-live-july-31-nse-bse-sensex-today-nifty50-gift-nifty-q1-results-today-ipo-share-market-126073100128_1.html"},
+  {src:"Business Standard",op:0,h:"Bank credit growth hits two-year high of 18.6%",p:"Non-food credit accelerated in the June-end fortnight as deposits rose over ₹7 trillion.",u:"https://www.business-standard.com/industry/banking/bank-credit-growth-hits-2-year-high-of-18-6-as-deposits-rise-over-7-trn-126071001123_1.html"},
+  {src:"Business Standard",op:0,h:"Rupee breaches 96/$; 10-year yield rises on oil surge",p:"An oil price spike pressured the currency to record-low territory and lifted yields ~6 bps intraday.",u:"https://www.business-standard.com/finance/news/rupee-breaches-96-10-year-bond-yield-rises-6-bps-on-oil-price-surge-126071401199_1.html"},
+  {src:"Advisor Perspectives",op:0,h:"Divided Fed holds funds rate at 3.50–3.75%",p:"The FOMC kept policy steady on July 29 amid a split committee, balancing sticky inflation against softer growth.",u:"https://www.advisorperspectives.com/dshort/updates/2026/07/29/feds-interest-rate-decision-july-29-2026"},
+ ],
+ macro:[
+  {src:"CNBC",op:0,h:"India's inflation accelerates to 4.38% in June, beating forecasts",p:"Higher oil and food costs — partly tied to Middle East tensions — pushed retail inflation above expectations.",u:"https://www.cnbc.com/2026/07/13/india-june-inflation-oil-food-iran-war.html"},
+  {src:"IMF",op:0,h:"IMF cuts 2026 global growth to 3.0%, lifts inflation to 4.7%",p:"The July WEO Update frames the world economy as caught in 'crosscurrents of war and technology'.",u:"https://www.imf.org/en/publications/weo/issues/2026/07/08/world-economic-outlook-update-july-2026"},
+  {src:"Reuters / US News",op:0,h:"India to keep engaging with US on trade deal after new tariffs",p:"New Delhi signalled continued negotiation despite fresh US tariff actions, keeping an interim deal in play.",u:"https://www.usnews.com/news/top-news/articles/2026-07-25/india-to-keep-engaging-with-us-on-trade-deal-after-new-tariff-measures"},
+  {src:"Bloomberg",op:1,h:"India's economy sends mixed signals amid war and trade shocks",p:"Opinion: businesses juggle an oil-price shock and tariff uncertainty even as domestic demand holds up.",u:"https://www.bloomberg.com/news/newsletters/2026-07-29/india-s-economy-sends-mixed-signals-as-businesses-juggle-war-and-trade-shocks"},
+ ],
+ tech:[
+  {src:"Business Today",op:0,h:"Nifty IT rebounds in July as chip stocks falter — a 'reverse AI trade'?",p:"IT services names recovered even as semiconductor shares slipped, hinting at rotation within the AI theme.",u:"https://www.businesstoday.in/markets/stocks/story/nifty-it-stocks-rebound-in-july-as-semiconductor-stocks-falter-reverse-ai-trade-546524-2026-07-31"},
+  {src:"The Week",op:1,h:"IT reset: will AI be the disruptor?",p:"Analysis of how generative AI is reshaping India's IT services model, margins and hiring pyramid.",u:"https://www.theweek.in/news/biz-tech/2026/07/28/indian-it-ai-disruption-impact-it-services-future-of-indian-it-sector.html"},
+  {src:"TechChannel",op:0,h:"India's IT sector added 1.35 lakh jobs amid AI fears",p:"Hiring held up despite automation anxiety — AI is augmenting rather than replacing headcount so far.",u:"https://techchannel.news/indias-it-sector-added-1-35-lakh-jobs-amid-ai-fears/"},
+ ],
+};
+const WEEKLY={
+ agri:[{src:"S&P / The Tribune",op:0,h:"Monsoon risk moves to centre stage for rural demand",p:"The week's dominant agri theme: a weak monsoon threatening farm incomes, rural credit and the food-inflation path.",u:"https://www.tribuneindia.com/news/agriculture-sector/weak-monsoon-may-weigh-on-rural-demand-credit-growth-in-coming-months-sp-global-ratings"}],
+ bank:[
+  {src:"Federal Reserve",op:0,h:"Fed holds at 3.50–3.75% on a divided vote",p:"The July 29 decision kept US rates steady, shaping the global rate backdrop for EM currencies including the rupee.",u:"https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm"},
+  {src:"Business Standard",op:0,h:"Sensex logs a three-day winning run into month-end",p:"Equities firmed on positive global cues and resilient Q1 results, with autos and financials leading.",u:"https://www.business-standard.com/markets/news/stock-market-live-july-31-nse-bse-sensex-today-nifty50-gift-nifty-q1-results-today-ipo-share-market-126073100128_1.html"},
+  {src:"Business Standard",op:0,h:"Credit growth strength persists at ~18.6%",p:"The two-year high in bank credit stayed a key positive signal on underlying demand through the week.",u:"https://www.business-standard.com/industry/banking/bank-credit-growth-hits-2-year-high-of-18-6-as-deposits-rise-over-7-trn-126071001123_1.html"},
+ ],
+ macro:[
+  {src:"IMF",op:0,h:"IMF's July WEO Update sets the global tone",p:"Growth trimmed to 3.0% and inflation nudged to 4.7% framed the week's macro narrative around war and tech shocks.",u:"https://www.imf.org/en/publications/weo/issues/2026/07/08/world-economic-outlook-update-july-2026"},
+  {src:"Reuters / US News",op:0,h:"India–US trade talks continue despite new tariffs",p:"Negotiations stayed alive through the week even after fresh US tariff measures, keeping exporters watchful.",u:"https://www.usnews.com/news/top-news/articles/2026-07-25/india-to-keep-engaging-with-us-on-trade-deal-after-new-tariff-measures"},
+  {src:"WTO",op:0,h:"Heads of IEA, IMF, World Bank and WTO issue joint statement",p:"A rare joint call underscored coordination risks around energy, trade and growth in a fractured global economy.",u:"https://www.wto.org/english/news_e/news26_e/dgno_08jul26_448_e.htm"},
+ ],
+ tech:[
+  {src:"Business Today",op:0,h:"Rotation within the AI trade hits Indian tech",p:"IT services rebounded while chip names slipped — the week's clearest sign of shifting AI-theme positioning.",u:"https://www.businesstoday.in/markets/stocks/story/nifty-it-stocks-rebound-in-july-as-semiconductor-stocks-falter-reverse-ai-trade-546524-2026-07-31"},
+  {src:"The Week",op:1,h:"Debate deepens on AI's disruption of IT services",p:"Editorial coverage weighed how far AI reshapes the sector's revenue and workforce model.",u:"https://www.theweek.in/news/biz-tech/2026/07/28/indian-it-ai-disruption-impact-it-services-future-of-indian-it-sector.html"},
+ ],
+};
+const MONTHLY={
+ agri:[
+  {src:"S&P / FactNews",op:0,h:"Monsoon emerges as the month's key downside risk",p:"Deficient rains dominated the rural-economy outlook through July, threatening farm incomes and lifting food-price risk.",u:"https://factnewsindia.com/top-story/southwest-monsoon-india-weak-rains-could-dent-farm-incomes-consumption-and-inflation-outlook-sp/"},
+  {src:"USDA FAS",op:0,h:"India grain and feed conditions under watch",p:"Official crop updates tracked sowing and output amid the uneven monsoon — relevant to buffer stocks and MSP.",u:"https://www.fas.usda.gov/data/india-grain-and-feed-update-38"},
+ ],
+ bank:[
+  {src:"RBI / Trading Economics",op:0,h:"RBI holds repo at 5.25% for a third meeting, neutral stance",p:"The bank balanced a weakening rupee and monsoon-driven inflation risk against growth, keeping policy on hold.",u:"https://tradingeconomics.com/india/interest-rate"},
+  {src:"Business Standard",op:0,h:"Bank credit growth hits a two-year high of 18.6%",p:"The month's standout domestic-demand signal, with deposits rising over ₹7 trillion in the June-end fortnight.",u:"https://www.business-standard.com/industry/banking/bank-credit-growth-hits-2-year-high-of-18-6-as-deposits-rise-over-7-trn-126071001123_1.html"},
+  {src:"Business Standard",op:0,h:"Rupee slid past ₹96/$ on an oil shock before easing",p:"A crude spike drove the currency to record-low territory mid-month; softer oil later helped yields retreat to ~6.8%.",u:"https://www.business-standard.com/finance/news/rupee-breaches-96-10-year-bond-yield-rises-6-bps-on-oil-price-surge-126071401199_1.html"},
+ ],
+ macro:[
+  {src:"IMF",op:0,h:"IMF's July WEO: global growth 3.0%, inflation 4.7%",p:"The flagship update characterised 2026 as caught between geopolitical conflict and a technology-investment boom.",u:"https://www.imf.org/en/publications/weo/issues/2026/07/08/world-economic-outlook-update-july-2026"},
+  {src:"CNBC",op:0,h:"India CPI accelerated to 4.38% in June on oil and food",p:"The month's key data print showed inflation re-accelerating from multi-year lows, complicating the easing debate.",u:"https://www.cnbc.com/2026/07/13/india-june-inflation-oil-food-iran-war.html"},
+  {src:"Reuters / US News",op:0,h:"India–US tariff standoff shaped the trade narrative",p:"New US tariff measures and India's decision to keep negotiating were the month's defining external-sector story.",u:"https://www.usnews.com/news/top-news/articles/2026-07-25/india-to-keep-engaging-with-us-on-trade-deal-after-new-tariff-measures"},
+ ],
+ tech:[
+  {src:"The Week",op:1,h:"AI's reshaping of Indian IT was July's structural story",p:"Coverage all month probed how AI affects IT-services margins, pricing and the traditional hiring pyramid.",u:"https://www.theweek.in/news/biz-tech/2026/07/28/indian-it-ai-disruption-impact-it-services-future-of-indian-it-sector.html"},
+  {src:"TechChannel",op:0,h:"IT sector added 1.35 lakh jobs despite AI anxiety",p:"Resilient hiring suggested AI is, for now, augmenting India's tech workforce rather than shrinking it.",u:"https://techchannel.news/indias-it-sector-added-1-35-lakh-jobs-amid-ai-fears/"},
+ ],
+};
+
+/* ============ RENDER ============ */
+const ALL=[...KPI_INDIA,...KPI_GLOBAL];
+const byId={}; ALL.forEach(k=>byId[k.id]=k);
+
+function spark(v,c){const w=46,h=17,mx=Math.max(...v),mn=Math.min(...v);
+  const p=v.map((n,i)=>((i/(v.length-1))*w).toFixed(1)+","+(h-((n-mn)/((mx-mn)||1))*(h-3)-1.5).toFixed(1)).join(" ");
+  return `<polyline points="${p}" fill="none" stroke="var(${c})" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>`;}
+function kpiHTML(k){const dc=k.dir==="up"?"up":k.dir==="down"?"down":"flat";const a=k.dir==="up"?"▲":k.dir==="down"?"▼":"—";
+  const live=k.sym?`<span class="lv snap" id="lv-${k.id}">•••</span>`:``;
+  return `<div class="kpi" id="kpi-${k.id}">
+    <svg class="spark" id="spark-${k.id}" width="46" height="17">${spark(k.spark,k.c)}</svg>
+    <div class="name">${k.name}${live}</div>
+    <div class="val" id="val-${k.id}">${k.val}</div>
+    <div class="chg ${dc}" id="chg-${k.id}">${dc!=="flat"?a+" ":""}${k.chg}</div>
+    <div class="meta">${k.meta}</div>
+    <div class="strip" style="background:var(${k.c})"></div></div>`;}
+document.getElementById("kpiIndia").innerHTML=KPI_INDIA.map(kpiHTML).join("");
+document.getElementById("kpiGlobal").innerHTML=KPI_GLOBAL.map(kpiHTML).join("");
+
+function item(it,c){return `<a class="item" style="--c:var(${c})" href="${it.u}" target="_blank" rel="noopener">
+  <div class="k"><span>${it.op?'Editorial':'News'}</span><span class="src">${it.src}</span>${it.op?'<span class="op">OPINION</span>':''}</div>
+  <h4>${it.h}</h4><p>${it.p}</p><span class="go">Read source →</span></a>`;}
+function topics(mount,data){const order=["agri","bank","macro","tech"];
+  document.getElementById(mount).innerHTML=order.map(key=>{const arr=data[key];if(!arr||!arr.length)return"";
+    const m=T[key];return `<div class="topic"><div class="topic-h"><span class="chip" style="background:var(${m.c})"></span>
+    <h3>${m.label}</h3><span class="count">${arr.length}</span></div>${arr.map(it=>item(it,m.c)).join("")}</div>`;}).join("");}
+topics("todayTopics",TODAY);topics("weeklyTopics",WEEKLY);topics("monthlyTopics",MONTHLY);
+
+/* ============ LIVE NEWS (RSS, client-side, auto on open) ============ */
+const FEEDS=[
+  {url:"https://www.business-standard.com/rss/economy-102.rss", src:"Business Standard", op:0},
+  {url:"https://www.business-standard.com/rss/markets-106.rss", src:"Business Standard", op:0},
+  {url:"https://www.business-standard.com/rss/opinion-105.rss", src:"Business Standard", op:1},
+  {url:"https://www.livemint.com/rss/economy", src:"Mint", op:0},
+  {url:"https://www.livemint.com/rss/markets", src:"Mint", op:0},
+  {url:"https://www.livemint.com/rss/opinion", src:"Mint", op:1},
+  {url:"https://economictimes.indiatimes.com/news/economy/rssfeeds/1373380680.cms", src:"Economic Times", op:0},
+  {url:"https://www.thehindubusinessline.com/economy/feeder/default.rss", src:"BusinessLine", op:0},
+];
+async function proxdFetch(url){
+  let lastErr;
+  for(const px of CONFIG.PROXIES){
+    try{
+      const u=px+encodeURIComponent(url);
+      const ctrl=new AbortController(); const t=setTimeout(()=>ctrl.abort(),9000);
+      const r=await fetch(u,{signal:ctrl.signal,cache:"no-store"}); clearTimeout(t);
+      if(!r.ok) throw new Error("http"+r.status);
+      return await r.text();
+    }catch(e){ lastErr=e; }
+  }
+  throw lastErr || new Error("proxy fail");
+}
+async function fetchFeed(f){
+  const txt=await proxdFetch(f.url);
+  const xml=new DOMParser().parseFromString(txt,"text/xml");
+  return [...xml.querySelectorAll("item")].slice(0,16).map(it=>{
+    const g=t=>{const e=it.querySelector(t); return e?e.textContent.trim():"";};
+    let link=g("link"); if(!link){const l=it.querySelector("link"); if(l) link=l.getAttribute("href")||"";}
+    let desc=g("description").replace(/<[^>]+>/g," ").replace(/&[a-z#0-9]+;/gi," ").replace(/\s+/g," ").trim();
+    const dt=g("pubDate")||g("date")||g("updated");
+    const date=dt?new Date(dt).getTime():Date.now();
+    return {title:g("title"), link, desc, date:isFinite(date)?date:Date.now(), src:f.src, op:f.op};
+  }).filter(x=>x.title && x.link);
+}
+function classify(t){
+  const s=" "+t.toLowerCase()+" ";
+  const has=a=>a.some(w=>s.includes(w));
+  if(has(["monsoon","farm","farmer","crop","agri","kharif","rabi","msp","rural","fertil","foodgrain","food grain","sowing","paddy","wheat","sugarcane","horticultur","irrigation"])) return "agri";
+  if(has([" ai ","artificial intelligence","semiconductor","chip ","software","startup","it sector","it services","technolog","digital","data centre","data center","fintech"])) return "tech";
+  if(has(["rbi","repo","sensex","nifty","bond","yield","rupee","bank","credit","deposit","npa","monetary","fed ","interest rate","equit","ipo","mutual fund","market","stock","fpi","fii"])) return "bank";
+  return "macro";
+}
+function relTime(d){const s=(Date.now()-d)/1000; if(s<3600)return Math.max(1,Math.round(s/60))+"m ago"; if(s<86400)return Math.round(s/3600)+"h ago"; return Math.round(s/86400)+"d ago";}
+function liveCard(it,c){const d=it.desc?(it.desc.length>150?it.desc.slice(0,150)+"…":it.desc):"";
+  return `<a class="item" style="--c:var(${c})" href="${it.link}" target="_blank" rel="noopener">
+  <div class="k"><span>${it.op?'Editorial':'News'}</span><span class="src">${it.src}</span>${it.op?'<span class="op">OPINION</span>':''}<span class="src" style="margin-left:auto">${relTime(it.date)}</span></div>
+  <h4>${it.title}</h4>${d?`<p>${d}</p>`:''}<span class="go">Read source →</span></a>`;}
+function renderNews(mount,items,updated){
+  const order=["agri","bank","macro","tech"];
+  const g={agri:[],bank:[],macro:[],tech:[]};
+  items.forEach(it=>g[classify(it.title+" "+(it.desc||""))].push(it));
+  let html=`<div style="display:flex;align-items:center;gap:8px;margin:0 2px 14px;font-size:11.5px;color:var(--muted)"><span class="dot on"></span><b style="color:var(--ink)">Live headlines</b> · updated ${updated} · ${items.length} stories</div>`;
+  html+=order.map(key=>{const arr=g[key].slice(0,6); if(!arr.length)return""; const m=T[key];
+    return `<div class="topic"><div class="topic-h"><span class="chip" style="background:var(${m.c})"></span><h3>${m.label}</h3><span class="count">${arr.length}</span></div>${arr.map(it=>liveCard(it,m.c)).join("")}</div>`;}).join("");
+  document.getElementById(mount).innerHTML=html;
+}
+async function loadNews(){
+  let all=[];
+  await Promise.all(FEEDS.map(f=>fetchFeed(f).then(a=>{all.push(...a);}).catch(()=>{})));
+  const seen=new Set();
+  all=all.filter(it=>{const k=(it.title||"").toLowerCase().replace(/\s+/g," ").slice(0,70); if(!k||seen.has(k))return false; seen.add(k); return true;});
+  all.sort((a,b)=>b.date-a.date);
+  if(all.length<8) return; /* keep curated fallback already rendered */
+  const now=Date.now(), day=86400000;
+  const upd=new Date().toLocaleTimeString("en-IN",{hour:"2-digit",minute:"2-digit"});
+  renderNews("todayTopics", all.slice(0,26), upd);
+  const wk=all.filter(it=>(now-it.date)/day<=7);
+  renderNews("weeklyTopics", wk.length>=8?wk:all.slice(0,26), upd);
+  const mo=all.filter(it=>(now-it.date)/day<=31);
+  renderNews("monthlyTopics", mo.length>=8?mo:all.slice(0,40), upd);
+}
+/* News is a FIXED daily set curated by the 5 PM task (stable all day, fresh each day) — client-side loadNews() intentionally not called to avoid intra-day churn. */
+
+/* ============ Lift nav above any injected host banner (e.g. tiiny free tier) ============ */
+function adjustForBanner(){
+  let h=0;
+  document.querySelectorAll('body *').forEach(el=>{
+    if(el.closest('.tabbar')||el.closest('.topbar')||el.tagName==='MAIN'||el.closest('main')) return;
+    const s=getComputedStyle(el);
+    if(s.position==='fixed'||s.position==='sticky'){
+      const r=el.getBoundingClientRect();
+      if(r.height>8 && r.height<150 && r.width>window.innerWidth*0.5 && r.bottom>=window.innerHeight-3 && r.top>window.innerHeight*0.5){
+        h=Math.max(h,r.height);
+      }
+    }
+  });
+  document.documentElement.style.setProperty('--bnr', h+'px');
+}
+adjustForBanner();
+window.addEventListener('load',()=>{adjustForBanner(); setTimeout(adjustForBanner,1200); setTimeout(adjustForBanner,3000);});
+window.addEventListener('resize',adjustForBanner);
+document.addEventListener('visibilitychange',()=>{ if(!document.hidden) setTimeout(adjustForBanner,300); });
+
+const U=new Set();[TODAY,WEEKLY,MONTHLY].forEach(d=>Object.values(d).forEach(a=>a.forEach(it=>U.add(it.u))));
+document.getElementById("sourcesFoot").innerHTML='<b style="color:var(--faint)">Sources:</b> '+[...U].map((u,i)=>`<a href="${u}" target="_blank" rel="noopener">[${i+1}]</a>`).join(" ");
+document.getElementById("homeFoot").innerHTML="Market tiles fetch live quotes in your browser; policy figures (repo, Fed, CPI, IMF) are official values that change rarely. News refreshes daily at 5 PM IST. Not investment advice.";
+
+/* ============ LIVE QUOTES ============ */
+function fmtNum(n,type){
+  if(type==="int") return Math.round(n).toLocaleString("en-IN");
+  if(type==="inr") return "₹"+n.toFixed(2);
+  if(type==="usd") return "$"+n.toFixed(2);
+  return (""+n);
+}
+async function fetchYahoo(sym){
+  const y="https://query1.finance.yahoo.com/v8/finance/chart/"+encodeURIComponent(sym)+"?interval=1d&range=1mo";
+  let lastErr;
+  for(const px of CONFIG.PROXIES){
+    try{
+      const url=px+encodeURIComponent(y);
+      const ctrl=new AbortController(); const t=setTimeout(()=>ctrl.abort(),8000);
+      const r=await fetch(url,{signal:ctrl.signal,cache:"no-store"}); clearTimeout(t);
+      if(!r.ok) throw new Error("http "+r.status);
+      const j=await r.json(); const res=j.chart.result[0]; const m=res.meta;
+      const closes=(res.indicators.quote[0].close||[]).filter(x=>x!=null);
+      const price=m.regularMarketPrice; const prev=m.chartPreviousClose ?? m.previousClose ?? closes[closes.length-2];
+      if(!isFinite(price)) throw new Error("no price");
+      return {price, prev, series:closes.slice(-14)};
+    }catch(e){ lastErr=e; }
+  }
+  throw lastErr || new Error("all proxies failed");
+}
+function patchTile(k,q){
+  const price=q.price, prev=q.prev, diff=price-prev, pct=prev?(diff/prev*100):0;
+  const dir=diff>0.0001?"up":diff<-0.0001?"down":"flat";
+  const a=dir==="up"?"▲":dir==="down"?"▼":"—";
+  document.getElementById("val-"+k.id).textContent=fmtNum(price,k.fmt);
+  const chg=document.getElementById("chg-"+k.id);
+  const sign=diff>=0?"+":"−";
+  chg.className="chg "+dir;
+  chg.textContent=`${a} ${sign}${Math.abs(diff).toLocaleString("en-IN",{maximumFractionDigits:2})} (${sign}${Math.abs(pct).toFixed(2)}%)`;
+  if(q.series && q.series.length>2){
+    document.getElementById("spark-"+k.id).innerHTML=spark(q.series,k.c);
+  }
+  const lv=document.getElementById("lv-"+k.id); if(lv){lv.textContent="LIVE"; lv.classList.remove("snap");}
+}
+let liveTimer=null;
+async function refreshLive(manual){
+  const dot=document.getElementById("liveDot"), msg=document.getElementById("liveMsg");
+  const btn=document.getElementById("refreshBtn"); if(manual) btn.classList.add("spin");
+  const symbols=ALL.filter(k=>k.sym);
+  symbols.forEach(k=>{const lv=document.getElementById("lv-"+k.id); if(lv) lv.textContent="•••";});
+  let ok=0;
+  await Promise.all(symbols.map(async k=>{
+    try{ const q=await fetchYahoo(k.sym); if(q && isFinite(q.price)){ patchTile(k,q); ok++; } }
+    catch(e){ const lv=document.getElementById("lv-"+k.id); if(lv){lv.textContent="SNAP"; lv.classList.add("snap");} }
+  }));
+  const time=new Date().toLocaleTimeString("en-IN",{hour:"2-digit",minute:"2-digit",second:"2-digit"});
+  if(ok>0){ dot.className="dot on"; msg.innerHTML=`<b style="color:var(--ink)">Live</b> · ${ok}/${symbols.length} quotes · updated ${time}`; }
+  else { dot.className="dot err"; msg.innerHTML=`Showing latest snapshot — live feed unreachable. Tap ⟳ to retry.`; }
+  if(manual){ setTimeout(()=>btn.classList.remove("spin"),600); }
+}
+document.getElementById("refreshBtn").addEventListener("click",()=>refreshLive(true));
+
+/* start + auto-refresh every 60s while visible */
+refreshLive(false);
+function schedule(){ if(liveTimer) clearInterval(liveTimer); liveTimer=setInterval(()=>{ if(!document.hidden) refreshLive(false); },60000); }
+schedule();
+document.addEventListener("visibilitychange",()=>{ if(!document.hidden) refreshLive(false); });
+
+/* tabs */
+const scroller=document.getElementById("scroller");
+document.querySelectorAll(".tab").forEach(t=>t.addEventListener("click",()=>{
+  document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));
+  document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));
+  t.classList.add("active");document.getElementById(t.dataset.page).classList.add("active");
+  scroller.scrollTo({top:0,behavior:"smooth"});
+}));
+/* theme */
+document.getElementById("themeBtn").addEventListener("click",()=>{
+  const b=document.body;b.dataset.theme=b.dataset.theme==="dark"?"light":"dark";
+  document.querySelector('meta[name=theme-color]').setAttribute('content',b.dataset.theme==="dark"?"#0e1116":"#eef1f6");
+});
+/* hide install hint when running installed */
+if(window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone){
+  const h=document.getElementById('installHint');if(h)h.style.display='none';
+}
+</script>
+</body>
+</html>
