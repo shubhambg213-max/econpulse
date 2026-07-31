@@ -9,8 +9,8 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="EconPulse">
-<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxODAiIGhlaWdodD0iMTgwIiB2aWV3Qm94PSIwIDAgMTgwIDE4MCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjMjJjM2I4Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjNGM4ZGZmIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjE4MCIgaGVpZ2h0PSIxODAiIHJ4PSI0MCIgZmlsbD0iIzBlMTExNiIvPjxwb2x5bGluZSBwb2ludHM9IjM0LDExNiA2Niw4NCA5MiwxMDAgMTIwLDU4IDE0OCw3MiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ1cmwoI2cpIiBzdHJva2Utd2lkdGg9IjEwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48Y2lyY2xlIGN4PSIxMjAiIGN5PSI1OCIgcj0iOSIgZmlsbD0iI2UzYjM0MSIvPjwvc3ZnPg==">
-<link rel="manifest" href='data:application/manifest+json,{"name":"EconPulse — Economics Brief","short_name":"EconPulse","start_url":".","display":"standalone","background_color":"%230e1116","theme_color":"%230e1116","icons":[{"src":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiB2aWV3Qm94PSIwIDAgMTgwIDE4MCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjMjJjM2I4Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjNGM4ZGZmIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjE4MCIgaGVpZ2h0PSIxODAiIHJ4PSI0MCIgZmlsbD0iIzBlMTExNiIvPjxwb2x5bGluZSBwb2ludHM9IjM0LDExNiA2Niw4NCA5MiwxMDAgMTIwLDU4IDE0OCw3MiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ1cmwoI2cpIiBzdHJva2Utd2lkdGg9IjEwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48Y2lyY2xlIGN4PSIxMjAiIGN5PSI1OCIgcj0iOSIgZmlsbD0iI2UzYjM0MSIvPjwvc3ZnPg==","sizes":"192x192","type":"image/svg+xml"}]}'>
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="manifest" href="manifest.json">
 <style>
   :root{
     --bg:#0e1116; --panel:#161b22; --panel-2:#1c232d; --line:#28313d;
@@ -379,6 +379,11 @@ adjustForBanner();
 window.addEventListener('load',()=>{adjustForBanner(); setTimeout(adjustForBanner,1200); setTimeout(adjustForBanner,3000);});
 window.addEventListener('resize',adjustForBanner);
 document.addEventListener('visibilitychange',()=>{ if(!document.hidden) setTimeout(adjustForBanner,300); });
+
+/* ============ Service worker → clean, installable, offline-capable app ============ */
+if('serviceWorker' in navigator){
+  window.addEventListener('load',()=>{ navigator.serviceWorker.register('sw.js').catch(()=>{}); });
+}
 
 const U=new Set();[TODAY,WEEKLY,MONTHLY].forEach(d=>Object.values(d).forEach(a=>a.forEach(it=>U.add(it.u))));
 document.getElementById("sourcesFoot").innerHTML='<b style="color:var(--faint)">Sources:</b> '+[...U].map((u,i)=>`<a href="${u}" target="_blank" rel="noopener">[${i+1}]</a>`).join(" ");
