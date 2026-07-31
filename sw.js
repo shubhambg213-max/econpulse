@@ -1,6 +1,6 @@
 /* EconPulse service worker — makes the app installable (no browser badge) and
    opens offline showing the last cached app + data. Network-first for freshness. */
-const CACHE = "econpulse-v2";
+const CACHE = "econpulse-v3";
 const SHELL = ["./", "./index.html", "./manifest.json", "./icon-192.png", "./icon-512.png"];
 
 self.addEventListener("install", e => {

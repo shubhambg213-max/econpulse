@@ -75,6 +75,14 @@
   .summary{background:var(--panel-2); border:1px solid var(--line); border-radius:14px; padding:13px 14px; font-size:13.5px; color:var(--muted); margin-bottom:16px}
   .summary b{color:var(--ink)}
 
+  .topicbar{display:flex; gap:8px; overflow-x:auto; padding:2px 2px 14px; -webkit-overflow-scrolling:touch; scrollbar-width:none}
+  .topicbar::-webkit-scrollbar{display:none}
+  .tchip{flex:0 0 auto; border:1px solid var(--line); background:var(--panel); color:var(--muted);
+    font-size:12.5px; font-weight:700; padding:8px 15px; border-radius:999px; cursor:pointer; white-space:nowrap;
+    transition:transform .1s ease}
+  .tchip:active{transform:scale(.95)}
+  .tchip.active{color:#fff; background:var(--tc,linear-gradient(135deg,var(--accent),var(--accent-2))); border-color:transparent;
+    box-shadow:0 4px 12px color-mix(in srgb,var(--tc,var(--accent)) 40%,transparent)}
   .topic{margin-bottom:20px}
   .topic-h{display:flex; align-items:center; gap:9px; margin:0 2px 10px}
   .topic-h .chip{width:9px; height:9px; border-radius:50%}
@@ -193,8 +201,8 @@ const KPI_GLOBAL=[
   {id:"brent", sym:"BZ=F", fmt:"usd", name:"Brent Crude", val:"$88.49", chg:"+1.85%", dir:"up", meta:"$/bbl · +24% m/m", spark:[5,5,6,6,7,7,8], c:"--intl"},
 ];
 
-const T={agri:{label:"Agriculture & Rural",c:"--agri"},bank:{label:"Banking, Monetary & Markets",c:"--bank"},
-  macro:{label:"Macro & International",c:"--macro"},tech:{label:"Technology, AI & Industry",c:"--tech"}};
+const T={agri:{label:"Agriculture & Rural",short:"🌾 Agriculture",c:"--agri"},bank:{label:"Banking, Monetary & Markets",short:"🏦 Banking & Markets",c:"--bank"},
+  macro:{label:"Macro & International",short:"🌍 Macro",c:"--macro"},tech:{label:"Technology, AI & Industry",short:"💡 Tech & AI",c:"--tech"}};
 
 const TODAY={
  agri:[
@@ -279,10 +287,34 @@ document.getElementById("kpiGlobal").innerHTML=KPI_GLOBAL.map(kpiHTML).join("");
 function item(it,c){return `<a class="item" style="--c:var(${c})" href="${it.u}" target="_blank" rel="noopener">
   <div class="k"><span>${it.op?'Editorial':'News'}</span><span class="src">${it.src}</span>${it.op?'<span class="op">OPINION</span>':''}</div>
   <h4>${it.h}</h4><p>${it.p}</p><span class="go">Read source →</span></a>`;}
-function topics(mount,data){const order=["agri","bank","macro","tech"];
-  document.getElementById(mount).innerHTML=order.map(key=>{const arr=data[key];if(!arr||!arr.length)return"";
-    const m=T[key];return `<div class="topic"><div class="topic-h"><span class="chip" style="background:var(${m.c})"></span>
-    <h3>${m.label}</h3><span class="count">${arr.length}</span></div>${arr.map(it=>item(it,m.c)).join("")}</div>`;}).join("");}
+const _topicData={};
+function topics(mount,data){
+  _topicData[mount]=data;
+  const order=["agri","bank","macro","tech"];
+  const present=order.filter(k=>data[k]&&data[k].length);
+  const total=present.reduce((n,k)=>n+data[k].length,0);
+  const chips=`<div class="topicbar">`
+    +`<button class="tchip active" data-k="all" data-mount="${mount}">All · ${total}</button>`
+    +present.map(k=>`<button class="tchip" style="--tc:var(${T[k].c})" data-k="${k}" data-mount="${mount}">${T[k].short} · ${data[k].length}</button>`).join("")
+    +`</div><div class="topiclist" id="${mount}-list"></div>`;
+  document.getElementById(mount).innerHTML=chips;
+  renderTopicList(mount,"all");
+  document.querySelectorAll('.tchip[data-mount="'+mount+'"]').forEach(b=>b.addEventListener('click',()=>{
+    document.querySelectorAll('.tchip[data-mount="'+mount+'"]').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active'); renderTopicList(mount,b.dataset.k);
+    document.getElementById(mount+"-list").scrollIntoView({block:"nearest"});
+  }));
+}
+function renderTopicList(mount,filter){
+  const data=_topicData[mount]; const order=["agri","bank","macro","tech"];
+  const keys=filter==="all"?order:[filter];
+  document.getElementById(mount+"-list").innerHTML=keys.map(key=>{
+    const arr=data[key]; if(!arr||!arr.length)return"";
+    const m=T[key];
+    return `<div class="topic"><div class="topic-h"><span class="chip" style="background:var(${m.c})"></span>
+      <h3>${m.label}</h3><span class="count">${arr.length}</span></div>${arr.map(it=>item(it,m.c)).join("")}</div>`;
+  }).join("");
+}
 topics("todayTopics",TODAY);topics("weeklyTopics",WEEKLY);topics("monthlyTopics",MONTHLY);
 
 /* ============ LIVE NEWS (RSS, client-side, auto on open) ============ */
@@ -397,7 +429,8 @@ function fmtNum(n,type){
   return (""+n);
 }
 async function fetchYahoo(sym){
-  const y="https://query1.finance.yahoo.com/v8/finance/chart/"+encodeURIComponent(sym)+"?interval=1d&range=1mo";
+  /* &_=timestamp busts the CORS proxy's cache so every reload pulls a fresh quote */
+  const y="https://query1.finance.yahoo.com/v8/finance/chart/"+encodeURIComponent(sym)+"?interval=1d&range=1mo&_="+Date.now();
   let lastErr;
   for(const px of CONFIG.PROXIES){
     try{
