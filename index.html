@@ -407,7 +407,9 @@ async function fetchYahoo(sym){
       if(!r.ok) throw new Error("http "+r.status);
       const j=await r.json(); const res=j.chart.result[0]; const m=res.meta;
       const closes=(res.indicators.quote[0].close||[]).filter(x=>x!=null);
-      const price=m.regularMarketPrice; const prev=m.chartPreviousClose ?? m.previousClose ?? closes[closes.length-2];
+      const price=m.regularMarketPrice ?? closes[closes.length-1];
+      /* TRUE prior-day close for the daily change — NOT chartPreviousClose, which is the close before the 1-month range and produced a wrong (monthly) % */
+      const prev=m.previousClose ?? m.chartPreviousClose ?? closes[closes.length-2];
       if(!isFinite(price)) throw new Error("no price");
       return {price, prev, series:closes.slice(-14)};
     }catch(e){ lastErr=e; }
