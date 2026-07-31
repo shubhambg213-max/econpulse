@@ -407,10 +407,19 @@ async function fetchYahoo(sym){
       if(!r.ok) throw new Error("http "+r.status);
       const j=await r.json(); const res=j.chart.result[0]; const m=res.meta;
       const closes=(res.indicators.quote[0].close||[]).filter(x=>x!=null);
-      const price=m.regularMarketPrice ?? closes[closes.length-1];
-      /* TRUE prior-day close for the daily change — NOT chartPreviousClose, which is the close before the 1-month range and produced a wrong (monthly) % */
-      const prev=m.previousClose ?? m.chartPreviousClose ?? closes[closes.length-2];
-      if(!isFinite(price)) throw new Error("no price");
+      /* DAILY change, robust whether the market is open or closed.
+         Derive the prior close from the daily series — never chartPreviousClose (that's the close before the 1-month window = a monthly move). */
+      const last = closes.length ? closes[closes.length-1] : m.regularMarketPrice;
+      const price = isFinite(m.regularMarketPrice) ? m.regularMarketPrice : last;
+      let prev;
+      if(closes.length >= 2){
+        // if live price differs from the latest daily close, that close IS the prior close (market open);
+        // otherwise price equals today's close, so the prior close is the one before it.
+        prev = (Math.abs(price - last) > Math.abs(last) * 0.0005) ? last : closes[closes.length - 2];
+      } else {
+        prev = isFinite(m.previousClose) ? m.previousClose : last;
+      }
+      if(!isFinite(price) || !isFinite(prev) || prev === 0) throw new Error("bad data");
       return {price, prev, series:closes.slice(-14)};
     }catch(e){ lastErr=e; }
   }
