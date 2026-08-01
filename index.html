@@ -149,7 +149,7 @@
   <!-- TODAY -->
   <section class="page" id="today">
     <div class="ptitle">Today's Brief</div>
-    <div class="pwhen">Friday, 31 July 2026 · news &amp; editorials by topic</div>
+    <div class="pwhen">Saturday, 1 August 2026 · news &amp; editorials by topic</div>
     <div id="todayTopics"></div>
     <div class="foot" id="sourcesFoot"></div>
   </section>
@@ -157,8 +157,8 @@
   <!-- WEEKLY -->
   <section class="page" id="weekly">
     <div class="ptitle">Weekly Wrap-up</div>
-    <div class="pwhen">Week of 27 – 31 July 2026</div>
-    <div class="summary">🔎 <b>The week in one line:</b> The Fed held at 3.50–3.75% and the RBI stayed at 5.25% as a weak monsoon, a rupee near ₹96/$ and an unresolved India–US tariff track kept policymakers cautious; the IMF trimmed 2026 global growth to 3.0%.</div>
+    <div class="pwhen">Week of 26 July – 1 August 2026</div>
+    <div class="summary">🔎 <b>The week in one line:</b> Markets closed July on a three-day winning run (Nifty 24,384) with June IIP surprising at +7.3% and bank credit near an 18.6% high — but Brent close to $90 kept the rupee soft and CPI at 4.38%, and India ran to an August 1 US tariff deadline with talks unresolved.</div>
     <div id="weeklyTopics"></div>
   </section>
 
@@ -166,7 +166,7 @@
   <section class="page" id="monthly">
     <div class="ptitle">Monthly Wrap-up</div>
     <div class="pwhen">July 2026</div>
-    <div class="summary">🔎 <b>The month in one line:</b> July ran on "crosscurrents of war and technology" — an oil-driven inflation scare pushed India's CPI to 4.38% and the rupee past ₹96/$, even as bank credit growth hit a two-year high of 18.6% and the AI debate reshaped India's IT sector.</div>
+    <div class="summary">🔎 <b>The month in one line:</b> July 2026 ran on an oil shock — Brent leapt ~21% toward $90, pushing the rupee to the edge of ₹96 and re-accelerating CPI to 4.38% — yet the real economy stayed firm (IIP +7.3%, credit +18.6%) as the RBI held at 5.25% and India headed into an August 1 US tariff deadline.</div>
     <div id="monthlyTopics"></div>
   </section>
 
@@ -187,18 +187,18 @@ const CONFIG = { PROXIES:["https://api.allorigins.win/raw?url=","https://corspro
 
 /* ============ INDICATOR DATA (snapshot fallback; live symbols patch these) ============ */
 const KPI_INDIA=[
-  {id:"sensex", sym:"^BSESN", fmt:"int", name:"BSE Sensex", val:"78,095", chg:"+166 (0.21%)", dir:"up", meta:"31 Jul close · BSE", spark:[3,4,3,5,6,5,7], c:"--mkt"},
+  {id:"sensex", sym:"^BSESN", fmt:"int", name:"BSE Sensex", val:"77,996", chg:"+166 (0.21%)", dir:"up", meta:"31 Jul close · 3rd day up", spark:[3,4,3,5,6,5,7], c:"--mkt"},
   {id:"nifty", sym:"^NSEI", fmt:"int", name:"Nifty 50", val:"24,384", chg:"+66 (0.27%)", dir:"up", meta:"31 Jul close · NSE", spark:[2,3,3,4,4,5,6], c:"--mkt"},
-  {id:"repo", sym:null, name:"RBI Repo Rate", val:"5.25%", chg:"Unchanged", dir:"flat", meta:"Held 3rd mtg · neutral", spark:[5,5,5,5,5,5,5], c:"--bank"},
-  {id:"cpi", sym:null, name:"India CPI (Jun)", val:"4.38%", chg:"↑ vs forecast", dir:"down", meta:"Food 5.32% · oil-led", spark:[2,2,3,3,4,4,5], c:"--macro"},
-  {id:"usdinr", sym:"INR=X", fmt:"inr", name:"USD / INR", val:"₹95.83", chg:"Rupee at 2-wk high", dir:"flat", meta:"30 Jul · live FX", spark:[7,7,6,6,5,5,4], c:"--intl"},
-  {id:"in10y", sym:null, name:"India 10Y Yield", val:"6.81%", chg:"+6 bps m/m", dir:"flat", meta:"31 Jul · G-sec", spark:[4,5,6,5,6,6,6], c:"--macro"},
+  {id:"repo", sym:null, name:"RBI Repo Rate", val:"5.25%", chg:"Unchanged", dir:"flat", meta:"Held 3 mtgs · Aug MPC due", spark:[5,5,5,5,5,5,5], c:"--bank"},
+  {id:"cpi", sym:null, name:"India CPI (Jun)", val:"4.38%", chg:"↑ from May 3.93%", dir:"down", meta:"Oil & food-led · beat fcast", spark:[2,2,3,3,4,4,5], c:"--macro"},
+  {id:"usdinr", sym:"INR=X", fmt:"inr", name:"USD / INR", val:"₹95.83", chg:"Off ₹96 record", dir:"flat", meta:"31 Jul · oil-pressured", spark:[7,7,6,6,5,5,4], c:"--intl"},
+  {id:"in10y", sym:null, name:"India 10Y Yield", val:"6.80%", chg:"~flat m/m", dir:"flat", meta:"31 Jul · G-sec 6.70–6.85%", spark:[4,5,6,5,6,6,6], c:"--macro"},
 ];
 const KPI_GLOBAL=[
   {id:"fed", sym:null, name:"US Fed Funds", val:"3.50–3.75%", chg:"Held Jul 29", dir:"flat", meta:"Divided Fed holds", spark:[6,6,5,5,4,4,4], c:"--bank"},
   {id:"imf", sym:null, name:"IMF Growth '26", val:"3.0%", chg:"Revised down", dir:"down", meta:"Global infl. 4.7%", spark:[6,5,5,4,4,3,3], c:"--intl"},
-  {id:"spx", sym:"^GSPC", fmt:"int", name:"S&P 500", val:"7,471", chg:"US large-cap", dir:"flat", meta:"US equities · live", spark:[3,4,4,5,5,6,6], c:"--bank"},
-  {id:"brent", sym:"BZ=F", fmt:"usd", name:"Brent Crude", val:"$88.49", chg:"+1.85%", dir:"up", meta:"$/bbl · +24% m/m", spark:[5,5,6,6,7,7,8], c:"--intl"},
+  {id:"spx", sym:"^GSPC", fmt:"int", name:"S&P 500", val:"7,478", chg:"Record highs", dir:"up", meta:"31 Jul · tech-led", spark:[3,4,4,5,5,6,6], c:"--bank"},
+  {id:"brent", sym:"BZ=F", fmt:"usd", name:"Brent Crude", val:"$89.53", chg:"+21% m/m", dir:"up", meta:"$/bbl · oil shock", spark:[5,5,6,6,7,7,8], c:"--intl"},
 ];
 
 const T={agri:{label:"Agriculture & Rural",short:"🌾 Agriculture",c:"--agri"},bank:{label:"Banking, Monetary & Markets",short:"🏦 Banking & Markets",c:"--bank"},
@@ -206,20 +206,19 @@ const T={agri:{label:"Agriculture & Rural",short:"🌾 Agriculture",c:"--agri"},
 
 const TODAY={
  agri:[
-  {src:"S&P / The Tribune",op:0,h:"Weak monsoon may weigh on rural demand and credit growth",p:"S&P Global Ratings flags that a patchy monsoon could soften farm incomes and rural consumption in coming months.",u:"https://www.tribuneindia.com/news/agriculture-sector/weak-monsoon-may-weigh-on-rural-demand-credit-growth-in-coming-months-sp-global-ratings"},
-  {src:"FactNews India",op:0,h:"Weak rains could dent farm incomes and inflation outlook",p:"Deficient rainfall in key belts risks lifting food prices just as headline CPI was cooling — an MPC watch item.",u:"https://factnewsindia.com/top-story/southwest-monsoon-india-weak-rains-could-dent-farm-incomes-consumption-and-inflation-outlook-sp/"},
+  {src:"Blitz India / IMD",op:0,h:"Monsoon deficit narrows as August rainfall outlook improves",p:"After a patchy start, rains picked up into month-end and the IMD's August outlook eased fears for kharif sowing and rural demand.",u:"https://blitzindiamedia.com/agriculture-bureau/india-monsoon-deficit-2026/"},
+  {src:"S&P / The Tribune",op:0,h:"S&P still flags monsoon as a swing factor for rural credit",p:"Even with the improving outlook, S&P Global warns an uneven monsoon could sway farm incomes, food prices and rural credit growth.",u:"https://www.tribuneindia.com/news/agriculture-sector/weak-monsoon-may-weigh-on-rural-demand-credit-growth-in-coming-months-sp-global-ratings"},
  ],
  bank:[
-  {src:"Business Standard",op:0,h:"Sensex ends up 3rd day at ~77,996; Nifty at 24,384",p:"Auto stocks led a broad advance amid positive global cues and steady Q1 earnings flow.",u:"https://www.business-standard.com/markets/news/stock-market-live-july-31-nse-bse-sensex-today-nifty50-gift-nifty-q1-results-today-ipo-share-market-126073100128_1.html"},
-  {src:"Business Standard",op:0,h:"Bank credit growth hits two-year high of 18.6%",p:"Non-food credit accelerated in the June-end fortnight as deposits rose over ₹7 trillion.",u:"https://www.business-standard.com/industry/banking/bank-credit-growth-hits-2-year-high-of-18-6-as-deposits-rise-over-7-trn-126071001123_1.html"},
-  {src:"Business Standard",op:0,h:"Rupee breaches 96/$; 10-year yield rises on oil surge",p:"An oil price spike pressured the currency to record-low territory and lifted yields ~6 bps intraday.",u:"https://www.business-standard.com/finance/news/rupee-breaches-96-10-year-bond-yield-rises-6-bps-on-oil-price-surge-126071401199_1.html"},
-  {src:"Advisor Perspectives",op:0,h:"Divided Fed holds funds rate at 3.50–3.75%",p:"The FOMC kept policy steady on July 29 amid a split committee, balancing sticky inflation against softer growth.",u:"https://www.advisorperspectives.com/dshort/updates/2026/07/29/feds-interest-rate-decision-july-29-2026"},
+  {src:"Business Standard",op:0,h:"Sensex ends up 3rd day at ~77,996; Nifty at 24,384",p:"Auto and financial stocks led a broad advance into month-end on positive global cues and a steady Q1 earnings flow.",u:"https://www.business-standard.com/markets/news/stock-market-live-july-31-nse-bse-sensex-today-nifty50-gift-nifty-q1-results-today-ipo-share-market-126073100128_1.html"},
+  {src:"Business Standard",op:0,h:"Bank credit growth holds a two-year high of 18.6%",p:"Non-food credit stayed strong as deposits rose over ₹7 trillion — the clearest sign of resilient domestic demand.",u:"https://www.business-standard.com/industry/banking/bank-credit-growth-hits-2-year-high-of-18-6-as-deposits-rise-over-7-trn-126071001123_1.html"},
+  {src:"Advisor Perspectives",op:0,h:"Divided Fed holds funds rate at 3.50–3.75%",p:"The FOMC kept policy steady on July 29 amid a split committee, weighing sticky inflation against softer growth.",u:"https://www.advisorperspectives.com/dshort/updates/2026/07/29/feds-interest-rate-decision-july-29-2026"},
  ],
  macro:[
-  {src:"CNBC",op:0,h:"India's inflation accelerates to 4.38% in June, beating forecasts",p:"Higher oil and food costs — partly tied to Middle East tensions — pushed retail inflation above expectations.",u:"https://www.cnbc.com/2026/07/13/india-june-inflation-oil-food-iran-war.html"},
-  {src:"IMF",op:0,h:"IMF cuts 2026 global growth to 3.0%, lifts inflation to 4.7%",p:"The July WEO Update frames the world economy as caught in 'crosscurrents of war and technology'.",u:"https://www.imf.org/en/publications/weo/issues/2026/07/08/world-economic-outlook-update-july-2026"},
-  {src:"Reuters / US News",op:0,h:"India to keep engaging with US on trade deal after new tariffs",p:"New Delhi signalled continued negotiation despite fresh US tariff actions, keeping an interim deal in play.",u:"https://www.usnews.com/news/top-news/articles/2026-07-25/india-to-keep-engaging-with-us-on-trade-deal-after-new-tariff-measures"},
-  {src:"Bloomberg",op:1,h:"India's economy sends mixed signals amid war and trade shocks",p:"Opinion: businesses juggle an oil-price shock and tariff uncertainty even as domestic demand holds up.",u:"https://www.bloomberg.com/news/newsletters/2026-07-29/india-s-economy-sends-mixed-signals-as-businesses-juggle-war-and-trade-shocks"},
+  {src:"Outlook Business",op:0,h:"India's June IIP jumps 7.3%, led by manufacturing and capital goods",p:"Industrial output (released Jul 28) beat expectations, with capital goods up 14.2% — a strong signal on the investment cycle.",u:"https://www.outlookbusiness.com/economy-and-policy/indias-june-industrial-production-rises-to-73-pc-led-by-manufacturing-capital-goods"},
+  {src:"CNBC",op:0,h:"India's inflation accelerates to 4.38% in June, beating forecasts",p:"Higher oil and food costs — partly tied to West Asia tensions — pushed retail inflation up from May's 3.93%.",u:"https://www.cnbc.com/2026/07/13/india-june-inflation-oil-food-iran-war.html"},
+  {src:"Reuters / US News",op:0,h:"India, US keep talking as an August 1 tariff deadline arrives",p:"New Delhi signalled continued negotiation even as fresh US tariff measures loomed at the deadline, keeping an interim deal in play.",u:"https://www.usnews.com/news/top-news/articles/2026-07-25/india-to-keep-engaging-with-us-on-trade-deal-after-new-tariff-measures"},
+  {src:"Bloomberg",op:1,h:"India's economy sends mixed signals amid war and trade shocks",p:"Opinion: firms juggle an oil-price shock and tariff uncertainty even as domestic demand and output hold up.",u:"https://www.bloomberg.com/news/newsletters/2026-07-29/india-s-economy-sends-mixed-signals-as-businesses-juggle-war-and-trade-shocks"},
  ],
  tech:[
   {src:"Business Today",op:0,h:"Nifty IT rebounds in July as chip stocks falter — a 'reverse AI trade'?",p:"IT services names recovered even as semiconductor shares slipped, hinting at rotation within the AI theme.",u:"https://www.businesstoday.in/markets/stocks/story/nifty-it-stocks-rebound-in-july-as-semiconductor-stocks-falter-reverse-ai-trade-546524-2026-07-31"},
@@ -228,16 +227,16 @@ const TODAY={
  ],
 };
 const WEEKLY={
- agri:[{src:"S&P / The Tribune",op:0,h:"Monsoon risk moves to centre stage for rural demand",p:"The week's dominant agri theme: a weak monsoon threatening farm incomes, rural credit and the food-inflation path.",u:"https://www.tribuneindia.com/news/agriculture-sector/weak-monsoon-may-weigh-on-rural-demand-credit-growth-in-coming-months-sp-global-ratings"}],
+ agri:[{src:"Blitz India / IMD",op:0,h:"Monsoon outlook improves through the week",p:"Rain picked up and the IMD's August forecast turned more benign, easing the week's rural-demand and food-price worries.",u:"https://blitzindiamedia.com/agriculture-bureau/india-monsoon-deficit-2026/"}],
  bank:[
   {src:"Federal Reserve",op:0,h:"Fed holds at 3.50–3.75% on a divided vote",p:"The July 29 decision kept US rates steady, shaping the global rate backdrop for EM currencies including the rupee.",u:"https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm"},
   {src:"Business Standard",op:0,h:"Sensex logs a three-day winning run into month-end",p:"Equities firmed on positive global cues and resilient Q1 results, with autos and financials leading.",u:"https://www.business-standard.com/markets/news/stock-market-live-july-31-nse-bse-sensex-today-nifty50-gift-nifty-q1-results-today-ipo-share-market-126073100128_1.html"},
   {src:"Business Standard",op:0,h:"Credit growth strength persists at ~18.6%",p:"The two-year high in bank credit stayed a key positive signal on underlying demand through the week.",u:"https://www.business-standard.com/industry/banking/bank-credit-growth-hits-2-year-high-of-18-6-as-deposits-rise-over-7-trn-126071001123_1.html"},
  ],
  macro:[
+  {src:"Outlook Business",op:0,h:"June IIP at 7.3% caps a strong data week",p:"Industrial output beat forecasts on manufacturing and capital goods, reinforcing the resilient-demand story.",u:"https://www.outlookbusiness.com/economy-and-policy/indias-june-industrial-production-rises-to-73-pc-led-by-manufacturing-capital-goods"},
+  {src:"Reuters / US News",op:0,h:"India–US trade talks run to the August 1 deadline",p:"Negotiations stayed alive through the week even as fresh US tariff measures loomed, keeping exporters watchful.",u:"https://www.usnews.com/news/top-news/articles/2026-07-25/india-to-keep-engaging-with-us-on-trade-deal-after-new-tariff-measures"},
   {src:"IMF",op:0,h:"IMF's July WEO Update sets the global tone",p:"Growth trimmed to 3.0% and inflation nudged to 4.7% framed the week's macro narrative around war and tech shocks.",u:"https://www.imf.org/en/publications/weo/issues/2026/07/08/world-economic-outlook-update-july-2026"},
-  {src:"Reuters / US News",op:0,h:"India–US trade talks continue despite new tariffs",p:"Negotiations stayed alive through the week even after fresh US tariff measures, keeping exporters watchful.",u:"https://www.usnews.com/news/top-news/articles/2026-07-25/india-to-keep-engaging-with-us-on-trade-deal-after-new-tariff-measures"},
-  {src:"WTO",op:0,h:"Heads of IEA, IMF, World Bank and WTO issue joint statement",p:"A rare joint call underscored coordination risks around energy, trade and growth in a fractured global economy.",u:"https://www.wto.org/english/news_e/news26_e/dgno_08jul26_448_e.htm"},
  ],
  tech:[
   {src:"Business Today",op:0,h:"Rotation within the AI trade hits Indian tech",p:"IT services rebounded while chip names slipped — the week's clearest sign of shifting AI-theme positioning.",u:"https://www.businesstoday.in/markets/stocks/story/nifty-it-stocks-rebound-in-july-as-semiconductor-stocks-falter-reverse-ai-trade-546524-2026-07-31"},
@@ -246,21 +245,23 @@ const WEEKLY={
 };
 const MONTHLY={
  agri:[
-  {src:"S&P / FactNews",op:0,h:"Monsoon emerges as the month's key downside risk",p:"Deficient rains dominated the rural-economy outlook through July, threatening farm incomes and lifting food-price risk.",u:"https://factnewsindia.com/top-story/southwest-monsoon-india-weak-rains-could-dent-farm-incomes-consumption-and-inflation-outlook-sp/"},
-  {src:"USDA FAS",op:0,h:"India grain and feed conditions under watch",p:"Official crop updates tracked sowing and output amid the uneven monsoon — relevant to buffer stocks and MSP.",u:"https://www.fas.usda.gov/data/india-grain-and-feed-update-38"},
+  {src:"Blitz India / IMD",op:0,h:"Monsoon swung from deficit to a better August outlook",p:"July's rural story was the rains: a patchy start stoked food-price fears before a late pickup and IMD's August outlook eased the risk to kharif sowing.",u:"https://blitzindiamedia.com/agriculture-bureau/india-monsoon-deficit-2026/"},
+  {src:"S&P / FactNews",op:0,h:"Monsoon stayed the key swing factor for rural credit",p:"S&P Global flagged all month that an uneven monsoon could sway farm incomes, rural consumption and the food-inflation path.",u:"https://factnewsindia.com/top-story/southwest-monsoon-india-weak-rains-could-dent-farm-incomes-consumption-and-inflation-outlook-sp/"},
  ],
  bank:[
-  {src:"RBI / Trading Economics",op:0,h:"RBI holds repo at 5.25% for a third meeting, neutral stance",p:"The bank balanced a weakening rupee and monsoon-driven inflation risk against growth, keeping policy on hold.",u:"https://tradingeconomics.com/india/interest-rate"},
-  {src:"Business Standard",op:0,h:"Bank credit growth hits a two-year high of 18.6%",p:"The month's standout domestic-demand signal, with deposits rising over ₹7 trillion in the June-end fortnight.",u:"https://www.business-standard.com/industry/banking/bank-credit-growth-hits-2-year-high-of-18-6-as-deposits-rise-over-7-trn-126071001123_1.html"},
-  {src:"Business Standard",op:0,h:"Rupee slid past ₹96/$ on an oil shock before easing",p:"A crude spike drove the currency to record-low territory mid-month; softer oil later helped yields retreat to ~6.8%.",u:"https://www.business-standard.com/finance/news/rupee-breaches-96-10-year-bond-yield-rises-6-bps-on-oil-price-surge-126071401199_1.html"},
+  {src:"RBI / Trading Economics",op:0,h:"RBI held repo at 5.25% for a third meeting, neutral stance",p:"The bank balanced a weakening rupee and oil-driven inflation risk against growth, keeping policy on hold ahead of the August MPC.",u:"https://tradingeconomics.com/india/interest-rate"},
+  {src:"Business Standard",op:0,h:"Bank credit growth hit a two-year high of 18.6%",p:"The month's standout domestic-demand signal, with deposits rising over ₹7 trillion in the June-end fortnight.",u:"https://www.business-standard.com/industry/banking/bank-credit-growth-hits-2-year-high-of-18-6-as-deposits-rise-over-7-trn-126071001123_1.html"},
+  {src:"Business Standard",op:0,h:"Rupee slid past ₹96/$ on an oil shock before steadying",p:"A crude spike drove the currency to record-low territory mid-month; a late easing helped the 10-year yield settle near 6.8%.",u:"https://www.business-standard.com/finance/news/rupee-breaches-96-10-year-bond-yield-rises-6-bps-on-oil-price-surge-126071401199_1.html"},
  ],
  macro:[
-  {src:"IMF",op:0,h:"IMF's July WEO: global growth 3.0%, inflation 4.7%",p:"The flagship update characterised 2026 as caught between geopolitical conflict and a technology-investment boom.",u:"https://www.imf.org/en/publications/weo/issues/2026/07/08/world-economic-outlook-update-july-2026"},
-  {src:"CNBC",op:0,h:"India CPI accelerated to 4.38% in June on oil and food",p:"The month's key data print showed inflation re-accelerating from multi-year lows, complicating the easing debate.",u:"https://www.cnbc.com/2026/07/13/india-june-inflation-oil-food-iran-war.html"},
-  {src:"Reuters / US News",op:0,h:"India–US tariff standoff shaped the trade narrative",p:"New US tariff measures and India's decision to keep negotiating were the month's defining external-sector story.",u:"https://www.usnews.com/news/top-news/articles/2026-07-25/india-to-keep-engaging-with-us-on-trade-deal-after-new-tariff-measures"},
+  {src:"CNBC",op:0,h:"India CPI re-accelerated to 4.38% in June on oil and food",p:"The month's key price print showed inflation climbing from May's 3.93%, complicating the rate-cut debate.",u:"https://www.cnbc.com/2026/07/13/india-june-inflation-oil-food-iran-war.html"},
+  {src:"Outlook Business",op:0,h:"June IIP surged 7.3%, showing the real economy held firm",p:"Manufacturing (+7.8%) and capital goods (+14.2%) drove the strongest factory print in months — a counterweight to the inflation scare.",u:"https://www.outlookbusiness.com/economy-and-policy/indias-june-industrial-production-rises-to-73-pc-led-by-manufacturing-capital-goods"},
+  {src:"IMF",op:0,h:"IMF's July WEO: global growth 3.0%, inflation 4.7%",p:"The flagship update cast 2026 as caught between geopolitical conflict and a technology-investment boom — 'crosscurrents of war and technology'.",u:"https://www.imf.org/en/publications/weo/issues/2026/07/08/world-economic-outlook-update-july-2026"},
+  {src:"Reuters / US News",op:0,h:"India–US tariff standoff ran to an August 1 deadline",p:"Fresh US tariff measures and India's choice to keep negotiating were the month's defining external-sector story.",u:"https://www.usnews.com/news/top-news/articles/2026-07-25/india-to-keep-engaging-with-us-on-trade-deal-after-new-tariff-measures"},
  ],
  tech:[
   {src:"The Week",op:1,h:"AI's reshaping of Indian IT was July's structural story",p:"Coverage all month probed how AI affects IT-services margins, pricing and the traditional hiring pyramid.",u:"https://www.theweek.in/news/biz-tech/2026/07/28/indian-it-ai-disruption-impact-it-services-future-of-indian-it-sector.html"},
+  {src:"Business Today",op:0,h:"A 'reverse AI trade' rotated flows back to IT services",p:"IT-services shares rebounded in July while semiconductor names slipped, marking a shift within the AI theme.",u:"https://www.businesstoday.in/markets/stocks/story/nifty-it-stocks-rebound-in-july-as-semiconductor-stocks-falter-reverse-ai-trade-546524-2026-07-31"},
   {src:"TechChannel",op:0,h:"IT sector added 1.35 lakh jobs despite AI anxiety",p:"Resilient hiring suggested AI is, for now, augmenting India's tech workforce rather than shrinking it.",u:"https://techchannel.news/indias-it-sector-added-1-35-lakh-jobs-amid-ai-fears/"},
  ],
 };
