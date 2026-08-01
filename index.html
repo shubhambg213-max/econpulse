@@ -158,7 +158,7 @@
   <section class="page" id="weekly">
     <div class="ptitle">Weekly Wrap-up</div>
     <div class="pwhen">Week of 26 July – 1 August 2026</div>
-    <div class="summary">🔎 <b>The week in one line:</b> The Fed held at 3.50–3.75% and the RBI stayed at 5.25% ahead of its 3–5 Aug review, as the monsoon deficit narrowed to ~15% and FPI inflows lifted the rupee to 95.35/$; Wall Street capped its best month since 2020 even as Brent surged above $90.</div>
+    <div class="summary">🔎 <b>The week in one line:</b> A hawkishly-split Fed held at 3.50–3.75% (three members wanted a hike) and the RBI stayed at 5.25% ahead of its 3–5 Aug review, as the monsoon deficit narrowed to ~15% and FPI inflows lifted the rupee to 95.35/$; Wall Street capped its best month since 2020, Brent surged above $90 on Middle-East risk, and Trump called an India–US trade deal "very close" at the Aug 1 tariff deadline.</div>
     <div id="weeklyTopics"></div>
   </section>
 
@@ -195,7 +195,7 @@ const KPI_INDIA=[
   {id:"in10y", sym:null, name:"India 10Y Yield", val:"6.81%", chg:"Steady", dir:"flat", meta:"31 Jul · G-sec", spark:[4,5,6,5,6,6,6], c:"--macro"},
 ];
 const KPI_GLOBAL=[
-  {id:"fed", sym:null, name:"US Fed Funds", val:"3.50–3.75%", chg:"Held Jul 29", dir:"flat", meta:"Divided Fed holds", spark:[6,6,5,5,4,4,4], c:"--bank"},
+  {id:"fed", sym:null, name:"US Fed Funds", val:"3.50–3.75%", chg:"Held Jul 29", dir:"flat", meta:"9–3 hold · 3 wanted hike", spark:[6,6,5,5,4,4,4], c:"--bank"},
   {id:"imf", sym:null, name:"IMF Growth '26", val:"3.0%", chg:"Revised down", dir:"down", meta:"Global infl. 4.7%", spark:[6,5,5,4,4,3,3], c:"--intl"},
   {id:"spx", sym:"^GSPC", fmt:"int", name:"S&P 500", val:"7,478", chg:"+52 (0.70%)", dir:"up", meta:"31 Jul · best month since '20", spark:[3,4,4,5,5,6,7], c:"--bank"},
   {id:"brent", sym:"BZ=F", fmt:"usd", name:"Brent Crude", val:"$90.24", chg:"+3.87%", dir:"up", meta:"$/bbl · +26% m/m", spark:[5,5,6,6,7,7,8], c:"--intl"},
@@ -213,11 +213,11 @@ const TODAY={
   {src:"Business Standard",op:0,h:"Sensex ends up 166 pts for 3rd day; Nifty settles at 24,384",p:"Auto stocks led a broad advance into month-end amid positive global cues and steady Q1 earnings flow.",u:"https://www.business-standard.com/markets/news/stock-market-live-july-31-nse-bse-sensex-today-nifty50-gift-nifty-q1-results-today-ipo-share-market-126073100128_1.html"},
   {src:"HDFC Sky",op:0,h:"Rupee closes at 95.35, up 15 paise on FPI inflows",p:"Returning foreign portfolio flows lifted the currency off recent lows, even as Brent's climb above $90 capped the gains.",u:"https://hdfcsky.com/news/inr-vs-usd-rate-july-31-2026-rupee-rises-15-paise-closes-at-95-35-against-us-dollar"},
   {src:"Business Today",op:0,h:"August money calendar: RBI 3–5 Aug policy, ITR deadline, CKYC 2.0, LPG prices",p:"A packed month for households and markets, with the MPC verdict the headline event after two straight holds at 5.25%.",u:"https://www.businesstoday.in/personal-finance/investment/story/august-2026-and-your-finances-itr-deadline-ckyc-2-0-rollout-rbi-policy-lpg-prices-and-other-key-financial-changes-to-watch-546473-2026-07-31"},
-  {src:"Federal Reserve",op:0,h:"Divided Fed holds funds rate at 3.50–3.75%",p:"The FOMC kept policy steady on July 29 amid a split committee, balancing sticky inflation against softer growth.",u:"https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm"},
+  {src:"Federal Reserve",op:0,h:"Divided Fed holds at 3.50–3.75% on a 9–3 vote",p:"The FOMC kept policy steady on July 29, but Hammack, Kashkari and Logan dissented in favour of a quarter-point hike as inflation stays sticky.",u:"https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm"},
  ],
  macro:[
   {src:"IMF",op:0,h:"IMF cuts 2026 global growth to 3.0%, lifts inflation to 4.7%",p:"The July WEO Update frames the world economy as caught in 'crosscurrents of war and technology'.",u:"https://www.imf.org/en/publications/weo/issues/2026/07/08/world-economic-outlook-update-july-2026"},
-  {src:"Reuters / US News",op:0,h:"India to keep engaging with US on trade deal after new tariffs",p:"New Delhi signalled continued negotiation despite fresh US tariff actions, keeping an interim deal in play.",u:"https://www.usnews.com/news/top-news/articles/2026-07-25/india-to-keep-engaging-with-us-on-trade-deal-after-new-tariff-measures"},
+  {src:"BBC",op:0,h:"Trump says India–US trade deal 'very close' as Aug 1 tariff deadline lands",p:"Both sides pushed for an interim pact against the tariff clock, with farm-sector and auto access the outstanding sticking points.",u:"https://www.bbc.com/news/articles/c2ley8pe5qlo"},
   {src:"AP",op:0,h:"US stocks cap a wild July as inflation worries worsen",p:"Wall Street finished the month higher on an AI-led rally — Amazon soared while Apple sank — but hotter inflation signals unsettled the tape.",u:"https://www.clickorlando.com/business/2026/07/31/south-koreas-kospi-index-jumps-more-than-13-on-a-surge-of-chipmaking-stocks/"},
   {src:"Bloomberg",op:1,h:"Foreign funds are back, but India isn't out of the woods",p:"Opinion: renewed FPI inflows help, yet risks from US rates, a stretched AI trade and domestic soft spots still linger.",u:"https://www.bloomberg.com/news/newsletters/2026-07-31/foreign-funds-are-back-but-risks-from-us-rates-ai-trade-domestic-issues-remain"},
  ],
@@ -233,13 +233,13 @@ const WEEKLY={
   {src:"India Gazette",op:0,h:"Rain pick-up seen supporting farm growth and rural demand",p:"A report flagged the recovery as a positive for kharif sowing and rural consumption, tempering the earlier deficit scare.",u:"https://www.indiagazette.com/news/279214566/july-rainfall-pick-up-positive-for-farm-growth-rural-incomes-despite-el-nino-risk-report"},
  ],
  bank:[
-  {src:"Federal Reserve",op:0,h:"Fed holds at 3.50–3.75% on a divided vote",p:"The July 29 decision kept US rates steady, shaping the global rate backdrop for EM currencies including the rupee.",u:"https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm"},
-  {src:"Business Standard",op:0,h:"Sensex logs a three-day winning run into month-end",p:"Equities firmed on positive global cues and resilient Q1 results, with autos and financials leading.",u:"https://www.business-standard.com/markets/news/stock-market-live-july-31-nse-bse-sensex-today-nifty50-gift-nifty-q1-results-today-ipo-share-market-126073100128_1.html"},
+  {src:"Federal Reserve",op:0,h:"Fed holds at 3.50–3.75% on a 9–3 vote with hawkish dissents",p:"Three members wanted a hike; the steady decision shaped the global rate backdrop for EM currencies including the rupee.",u:"https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm"},
+  {src:"NewsX",op:0,h:"RBI heads into its 3–5 Aug MPC; a hold at 5.25% is widely expected",p:"With CPI above target and the rupee and oil in flux, 68 of 72 economists polled see the repo rate left unchanged.",u:"https://www.newsx.com/business/rbi-mpc-august-2026-repo-rate-decision-loan-fd-impact-monetary-policy-meet-explained-254543/"},
   {src:"HDFC Sky",op:0,h:"Rupee firms to 95.35 as FPI inflows return",p:"Foreign buying helped the currency recover ground through the week even as Brent's rise above $90 limited the upside.",u:"https://hdfcsky.com/news/inr-vs-usd-rate-july-31-2026-rupee-rises-15-paise-closes-at-95-35-against-us-dollar"},
  ],
  macro:[
   {src:"IMF",op:0,h:"IMF's July WEO Update sets the global tone",p:"Growth trimmed to 3.0% and inflation nudged to 4.7% framed the week's macro narrative around war and tech shocks.",u:"https://www.imf.org/en/publications/weo/issues/2026/07/08/world-economic-outlook-update-july-2026"},
-  {src:"Reuters / US News",op:0,h:"India–US trade talks continue despite new tariffs",p:"Negotiations stayed alive through the week even after fresh US tariff measures, keeping exporters watchful.",u:"https://www.usnews.com/news/top-news/articles/2026-07-25/india-to-keep-engaging-with-us-on-trade-deal-after-new-tariff-measures"},
+  {src:"BBC",op:0,h:"Trump calls India–US trade deal 'very close' at the Aug 1 deadline",p:"Talks stayed alive as the tariff clock ran down, with agriculture and auto access the outstanding sticking points.",u:"https://www.bbc.com/news/articles/c2ley8pe5qlo"},
   {src:"Bloomberg",op:1,h:"Foreign funds return to India, but risks remain",p:"Opinion: the week's renewed FPI inflows were welcome, though US rates, a stretched AI trade and domestic soft spots still loom.",u:"https://www.bloomberg.com/news/newsletters/2026-07-31/foreign-funds-are-back-but-risks-from-us-rates-ai-trade-domestic-issues-remain"},
  ],
  tech:[
@@ -260,11 +260,11 @@ const MONTHLY={
  macro:[
   {src:"IMF",op:0,h:"IMF's July WEO: global growth 3.0%, inflation 4.7%",p:"The flagship update characterised 2026 as caught between geopolitical conflict and a technology-investment boom.",u:"https://www.imf.org/en/publications/weo/issues/2026/07/08/world-economic-outlook-update-july-2026"},
   {src:"CNBC",op:0,h:"India CPI accelerated to 4.38% in June on oil and food",p:"The month's key data print showed inflation re-accelerating from multi-year lows, complicating the easing debate.",u:"https://www.cnbc.com/2026/07/13/india-june-inflation-oil-food-iran-war.html"},
-  {src:"Reuters / US News",op:0,h:"India–US tariff standoff shaped the trade narrative",p:"New US tariff measures and India's decision to keep negotiating were the month's defining external-sector story.",u:"https://www.usnews.com/news/top-news/articles/2026-07-25/india-to-keep-engaging-with-us-on-trade-deal-after-new-tariff-measures"},
+  {src:"BBC",op:0,h:"India–US tariff standoff ran all month; a deal reported 'very close'",p:"Negotiations continued against an Aug 1 tariff deadline, with agriculture the key unresolved issue by month-end.",u:"https://www.bbc.com/news/articles/c2ley8pe5qlo"},
  ],
  tech:[
-  {src:"The Week",op:1,h:"AI's reshaping of Indian IT was July's structural story",p:"Coverage all month probed how AI affects IT-services margins, pricing and the traditional hiring pyramid.",u:"https://www.theweek.in/news/biz-tech/2026/07/28/indian-it-ai-disruption-impact-it-services-future-of-indian-it-sector.html"},
-  {src:"TechChannel",op:0,h:"IT sector added 1.35 lakh jobs despite AI anxiety",p:"Resilient hiring suggested AI is, for now, augmenting India's tech workforce rather than shrinking it.",u:"https://techchannel.news/indias-it-sector-added-1-35-lakh-jobs-amid-ai-fears/"},
+  {src:"Yahoo Finance",op:0,h:"TCS to cut ~12,200 roles (2%) — July's clearest AI signal for IT",p:"India's largest IT firm's workforce reduction, hitting mostly mid- and senior staff, underscored how AI and weak demand are reshaping the sector.",u:"https://finance.yahoo.com/news/indian-tech-company-tcs-cut-103558769.html"},
+  {src:"Business Today",op:0,h:"IT services vs chips: a 'reverse AI trade' rotated through tech",p:"Nifty IT rebounded while semiconductor names slipped, a sign of shifting positioning within the AI theme.",u:"https://www.businesstoday.in/markets/stocks/story/nifty-it-stocks-rebound-in-july-as-semiconductor-stocks-falter-reverse-ai-trade-546524-2026-07-31"},
  ],
 };
 
