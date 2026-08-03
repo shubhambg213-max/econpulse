@@ -157,16 +157,16 @@
   <!-- WEEKLY -->
   <section class="page" id="weekly">
     <div class="ptitle">Weekly Wrap-up</div>
-    <div class="pwhen">Week of 26 July – 1 August 2026</div>
-    <div class="summary">🔎 <b>The week in one line:</b> A hawkishly-split Fed held at 3.50–3.75% (three members wanted a hike) and the RBI stayed at 5.25% ahead of its 3–5 Aug review, as the monsoon deficit narrowed to ~15% and FPI inflows lifted the rupee to 95.35/$; Wall Street capped its best month since 2020, Brent surged above $90 on Middle-East risk, and Trump called an India–US trade deal "very close" at the Aug 1 tariff deadline.</div>
+    <div class="pwhen">Week of 28 July – 3 August 2026</div>
+    <div class="summary">🔎 <b>The week in one line:</b> A hawkishly-split Fed held at 3.50–3.75% (three members wanted a hike) and the RBI opened its 3–5 Aug review with a hold at 5.25% widely expected, as the monsoon deficit narrowed and FPI inflows plus RBI support lifted the rupee to ~95.35/$; Brent slid ~4.5% below $84 as US–Iran peace talks resumed, giving Indian equities a 4th straight up-day (Sensex +544, Nifty past 24,770), even as the US struck a 25%-plus tariff on India from Aug 1.</div>
     <div id="weeklyTopics"></div>
   </section>
 
   <!-- MONTHLY -->
   <section class="page" id="monthly">
     <div class="ptitle">Monthly Wrap-up</div>
-    <div class="pwhen">Past 30 days · to 1 August 2026</div>
-    <div class="summary">🔎 <b>The month in one line:</b> July ran on "crosscurrents of war and technology" — an oil-driven inflation scare pushed India's CPI to 4.38% and the rupee past ₹96/$ before FPI inflows pulled it back to 95.35, even as bank credit growth hit a two-year high of 18.6%, the monsoon deficit narrowed and the AI-led rally gave US equities their best month since 2020.</div>
+    <div class="pwhen">Past 30 days · to 3 August 2026</div>
+    <div class="summary">🔎 <b>The month in one line:</b> July ran on "crosscurrents of war and technology" — an oil-driven inflation scare pushed India's CPI to 4.38% and the rupee past ₹96/$ before FPI inflows pulled it back to ~95.35, even as bank credit growth hit a two-year high of 18.6% and the monsoon deficit narrowed; US equities ended July roughly flat as a late AI-led rally offset an early-month wobble, and the US imposed a 25%-plus tariff on India from Aug 1.</div>
     <div id="monthlyTopics"></div>
   </section>
 
@@ -187,18 +187,18 @@ const CONFIG = { PROXIES:["https://api.allorigins.win/raw?url=","https://corspro
 
 /* ============ INDICATOR DATA (snapshot fallback; live symbols patch these) ============ */
 const KPI_INDIA=[
-  {id:"sensex", sym:"^BSESN", fmt:"int", name:"BSE Sensex", val:"78,883", chg:"+788 (1.01%)", dir:"up", meta:"3 Aug · oil-led rally", spark:[3,4,3,4,5,6,7], c:"--mkt"},
-  {id:"nifty", sym:"^NSEI", fmt:"int", name:"Nifty 50", val:"24,560", chg:"+176 (0.72%)", dir:"up", meta:"3 Aug · tops 24,550", spark:[2,3,3,4,4,5,6], c:"--mkt"},
+  {id:"sensex", sym:"^BSESN", fmt:"int", name:"BSE Sensex", val:"78,639", chg:"+544 (0.70%)", dir:"up", meta:"3 Aug close · 4th day up", spark:[3,4,3,4,5,6,7], c:"--mkt"},
+  {id:"nifty", sym:"^NSEI", fmt:"int", name:"Nifty 50", val:"24,774", chg:"+391 (1.60%)", dir:"up", meta:"3 Aug close · new CAS lift", spark:[2,3,3,4,4,5,6], c:"--mkt"},
   {id:"repo", sym:null, name:"RBI Repo Rate", val:"5.25%", chg:"Hold likely", dir:"flat", meta:"MPC on now · verdict 5 Aug", spark:[5,5,5,5,5,5,5], c:"--bank"},
   {id:"cpi", sym:null, name:"India CPI (Jun)", val:"4.38%", chg:"↑ vs forecast", dir:"down", meta:"Oil/food-led · Jul 12 Aug", spark:[2,2,3,3,4,4,5], c:"--macro"},
-  {id:"usdinr", sym:"INR=X", fmt:"inr", name:"USD / INR", val:"₹95.35", chg:"+15p on FPI inflows", dir:"up", meta:"31 Jul close · live FX", spark:[7,7,6,6,5,5,6], c:"--intl"},
+  {id:"usdinr", sym:"INR=X", fmt:"inr", name:"USD / INR", val:"₹95.35", chg:"5th day up on FPI, RBI", dir:"up", meta:"31 Jul close · live FX", spark:[7,7,6,6,5,5,6], c:"--intl"},
   {id:"in10y", sym:null, name:"India 10Y Yield", val:"6.81%", chg:"Steady", dir:"flat", meta:"31 Jul · G-sec", spark:[4,5,6,5,6,6,6], c:"--macro"},
 ];
 const KPI_GLOBAL=[
   {id:"fed", sym:null, name:"US Fed Funds", val:"3.50–3.75%", chg:"Held Jul 29", dir:"flat", meta:"9–3 hold · 3 wanted hike", spark:[6,6,5,5,4,4,4], c:"--bank"},
   {id:"imf", sym:null, name:"IMF Growth '26", val:"3.0%", chg:"Revised down", dir:"down", meta:"Global infl. 4.7%", spark:[6,5,5,4,4,3,3], c:"--intl"},
-  {id:"spx", sym:"^GSPC", fmt:"int", name:"S&P 500", val:"7,478", chg:"+52 (0.70%)", dir:"up", meta:"31 Jul · best month since '20", spark:[3,4,4,5,5,6,7], c:"--bank"},
-  {id:"brent", sym:"BZ=F", fmt:"usd", name:"Brent Crude", val:"$83.88", chg:"−4.61%", dir:"down", meta:"$/bbl · Iran peace talks", spark:[8,8,7,7,6,6,5], c:"--intl"},
+  {id:"spx", sym:"^GSPC", fmt:"int", name:"S&P 500", val:"7,521", chg:"+52 (0.70%)", dir:"up", meta:"1 Aug · tech-led; July ~flat", spark:[3,4,4,5,5,6,7], c:"--bank"},
+  {id:"brent", sym:"BZ=F", fmt:"usd", name:"Brent Crude", val:"$84.03", chg:"−4.44%", dir:"down", meta:"$/bbl · US–Iran talks resume", spark:[8,8,7,7,6,6,5], c:"--intl"},
 ];
 
 const T={agri:{label:"Agriculture & Rural",short:"🌾 Agriculture",c:"--agri"},bank:{label:"Banking, Monetary & Markets",short:"🏦 Banking & Markets",c:"--bank"},
@@ -222,7 +222,7 @@ const TODAY={
  tech:[
   {src:"TCS",op:0,h:"TCS opens FY27 with growth and multiple AI transformation deals",p:"India's largest IT firm reported continued growth and fresh AI-led wins — a bright spot for the services sector amid the tariff noise.",u:"https://www.tcs.com/who-we-are/newsroom/press-release/tcs-financial-results-q1-fy-2027"},
   {src:"Business Today",op:0,h:"Nifty IT rebounds as a 'reverse AI trade' plays out",p:"IT services names recovered even as semiconductor shares slipped, hinting at rotation within the AI theme.",u:"https://www.businesstoday.in/markets/stocks/story/nifty-it-stocks-rebound-in-july-as-semiconductor-stocks-falter-reverse-ai-trade-546524-2026-07-31"},
-  {src:"24/7 Wall St.",op:0,h:"AI-led rally capped Wall Street's best month since 2020",p:"US indexes closed July strongly as the Nasdaq led a relief rally, underscoring the AI theme's grip on global markets.",u:"https://247wallst.com/cards/nasdaq-led-friday-s-rally-with-a-1-1-jump-as-all-three-majo-gspc-market-bell-01kywwcem3j2q2kbbyjtetwpdm"},
+  {src:"24/7 Wall St.",op:0,h:"AI-led rally lifts Wall Street, but S&P ended July roughly flat",p:"Big-tech gains from Amazon, Alphabet and Microsoft powered a strong finish even as the S&P 500 (~7,521) closed July little changed after an early-month wobble.",u:"https://247wallst.com/cards/nasdaq-led-friday-s-rally-with-a-1-1-jump-as-all-three-majo-gspc-market-bell-01kywwcem3j2q2kbbyjtetwpdm"},
  ],
 };
 const WEEKLY={
@@ -233,7 +233,7 @@ const WEEKLY={
  bank:[
   {src:"Federal Reserve",op:0,h:"Fed holds at 3.50–3.75% on a 9–3 vote with hawkish dissents",p:"Three members wanted a hike; the steady decision shaped the global rate backdrop for EM currencies including the rupee.",u:"https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm"},
   {src:"NewsX",op:0,h:"RBI heads into its 3–5 Aug MPC; a hold at 5.25% is widely expected",p:"With CPI above target and the rupee and oil in flux, 68 of 72 economists polled see the repo rate left unchanged.",u:"https://www.newsx.com/business/rbi-mpc-august-2026-repo-rate-decision-loan-fd-impact-monetary-policy-meet-explained-254543/"},
-  {src:"HDFC Sky",op:0,h:"Rupee firms to 95.35 as FPI inflows return",p:"Foreign buying helped the currency recover ground through the week even as Brent's rise above $90 limited the upside.",u:"https://hdfcsky.com/news/inr-vs-usd-rate-july-31-2026-rupee-rises-15-paise-closes-at-95-35-against-us-dollar"},
+  {src:"HDFC Sky",op:0,h:"Rupee firms to ~95.35 for a 5th session as FPI inflows return",p:"Foreign buying, RBI support and a late-week slide in Brent below $84 helped the currency extend its recovery against the dollar.",u:"https://hdfcsky.com/news/inr-vs-usd-rate-july-31-2026-rupee-rises-15-paise-closes-at-95-35-against-us-dollar"},
  ],
  macro:[
   {src:"IMF",op:0,h:"IMF's July WEO Update sets the global tone",p:"Growth trimmed to 3.0% and inflation nudged to 4.7% framed the week's macro narrative around war and tech shocks.",u:"https://www.imf.org/en/publications/weo/issues/2026/07/08/world-economic-outlook-update-july-2026"},
@@ -241,7 +241,7 @@ const WEEKLY={
   {src:"Bloomberg",op:1,h:"Foreign funds return to India, but risks remain",p:"Opinion: the week's renewed FPI inflows were welcome, though US rates, a stretched AI trade and domestic soft spots still loom.",u:"https://www.bloomberg.com/news/newsletters/2026-07-31/foreign-funds-are-back-but-risks-from-us-rates-ai-trade-domestic-issues-remain"},
  ],
  tech:[
-  {src:"24/7 Wall St.",op:0,h:"AI-led rally caps Wall Street's best month since 2020",p:"US indexes closed July strongly as the Nasdaq led a relief rally, underscoring the AI theme's grip on global markets.",u:"https://247wallst.com/cards/nasdaq-led-friday-s-rally-with-a-1-1-jump-as-all-three-majo-gspc-market-bell-01kywwcem3j2q2kbbyjtetwpdm"},
+  {src:"24/7 Wall St.",op:0,h:"AI-led rally powered a strong finish to a roughly flat July",p:"Big-tech strength late in the month offset an early-July wobble, leaving the S&P 500 (~7,521) little changed even as the AI theme kept its grip on global markets.",u:"https://247wallst.com/cards/nasdaq-led-friday-s-rally-with-a-1-1-jump-as-all-three-majo-gspc-market-bell-01kywwcem3j2q2kbbyjtetwpdm"},
   {src:"Business Today",op:0,h:"Rotation within the AI trade hits Indian tech",p:"IT services rebounded while chip names slipped — the week's clearest sign of shifting AI-theme positioning.",u:"https://www.businesstoday.in/markets/stocks/story/nifty-it-stocks-rebound-in-july-as-semiconductor-stocks-falter-reverse-ai-trade-546524-2026-07-31"},
  ],
 };
