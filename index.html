@@ -149,7 +149,7 @@
   <!-- TODAY -->
   <section class="page" id="today">
     <div class="ptitle">Today's Brief</div>
-    <div class="pwhen">Saturday, 1 August 2026 · news &amp; editorials by topic</div>
+    <div class="pwhen">Monday, 3 August 2026 · news &amp; editorials by topic</div>
     <div id="todayTopics"></div>
     <div class="foot" id="sourcesFoot"></div>
   </section>
@@ -187,9 +187,9 @@ const CONFIG = { PROXIES:["https://api.allorigins.win/raw?url=","https://corspro
 
 /* ============ INDICATOR DATA (snapshot fallback; live symbols patch these) ============ */
 const KPI_INDIA=[
-  {id:"sensex", sym:"^BSESN", fmt:"int", name:"BSE Sensex", val:"78,095", chg:"+166 (0.21%)", dir:"up", meta:"31 Jul close · BSE", spark:[3,4,3,5,6,5,7], c:"--mkt"},
-  {id:"nifty", sym:"^NSEI", fmt:"int", name:"Nifty 50", val:"24,384", chg:"+66 (0.27%)", dir:"up", meta:"31 Jul close · NSE", spark:[2,3,3,4,4,5,6], c:"--mkt"},
-  {id:"repo", sym:null, name:"RBI Repo Rate", val:"5.25%", chg:"Unchanged", dir:"flat", meta:"Neutral · MPC 3–5 Aug", spark:[5,5,5,5,5,5,5], c:"--bank"},
+  {id:"sensex", sym:"^BSESN", fmt:"int", name:"BSE Sensex", val:"78,883", chg:"+788 (1.01%)", dir:"up", meta:"3 Aug · oil-led rally", spark:[3,4,3,4,5,6,7], c:"--mkt"},
+  {id:"nifty", sym:"^NSEI", fmt:"int", name:"Nifty 50", val:"24,560", chg:"+176 (0.72%)", dir:"up", meta:"3 Aug · tops 24,550", spark:[2,3,3,4,4,5,6], c:"--mkt"},
+  {id:"repo", sym:null, name:"RBI Repo Rate", val:"5.25%", chg:"Hold likely", dir:"flat", meta:"MPC on now · verdict 5 Aug", spark:[5,5,5,5,5,5,5], c:"--bank"},
   {id:"cpi", sym:null, name:"India CPI (Jun)", val:"4.38%", chg:"↑ vs forecast", dir:"down", meta:"Oil/food-led · Jul 12 Aug", spark:[2,2,3,3,4,4,5], c:"--macro"},
   {id:"usdinr", sym:"INR=X", fmt:"inr", name:"USD / INR", val:"₹95.35", chg:"+15p on FPI inflows", dir:"up", meta:"31 Jul close · live FX", spark:[7,7,6,6,5,5,6], c:"--intl"},
   {id:"in10y", sym:null, name:"India 10Y Yield", val:"6.81%", chg:"Steady", dir:"flat", meta:"31 Jul · G-sec", spark:[4,5,6,5,6,6,6], c:"--macro"},
@@ -198,7 +198,7 @@ const KPI_GLOBAL=[
   {id:"fed", sym:null, name:"US Fed Funds", val:"3.50–3.75%", chg:"Held Jul 29", dir:"flat", meta:"9–3 hold · 3 wanted hike", spark:[6,6,5,5,4,4,4], c:"--bank"},
   {id:"imf", sym:null, name:"IMF Growth '26", val:"3.0%", chg:"Revised down", dir:"down", meta:"Global infl. 4.7%", spark:[6,5,5,4,4,3,3], c:"--intl"},
   {id:"spx", sym:"^GSPC", fmt:"int", name:"S&P 500", val:"7,478", chg:"+52 (0.70%)", dir:"up", meta:"31 Jul · best month since '20", spark:[3,4,4,5,5,6,7], c:"--bank"},
-  {id:"brent", sym:"BZ=F", fmt:"usd", name:"Brent Crude", val:"$90.24", chg:"+3.87%", dir:"up", meta:"$/bbl · +26% m/m", spark:[5,5,6,6,7,7,8], c:"--intl"},
+  {id:"brent", sym:"BZ=F", fmt:"usd", name:"Brent Crude", val:"$83.88", chg:"−4.61%", dir:"down", meta:"$/bbl · Iran peace talks", spark:[8,8,7,7,6,6,5], c:"--intl"},
 ];
 
 const T={agri:{label:"Agriculture & Rural",short:"🌾 Agriculture",c:"--agri"},bank:{label:"Banking, Monetary & Markets",short:"🏦 Banking & Markets",c:"--bank"},
@@ -206,25 +206,23 @@ const T={agri:{label:"Agriculture & Rural",short:"🌾 Agriculture",c:"--agri"},
 
 const TODAY={
  agri:[
-  {src:"Blitz India",op:0,h:"Monsoon deficit narrows to ~15%; August outlook improves",p:"Late-July showers cut the seasonal shortfall from ~40% in June; the IMD sees August rain at 97% of normal, easing farm-income and food-price worries.",u:"https://blitzindiamedia.com/agriculture-bureau/india-monsoon-deficit-2026/"},
-  {src:"India Gazette",op:0,h:"July rainfall pick-up seen positive for farm growth and rural incomes",p:"A fresh report says the late-month recovery in rains supports kharif sowing and rural demand, despite lingering El Niño risk.",u:"https://www.indiagazette.com/news/279214566/july-rainfall-pick-up-positive-for-farm-growth-rural-incomes-despite-el-nino-risk-report"},
+  {src:"Blitz India",op:0,h:"Monsoon deficit narrows to ~15%; IMD sees August at 97% of normal",p:"The late-July rain recovery has eased farm-income and food-price worries just as the RBI weighs the inflation outlook this week.",u:"https://blitzindiamedia.com/agriculture-bureau/india-monsoon-deficit-2026/"},
+  {src:"India Gazette",op:0,h:"Rain pick-up seen positive for farm growth and rural incomes",p:"The recovery supports kharif sowing and rural demand, though lingering El Niño risk keeps the outlook uncertain.",u:"https://www.indiagazette.com/news/279214566/july-rainfall-pick-up-positive-for-farm-growth-rural-incomes-despite-el-nino-risk-report"},
  ],
  bank:[
-  {src:"Business Standard",op:0,h:"Sensex ends up 166 pts for 3rd day; Nifty settles at 24,384",p:"Auto stocks led a broad advance into month-end amid positive global cues and steady Q1 earnings flow.",u:"https://www.business-standard.com/markets/news/stock-market-live-july-31-nse-bse-sensex-today-nifty50-gift-nifty-q1-results-today-ipo-share-market-126073100128_1.html"},
-  {src:"HDFC Sky",op:0,h:"Rupee closes at 95.35, up 15 paise on FPI inflows",p:"Returning foreign portfolio flows lifted the currency off recent lows, even as Brent's climb above $90 capped the gains.",u:"https://hdfcsky.com/news/inr-vs-usd-rate-july-31-2026-rupee-rises-15-paise-closes-at-95-35-against-us-dollar"},
-  {src:"Business Today",op:0,h:"August money calendar: RBI 3–5 Aug policy, ITR deadline, CKYC 2.0, LPG prices",p:"A packed month for households and markets, with the MPC verdict the headline event after two straight holds at 5.25%.",u:"https://www.businesstoday.in/personal-finance/investment/story/august-2026-and-your-finances-itr-deadline-ckyc-2-0-rollout-rbi-policy-lpg-prices-and-other-key-financial-changes-to-watch-546473-2026-07-31"},
-  {src:"Federal Reserve",op:0,h:"Divided Fed holds at 3.50–3.75% on a 9–3 vote",p:"The FOMC kept policy steady on July 29, but Hammack, Kashkari and Logan dissented in favour of a quarter-point hike as inflation stays sticky.",u:"https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm"},
+  {src:"India TV",op:0,h:"Sensex surges ~788 pts, Nifty tops 24,550 as crude oil slides",p:"A sharp drop in Brent on US–Iran peace hopes lifted the market ahead of the RBI verdict; oil-sensitive and rate-sensitive stocks led.",u:"https://www.indiatvnews.com/business/markets/3-august-2026-stock-market-updates-sensex-surges-788-points-nifty-above-24-550-as-crude-oil-falls-2026-08-03-1050188"},
+  {src:"Free Press Journal",op:0,h:"RBI MPC begins today; repo seen held at 5.25%, focus on liquidity",p:"The three-day meeting is expected to keep rates steady for a fourth straight time; the verdict lands Wednesday, 5 August.",u:"https://www.freepressjournal.in/business/rbi-mpc-meeting-begins-august-3-repo-rate-likely-to-stay-at-525-as-focus-shifts-to-liquidity-management"},
+  {src:"Business Standard",op:0,h:"RBI likely to hold as inflation risks persist; hawkish tone expected",p:"Economists see a neutral stance with a cautious tone amid oil, monsoon and geopolitical risks; some flag possible FY27 hikes.",u:"https://www.business-standard.com/finance/news/rbi-likely-to-keep-rates-unchanged-in-august-as-inflation-risks-persist-126080200286_1.html"},
  ],
  macro:[
-  {src:"IMF",op:0,h:"IMF cuts 2026 global growth to 3.0%, lifts inflation to 4.7%",p:"The July WEO Update frames the world economy as caught in 'crosscurrents of war and technology'.",u:"https://www.imf.org/en/publications/weo/issues/2026/07/08/world-economic-outlook-update-july-2026"},
-  {src:"BBC",op:0,h:"Trump says India–US trade deal 'very close' as Aug 1 tariff deadline lands",p:"Both sides pushed for an interim pact against the tariff clock, with farm-sector and auto access the outstanding sticking points.",u:"https://www.bbc.com/news/articles/c2ley8pe5qlo"},
-  {src:"AP",op:0,h:"US stocks cap a wild July as inflation worries worsen",p:"Wall Street finished the month higher on an AI-led rally — Amazon soared while Apple sank — but hotter inflation signals unsettled the tape.",u:"https://www.clickorlando.com/business/2026/07/31/south-koreas-kospi-index-jumps-more-than-13-on-a-surge-of-chipmaking-stocks/"},
-  {src:"Bloomberg",op:1,h:"Foreign funds are back, but India isn't out of the woods",p:"Opinion: renewed FPI inflows help, yet risks from US rates, a stretched AI trade and domestic soft spots still linger.",u:"https://www.bloomberg.com/news/newsletters/2026-07-31/foreign-funds-are-back-but-risks-from-us-rates-ai-trade-domestic-issues-remain"},
+  {src:"Deccan Herald",op:0,h:"Trump imposes 25% tariff plus penalty on India from Aug 1",p:"With no interim deal reached, the US applied a 25% tariff and an added penalty on Indian goods, citing 'non-monetary trade barriers' — a blow to exporters.",u:"https://www.deccanherald.com/amp/story/business%2Fobnoxious-non-monetary-trade-barriers-trump-announces-25-tariff-plus-penalty-on-india-from-august-1-3656586"},
+  {src:"Trading Economics",op:0,h:"Brent slides ~4.6% to ~$84 as US–Iran peace talks resume",p:"Trump canceled a planned strike on Iran and negotiations restarted, pulling crude down — a relief for India's import bill and inflation path.",u:"https://tradingeconomics.com/commodity/brent-crude-oil"},
+  {src:"Deccan Herald",op:1,h:"Tariff a 'major setback' for India–US ties, experts say",p:"Opinion: analysts warn the 25%-plus levy strains relations and could dent export-oriented sectors until a deal is reached.",u:"https://www.deccanherald.com/world/trumps-tariff-on-india-major-setback-in-bilateral-relations-say-experts-3657246"},
  ],
  tech:[
-  {src:"24/7 Wall St.",op:0,h:"Nasdaq leads Wall Street rally as AI relief lifts best month since 2020",p:"All three major US indexes closed green Friday, with the Nasdaq up 1.1%, capping July's strongest run in years.",u:"https://247wallst.com/cards/nasdaq-led-friday-s-rally-with-a-1-1-jump-as-all-three-majo-gspc-market-bell-01kywwcem3j2q2kbbyjtetwpdm"},
-  {src:"TCS",op:0,h:"TCS opens FY27 with growth, wins multiple AI transformation deals",p:"India's largest IT firm reported continued growth and fresh AI-led deal wins, a bright spot for the services sector.",u:"https://www.tcs.com/who-we-are/newsroom/press-release/tcs-financial-results-q1-fy-2027"},
-  {src:"Business Today",op:0,h:"Nifty IT rebounds in July as chip stocks falter — a 'reverse AI trade'?",p:"IT services names recovered even as semiconductor shares slipped, hinting at rotation within the AI theme.",u:"https://www.businesstoday.in/markets/stocks/story/nifty-it-stocks-rebound-in-july-as-semiconductor-stocks-falter-reverse-ai-trade-546524-2026-07-31"},
+  {src:"TCS",op:0,h:"TCS opens FY27 with growth and multiple AI transformation deals",p:"India's largest IT firm reported continued growth and fresh AI-led wins — a bright spot for the services sector amid the tariff noise.",u:"https://www.tcs.com/who-we-are/newsroom/press-release/tcs-financial-results-q1-fy-2027"},
+  {src:"Business Today",op:0,h:"Nifty IT rebounds as a 'reverse AI trade' plays out",p:"IT services names recovered even as semiconductor shares slipped, hinting at rotation within the AI theme.",u:"https://www.businesstoday.in/markets/stocks/story/nifty-it-stocks-rebound-in-july-as-semiconductor-stocks-falter-reverse-ai-trade-546524-2026-07-31"},
+  {src:"24/7 Wall St.",op:0,h:"AI-led rally capped Wall Street's best month since 2020",p:"US indexes closed July strongly as the Nasdaq led a relief rally, underscoring the AI theme's grip on global markets.",u:"https://247wallst.com/cards/nasdaq-led-friday-s-rally-with-a-1-1-jump-as-all-three-majo-gspc-market-bell-01kywwcem3j2q2kbbyjtetwpdm"},
  ],
 };
 const WEEKLY={
