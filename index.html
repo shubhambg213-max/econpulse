@@ -149,7 +149,7 @@
   <!-- TODAY -->
   <section class="page" id="today">
     <div class="ptitle">Today's Brief</div>
-    <div class="pwhen">Tuesday, 4 August 2026 · news &amp; editorials by topic</div>
+    <div class="pwhen">Wednesday, 5 August 2026 · news &amp; editorials by topic</div>
     <div id="todayTopics"></div>
     <div class="foot" id="sourcesFoot"></div>
   </section>
@@ -157,16 +157,16 @@
   <!-- WEEKLY -->
   <section class="page" id="weekly">
     <div class="ptitle">Weekly Wrap-up</div>
-    <div class="pwhen">Week of 29 July – 4 August 2026</div>
-    <div class="summary">🔎 <b>The week in one line:</b> The Fed's 29 Jul hold (3.50–3.75%, three dissents wanted a hike) and the RBI's 3–5 Aug review — a fourth straight pause at 5.25% widely expected — framed the week as US stocks powered to records (S&amp;P 500 above 7,600) on an AI-led rally; Indian equities climbed four days then snapped lower on Strait-of-Hormuz jitters, Brent whipsawed from a ~7% dive back to ~$84 as Iran denied US talks, the rupee held near 95.3/$, and the IMD's below-normal August outlook plus lagging kharif sowing revived food-inflation worries — all under the new 25%-plus US tariff live from Aug 1.</div>
+    <div class="pwhen">Week of 30 July – 5 August 2026</div>
+    <div class="summary">🔎 <b>The week in one line:</b> Two central banks anchored the week — the Fed's 29 Jul hold (3.50–3.75%, three dissents wanted a hike) and the RBI's 5 Aug fourth straight pause at 5.25% on a 'neutral' stance (FY27 growth 6.7%, inflation cut to 5%) — while US stocks powered to records (S&amp;P 500 near 7,758, Dow above 54,000) on AI earnings; Indian benchmarks diverged on policy day as the Sensex firmed to ~78,575 and the Nifty eased to ~24,571, Brent whipsawed on Iran headlines before steadying near $80.5 as Hormuz fears cooled, the rupee held near 95.3/$, and the IMD's below-normal August outlook plus lagging kharif sowing kept food-inflation worries alive — all under the 25%-plus US tariff live from Aug 1.</div>
     <div id="weeklyTopics"></div>
   </section>
 
   <!-- MONTHLY -->
   <section class="page" id="monthly">
     <div class="ptitle">Monthly Wrap-up</div>
-    <div class="pwhen">Past 30 days · to 4 August 2026</div>
-    <div class="summary">🔎 <b>The month in one line:</b> July's crosscurrents of war and technology ran into August — India's CPI re-accelerated to 4.38% on oil and food, the monsoon swung from a late-July recovery to a cautious below-normal August outlook, and bank credit growth hit a two-year high of 18.6%, while US equities powered to records (S&amp;P 500 above 7,600) on an AI-led rally and Washington imposed a 25%-plus tariff on India from Aug 1, putting up to ~$25 bn of exports at risk.</div>
+    <div class="pwhen">Past 30 days · to 5 August 2026</div>
+    <div class="summary">🔎 <b>The month in one line:</b> July's crosscurrents of war and technology ran into August — India's CPI re-accelerated to 4.38% on oil and food, the RBI held repo at 5.25% for a fourth time on 5 Aug (FY27 growth 6.7%, inflation 5%), the monsoon swung from a late-July recovery to a cautious below-normal August outlook, and bank credit growth hit a two-year high of 18.6%, while US equities powered to records (S&amp;P 500 near 7,758, Dow above 54,000) on an AI-led rally and Washington's 25%-plus tariff on India took effect from Aug 1, putting up to ~$25 bn of exports at risk.</div>
     <div id="monthlyTopics"></div>
   </section>
 
@@ -187,18 +187,18 @@ const CONFIG = { PROXIES:["https://api.allorigins.win/raw?url=","https://corspro
 
 /* ============ INDICATOR DATA (snapshot fallback; live symbols patch these) ============ */
 const KPI_INDIA=[
-  {id:"sensex", sym:"^BSESN", fmt:"int", name:"BSE Sensex", val:"78,428", chg:"−210 (0.27%)", dir:"down", meta:"4 Aug close · streak snaps", spark:[4,5,6,7,7,6,6], c:"--mkt"},
-  {id:"nifty", sym:"^NSEI", fmt:"int", name:"Nifty 50", val:"24,615", chg:"−159 (0.64%)", dir:"down", meta:"4 Aug close · late CAS rally", spark:[3,4,5,6,6,5,5], c:"--mkt"},
-  {id:"repo", sym:null, name:"RBI Repo Rate", val:"5.25%", chg:"Verdict tomorrow", dir:"flat", meta:"MPC on · hold seen 5 Aug", spark:[5,5,5,5,5,5,5], c:"--bank"},
-  {id:"cpi", sym:null, name:"India CPI (Jun)", val:"4.38%", chg:"Above 4% target", dir:"down", meta:"Oil/food-led · Jul due 12 Aug", spark:[2,2,3,3,4,4,5], c:"--macro"},
-  {id:"usdinr", sym:"INR=X", fmt:"inr", name:"USD / INR", val:"₹95.33", chg:"Range-bound near 95.3", dir:"flat", meta:"3 Aug close · live FX", spark:[6,6,6,6,6,6,6], c:"--intl"},
-  {id:"in10y", sym:null, name:"India 10Y Yield", val:"6.81%", chg:"Steady", dir:"flat", meta:"31 Jul · G-sec", spark:[5,6,6,6,6,6,6], c:"--macro"},
+  {id:"sensex", sym:"^BSESN", fmt:"int", name:"BSE Sensex", val:"78,575", chg:"+146 (0.19%)", dir:"up", meta:"5 Aug close · steadies post-RBI", spark:[4,5,5,4,5,6,6], c:"--mkt"},
+  {id:"nifty", sym:"^NSEI", fmt:"int", name:"Nifty 50", val:"24,571", chg:"−44 (0.18%)", dir:"down", meta:"5 Aug close · CAS divergence", spark:[5,6,6,5,5,5,5], c:"--mkt"},
+  {id:"repo", sym:null, name:"RBI Repo Rate", val:"5.25%", chg:"Held Aug 5", dir:"flat", meta:"Neutral · 4th straight pause", spark:[5,5,5,5,5,5,5], c:"--bank"},
+  {id:"cpi", sym:null, name:"India CPI (Jun)", val:"4.38%", chg:"Above 4% target", dir:"down", meta:"Oil/food-led · Jul due ~12 Aug", spark:[2,2,3,3,4,4,5], c:"--macro"},
+  {id:"usdinr", sym:"INR=X", fmt:"inr", name:"USD / INR", val:"₹95.30", chg:"Steady after RBI hold", dir:"flat", meta:"5 Aug · live FX", spark:[6,6,6,6,6,6,6], c:"--intl"},
+  {id:"in10y", sym:null, name:"India 10Y Yield", val:"6.83%", chg:"Little changed", dir:"flat", meta:"4 Aug · G-sec", spark:[5,6,6,6,6,6,6], c:"--macro"},
 ];
 const KPI_GLOBAL=[
   {id:"fed", sym:null, name:"US Fed Funds", val:"3.50–3.75%", chg:"Held Jul 29", dir:"flat", meta:"9–3 hold · 3 wanted hike", spark:[6,6,5,5,4,4,4], c:"--bank"},
-  {id:"imf", sym:null, name:"IMF Growth '26", val:"3.0%", chg:"Revised down", dir:"down", meta:"Global infl. 4.7%", spark:[6,5,5,4,4,3,3], c:"--intl"},
-  {id:"spx", sym:"^GSPC", fmt:"int", name:"S&P 500", val:"7,600", chg:"+111 (1.50%)", dir:"up", meta:"3 Aug record · near ATH", spark:[3,4,4,5,5,6,7], c:"--bank"},
-  {id:"brent", sym:"BZ=F", fmt:"usd", name:"Brent Crude", val:"$84.39", chg:"+0.70%", dir:"up", meta:"$/bbl · Hormuz risk premium", spark:[5,7,6,4,5,5,6], c:"--intl"},
+  {id:"imf", sym:null, name:"IMF Growth '26", val:"3.0%", chg:"Jul WEO", dir:"down", meta:"Global infl. 4.7%", spark:[6,5,5,4,4,3,3], c:"--intl"},
+  {id:"spx", sym:"^GSPC", fmt:"int", name:"S&P 500", val:"7,758", chg:"Record close", dir:"up", meta:"4 Aug ATH · Dow tops 54,000", spark:[3,4,4,5,5,6,7], c:"--bank"},
+  {id:"brent", sym:"BZ=F", fmt:"usd", name:"Brent Crude", val:"$80.53", chg:"+1.48%", dir:"up", meta:"$/bbl · Mideast tensions ease", spark:[6,6,5,4,4,5,5], c:"--intl"},
 ];
 
 const T={agri:{label:"Agriculture & Rural",short:"🌾 Agriculture",c:"--agri"},bank:{label:"Banking, Monetary & Markets",short:"🏦 Banking & Markets",c:"--bank"},
@@ -206,22 +206,22 @@ const T={agri:{label:"Agriculture & Rural",short:"🌾 Agriculture",c:"--agri"},
 
 const TODAY={
  agri:[
-  {src:"The Hindu",op:0,h:"IMD sees below-normal August rains (<94% of LPA) as El Niño strengthens",p:"A weaker second half of the monsoon threatens kharif sowing, food supply and rural incomes just as the RBI weighs its inflation outlook.",u:"https://superkalam.com/current-affairs/01-08-2026/india-likely-to-receive-below-normal-rainfall-this-month-says-imd-pg10-4b9fc93c-d4fe-46a5-bf44-a85cc45d9229"},
+  {src:"The Hindu",op:0,h:"IMD sees below-normal August rains (<94% of LPA) as El Niño strengthens",p:"A weaker second half of the monsoon threatens kharif sowing, food supply and rural incomes just as the RBI flags food-price risk in its outlook.",u:"https://superkalam.com/current-affairs/01-08-2026/india-likely-to-receive-below-normal-rainfall-this-month-says-imd-pg10-4b9fc93c-d4fe-46a5-bf44-a85cc45d9229"},
   {src:"ANI",op:0,h:"Kharif sowing down ~6% y/y; pulses acreage falls over 15%",p:"Government data show planting lagging last year on the uneven monsoon, keeping pressure on pulses and food-price expectations.",u:"https://aninews.in/news/business/indias-kharif-sowing-declines-604-year-on-year-till-july-17-pulses-acreage-drops-over-15-govt-data20260721130637/"},
  ],
  bank:[
-  {src:"Business Today",op:0,h:"Equities snap 4-day streak; Sensex −210, Nifty holds 24,615 on late CAS rally",p:"Profit-taking and Strait-of-Hormuz jitters ended the winning run, though a sharp closing-auction bounce trimmed the day's losses.",u:"https://www.businesstoday.in/markets/stocks/story/equities-snap-four-day-gaining-streak-late-nifty-rally-trims-losses-547149-2026-08-04"},
-  {src:"Business Today",op:0,h:"RBI MPC verdict due tomorrow; a repo pause at 5.25% is the strongest bet",p:"With CPI above the 4% target on oil and food, economists expect a fourth straight hold and a cautious, liquidity-focused tone.",u:"https://www.businesstoday.in/latest/economy/story/rbi-mpc-meeting-begins-today-repo-rate-pause-likely-as-inflation-crude-oil-risks-keep-policymakers-cautious-546753-2026-08-03"},
-  {src:"SBI Research",op:0,h:"SBI Research: repo rate to stay at 5.25% despite inflation concerns",p:"The house sees the MPC preserving its FY27 forecasts (inflation 5.1%, growth 6.6%) and a neutral stance ahead of Wednesday's decision.",u:"https://en.sangritimes.com/business/rbi-mpc-august-2026-sbi-research-expects-repo-rate-to-remain-unchanged-despite-inflation-concerns"},
+  {src:"Business Standard",op:0,h:"RBI holds repo at 5.25% for a fourth time, keeps 'neutral' stance",p:"The MPC left rates unchanged as Governor Malhotra cited a 'hazy' global trade outlook; it pegged FY27 growth at 6.7% and sees inflation peaking in Q3.",u:"https://www.business-standard.com/finance/news/rbi-mpc-meet-august-repo-rate-governor-sanjay-malhotra-inflation-growth-gdp-126080500231_1.html"},
+  {src:"Forbes India",op:0,h:"RBI trims FY27 inflation forecast to 5%; sees Q3 peak at 5.9%",p:"The bank lowered its headline CPI projection from 5.1% to 5% for the year even as it warned prices would 'rise further in the near term' on food and fuel.",u:"https://www.forbesindia.com/article/news/rbi-mpc-live-updates-august-2026-repo-rate-sanjay-malhotra-policy-announcement-liveblog/2996705/1"},
+  {src:"HDFC Sky",op:0,h:"Sensex adds 146 to 78,575; Nifty slips to 24,571 as RBI holds rates",p:"A revised closing-auction framework drove a rare divergence between the benchmarks on policy day, with the Nifty easing even as the Sensex firmed.",u:"https://hdfcsky.com/news/sensex-gains-nifty-slips-rbi-holds-rates-mideast-tensions-ease-august-5-2026"},
  ],
  macro:[
-  {src:"Sunday Guardian",op:0,h:"Brent recovers to ~$84 as Iran denies talks; Hormuz risk lingers",p:"Oil rose 0.7% after Monday's ~7% slide as Tehran rejected Trump's claim of negotiations, keeping a supply-risk premium over the Strait of Hormuz.",u:"https://sundayguardianlive.com/business/brent-crude-oil-price-today-august-4-brent-rises-above-84-wti-near-81-as-us-iran-conflict-and-middle-east-supply-concerns-support-oil-prices-check-latest-brent-wti-rates-today-253385/"},
-  {src:"WISH-TV / AP",op:0,h:"Wall Street hits records: S&P 500 above 7,600, Dow +693 as AI rally rolls on",p:"US indices closed at or near all-time highs on cooling inflation worries and big-tech strength — a supportive backdrop for global equities.",u:"https://www.wishtv.com/news/business/wall-street-rallies-toward-record-highs-amid-cooling-inflation-worries-aug-3-2026/"},
+  {src:"CNN Business",op:0,h:"S&P 500 back at a record, Dow tops 54,000 as AI earnings fuel rally",p:"US indices hit fresh highs — the S&P printed an intraday record near 7,758 — on strong big-tech results and hopes of easing Middle-East risk.",u:"https://www.cnn.com/2026/08/04/investing/us-stock-market"},
+  {src:"Trading Economics",op:0,h:"Brent steadies near $80.5 as Middle-East supply fears cool",p:"Crude firmed ~1.5% but held below recent peaks as Strait-of-Hormuz worries eased — a relief for India's import bill and the inflation path.",u:"https://tradingeconomics.com/commodity/brent-crude-oil"},
   {src:"Deccan Herald",op:0,h:"GTRI: US tariff without exemptions puts ~$25 bn of Indian exports at risk",p:"With the 25%-plus US levy live from Aug 1, analysts warn labour-intensive sectors face the sharpest hit unless a deal restores carve-outs.",u:"https://www.deccanherald.com/amp/story/business%2Feconomy%2Fus-tariff-without-exemptions-threatens-25-bn-in-exports-gtri-3660510"},
   {src:"Business Standard",op:1,h:"BS Edit: India's inflation dynamics argue for patience, not cuts",p:"Editorial: with oil and monsoon risks tilting prices up, the RBI is right to hold and guard against premature easing.",u:"https://www.business-standard.com/webstories/bs-edit-inflation-dynamics-1250807212608ws"},
  ],
  tech:[
-  {src:"Yahoo Finance",op:0,h:"AI-led rally lifts Nasdaq 2.1% to fresh highs",p:"Amazon, Alphabet and Microsoft strength powered the tech-heavy index, extending the AI trade that has driven US markets.",u:"https://finance.yahoo.com/markets/stocks/articles/stock-market-news-aug-3-124000595.html"},
+  {src:"TheStreet",op:0,h:"Tech comeback powers record closes; SpaceX and AMD report earnings",p:"A renewed AI-and-semiconductor bid lifted US indices to fresh highs, extending the technology trade that has led global markets.",u:"https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-aug-4-2026"},
   {src:"Whalesbook",op:0,h:"Nifty IT rallies as majors announce large AI deals",p:"Indian IT services names firmed on fresh AI-transformation wins — a bright spot for the sector amid tariff and demand worries.",u:"https://www.whalesbook.com/news/English/technology/Nifty-IT-Rallies-as-Majors-Announce-Major-AI-Deals/6a324253d017fdb509987bf3"},
   {src:"Business Today",op:1,h:"AI disruption bites: top IT firms' market cap slips versus Reliance",p:"Analysis: automation and soft discretionary demand are reshaping India's IT majors even as select AI deals cushion the blow.",u:"https://www.businesstoday.in/markets/stocks/story/indian-it-stocks-fall-tcs-infosys-wipro-hcl-tech-reliance-market-cap-ai-impact-540988-2026-07-04"},
  ],
@@ -232,17 +232,17 @@ const WEEKLY={
   {src:"ANI",op:0,h:"Kharif sowing trails last year; pulses acreage down sharply",p:"Government data showed planting lagging on the uneven monsoon — a caution for food prices as the RBI meets.",u:"https://aninews.in/news/business/indias-kharif-sowing-declines-604-year-on-year-till-july-17-pulses-acreage-drops-over-15-govt-data20260721130637/"},
  ],
  bank:[
+  {src:"Business Standard",op:0,h:"RBI keeps repo at 5.25%, holds 'neutral' stance for a fourth meeting",p:"The week's headline: the MPC stood pat, pegged FY27 growth at 6.7% and trimmed its inflation forecast to 5% amid a 'hazy' trade backdrop.",u:"https://www.business-standard.com/finance/news/rbi-mpc-meet-august-repo-rate-governor-sanjay-malhotra-inflation-growth-gdp-126080500231_1.html"},
   {src:"Federal Reserve",op:0,h:"Fed holds at 3.50–3.75% on a 9–3 vote with hawkish dissents",p:"Three members wanted a hike; the steady decision framed the global rate backdrop for EM currencies including the rupee.",u:"https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm"},
-  {src:"Business Today",op:0,h:"RBI MPC in session; a fourth straight hold at 5.25% widely expected",p:"With inflation above target and oil volatile, economists see rates unchanged and a cautious tone; the verdict lands 5 August.",u:"https://www.businesstoday.in/latest/economy/story/rbi-mpc-meeting-begins-today-repo-rate-pause-likely-as-inflation-crude-oil-risks-keep-policymakers-cautious-546753-2026-08-03"},
-  {src:"Business Today",op:0,h:"Equities snap a four-day rally as Hormuz jitters return",p:"After four straight gains, the Sensex and Nifty slipped on profit-taking and Middle East risk, with a late CAS bounce cutting losses.",u:"https://www.businesstoday.in/markets/stocks/story/equities-snap-four-day-gaining-streak-late-nifty-rally-trims-losses-547149-2026-08-04"},
+  {src:"HDFC Sky",op:0,h:"Benchmarks diverge on policy day: Sensex firms, Nifty eases",p:"A revised closing-auction framework split the indices as the RBI held rates; the Sensex closed near 78,575 and the Nifty around 24,571.",u:"https://hdfcsky.com/news/sensex-gains-nifty-slips-rbi-holds-rates-mideast-tensions-ease-august-5-2026"},
  ],
  macro:[
-  {src:"Sunday Guardian",op:0,h:"Oil whipsaws on Iran: Brent dives ~7%, then steadies near $84",p:"A diplomacy headline sank crude early in the week before Tehran's denial and Hormuz worries pulled it back — a swing factor for India's import bill.",u:"https://sundayguardianlive.com/business/brent-crude-oil-price-today-august-4-brent-rises-above-84-wti-near-81-as-us-iran-conflict-and-middle-east-supply-concerns-support-oil-prices-check-latest-brent-wti-rates-today-253385/"},
-  {src:"WISH-TV / AP",op:0,h:"US stocks close the week at records on cooling inflation worries",p:"The S&P 500 topped 7,600 and the Dow jumped ~693 points, extending an AI-driven advance into early August.",u:"https://www.wishtv.com/news/business/wall-street-rallies-toward-record-highs-amid-cooling-inflation-worries-aug-3-2026/"},
+  {src:"CNN Business",op:0,h:"US stocks close the week at records; Dow tops 54,000",p:"An AI-earnings surge lifted the S&P 500 to fresh highs near 7,758, extending a booming rally into early August.",u:"https://www.cnn.com/2026/08/04/investing/us-stock-market"},
+  {src:"Trading Economics",op:0,h:"Brent whipsaws, then settles near $80.5 as Mideast fears ease",p:"Crude swung on Iran headlines through the week before steadying below recent peaks — a swing factor for India's import bill.",u:"https://tradingeconomics.com/commodity/brent-crude-oil"},
   {src:"Deccan Herald",op:1,h:"Tariff without exemptions could cost India ~$25 bn in exports",p:"Analysis: GTRI warns the 25%-plus US levy, live from Aug 1, threatens labour-intensive exporters absent a deal.",u:"https://www.deccanherald.com/amp/story/business%2Feconomy%2Fus-tariff-without-exemptions-threatens-25-bn-in-exports-gtri-3660510"},
  ],
  tech:[
-  {src:"Yahoo Finance",op:0,h:"AI trade powers Nasdaq to fresh highs to end the week",p:"Big-tech gains extended the AI-led rally, keeping global risk appetite firm even as India's markets wobbled.",u:"https://finance.yahoo.com/markets/stocks/articles/stock-market-news-aug-3-124000595.html"},
+  {src:"TheStreet",op:0,h:"AI-and-chip comeback powers record closes into the weekend",p:"Big-tech and semiconductor gains extended the AI-led rally, keeping global risk appetite firm even as India's markets wobbled.",u:"https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-aug-4-2026"},
   {src:"Whalesbook",op:0,h:"Nifty IT firms on fresh AI-deal wins",p:"Indian IT majors announced large AI-transformation contracts, supporting the sector through tariff and demand noise.",u:"https://www.whalesbook.com/news/English/technology/Nifty-IT-Rallies-as-Majors-Announce-Major-AI-Deals/6a324253d017fdb509987bf3"},
  ],
 };
@@ -252,7 +252,7 @@ const MONTHLY={
   {src:"ANI",op:0,h:"Kharif sowing lagged last year through July on uneven rains",p:"Planting trailed year-ago levels with pulses acreage down sharply — a signal for buffer stocks, MSP and food prices.",u:"https://aninews.in/news/business/indias-kharif-sowing-declines-604-year-on-year-till-july-17-pulses-acreage-drops-over-15-govt-data20260721130637/"},
  ],
  bank:[
-  {src:"RBI / Trading Economics",op:0,h:"RBI held repo at 5.25% through the month; Aug decision due 5 Aug",p:"The bank balanced a soft rupee and monsoon-driven inflation risk against growth; markets expect another hold.",u:"https://tradingeconomics.com/india/interest-rate"},
+  {src:"Business Standard",op:0,h:"RBI held repo at 5.25% again on 5 Aug — a fourth straight pause",p:"The month closed with the MPC standing pat on a 'neutral' stance, pegging FY27 growth at 6.7% and inflation at 5% amid trade uncertainty.",u:"https://www.business-standard.com/finance/news/rbi-mpc-meet-august-repo-rate-governor-sanjay-malhotra-inflation-growth-gdp-126080500231_1.html"},
   {src:"Business Standard",op:0,h:"Bank credit growth hits a two-year high of 18.6%",p:"The month's standout domestic-demand signal, with deposits rising over ₹7 trillion in the June-end fortnight.",u:"https://www.business-standard.com/industry/banking/bank-credit-growth-hits-2-year-high-of-18-6-as-deposits-rise-over-7-trn-126071001123_1.html"},
   {src:"HDFC Sky",op:0,h:"Rupee steadied near 95.3/$ after an oil-driven wobble",p:"FPI inflows and RBI support pulled the currency back from weaker levels by early August; the 10-year yield held near 6.81%.",u:"https://hdfcsky.com/news/inr-vs-usd-rate-july-31-2026-rupee-rises-15-paise-closes-at-95-35-against-us-dollar"},
  ],
