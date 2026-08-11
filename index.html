@@ -149,7 +149,7 @@
   <!-- TODAY -->
   <section class="page" id="today">
     <div class="ptitle">Today's Brief</div>
-    <div class="pwhen">Monday, 10 August 2026 · news &amp; editorials by topic</div>
+    <div class="pwhen">Tuesday, 11 August 2026 · news &amp; editorials by topic</div>
     <div id="todayTopics"></div>
     <div class="foot" id="sourcesFoot"></div>
   </section>
@@ -157,16 +157,16 @@
   <!-- WEEKLY -->
   <section class="page" id="weekly">
     <div class="ptitle">Weekly Wrap-up</div>
-    <div class="pwhen">Week of 4 – 10 August 2026</div>
-    <div class="summary">🔎 <b>The week in one line:</b> The RBI's 5 Aug fourth straight pause at 5.25% on a 'neutral' stance (FY27 growth 6.7%, inflation cut to 5%) framed the week, while a soft US jobs report (payrolls −23,000) sent the S&amp;P 500 to a record 7,758 and the Nasdaq to 26,690 and cut September Fed rate-hike odds to ~44%. India Inc's Q1 FY27 earnings surprised on the upside — profits grew ~2% versus a feared ~10% drop, led by BFSI (+20%) and metals (+53%) — even as RBI draft norms barring NBFC revolving-credit products bruised Bajaj Finance mid-week. Benchmarks steadied by Monday, with the Sensex up 43 to 78,542 and the Nifty at 24,584 as TCS (+3.4%) and IT offset a ~2% drop in PSU banks; Brent firmed back to ~$85 on Strait-of-Hormuz talks, dragging the rupee 11 paise lower to a record-low 95.28/$ while the 10-year G-sec held at 6.78% — all under the 25%-plus US tariff live from Aug 1, with the July CPI print due 12 Aug.</div>
+    <div class="pwhen">Week of 5 – 11 August 2026</div>
+    <div class="summary">🔎 <b>The week in one line:</b> The RBI's 5 Aug fourth straight pause at 5.25% on a 'neutral' stance (FY27 growth 6.7%, inflation cut to 5%) framed the week, while a soft US jobs report (payrolls −23,000) had sent the S&amp;P 500 to a record 7,758 before it eased back near 7,753 as oil and Iran risk returned. India Inc's Q1 FY27 earnings surprised on the upside — profits grew ~2% versus a feared ~10% drop, led by BFSI (+20%) and metals (+53%). But the week closed on a softer note: a rebound in Brent toward $88 on Strait-of-Hormuz risk revived inflation worries, sending the Sensex down 388 to 78,154 and the Nifty 112 lower to 24,472 on 11 Aug, with financials the biggest drag and the rupee near a record low around 95.30/$ while the 10-year G-sec held at 6.78% — all under the 25%-plus US tariff live from Aug 1, and both India's and the US's July CPI prints due 12 Aug.</div>
     <div id="weeklyTopics"></div>
   </section>
 
   <!-- MONTHLY -->
   <section class="page" id="monthly">
     <div class="ptitle">Monthly Wrap-up</div>
-    <div class="pwhen">Past 30 days · to 10 August 2026</div>
-    <div class="summary">🔎 <b>The month in one line:</b> July's crosscurrents of war and technology ran into August — India's CPI re-accelerated to 4.38% on oil and food (July print due 12 Aug, seen near 4.4%), the RBI held repo at 5.25% for a fourth time on 5 Aug (FY27 growth 6.7%, inflation 5%), bank credit growth hit a two-year high of 18.6%, and Q1 FY27 earnings beat a feared decline as BFSI (+20%) and metals (+53%) led, while a shock US July jobs report (payrolls −23,000) drove the S&amp;P 500 to a record 7,758 and the Nasdaq to 26,690 and cut Fed rate-hike odds to ~44%, even as Brent swung back to ~$85 on renewed Strait-of-Hormuz fears and the rupee slid to a record-low 95.28/$ — all under Washington's 25%-plus tariff on India, live from Aug 1 and putting up to ~$25 bn of exports at risk, with a slow, El Niño-clouded monsoon keeping food-price worries alive.</div>
+    <div class="pwhen">Past 30 days · to 11 August 2026</div>
+    <div class="summary">🔎 <b>The month in one line:</b> July's crosscurrents of war and technology ran into August — India's CPI re-accelerated to 4.38% on oil and food (July print due 12 Aug, seen near 4.4%), the RBI held repo at 5.25% for a fourth time on 5 Aug (FY27 growth 6.7%, inflation 5%), bank credit growth hit a two-year high of 18.6%, and Q1 FY27 earnings beat a feared decline as BFSI (+20%) and metals (+53%) led, while a shock US July jobs report (payrolls −23,000) drove the S&amp;P 500 to a record 7,758 before it slipped back near 7,753 as oil and Iran risk returned. Brent climbed toward $88 on renewed Strait-of-Hormuz fears — dragging the Sensex 388 lower to 78,154 by 11 Aug and pinning the rupee near a record low around 95.30/$ — all under Washington's 25%-plus tariff on India, live from Aug 1 and putting up to ~$25 bn of exports at risk, with a slow, El Niño-clouded monsoon keeping food-price worries alive.</div>
     <div id="monthlyTopics"></div>
   </section>
 
@@ -187,18 +187,18 @@ const CONFIG = { PROXIES:["https://api.allorigins.win/raw?url=","https://corspro
 
 /* ============ INDICATOR DATA (snapshot fallback; live symbols patch these) ============ */
 const KPI_INDIA=[
-  {id:"sensex", sym:"^BSESN", fmt:"int", name:"BSE Sensex", val:"78,542", chg:"+43 (0.05%)", dir:"up", meta:"10 Aug close · IT leads; PSU banks −2%", spark:[6,7,6,7,6,4,5], c:"--mkt"},
-  {id:"nifty", sym:"^NSEI", fmt:"int", name:"Nifty 50", val:"24,584", chg:"+13 (0.05%)", dir:"up", meta:"10 Aug close · TCS +3.4% cushions financials", spark:[6,6,6,6,6,5,5], c:"--mkt"},
+  {id:"sensex", sym:"^BSESN", fmt:"int", name:"BSE Sensex", val:"78,154", chg:"−388 (0.49%)", dir:"down", meta:"11 Aug close · crude surge, financials drag", spark:[6,7,6,7,6,5,3], c:"--mkt"},
+  {id:"nifty", sym:"^NSEI", fmt:"int", name:"Nifty 50", val:"24,472", chg:"−112 (0.46%)", dir:"down", meta:"11 Aug close · banks, oil weigh; inflation eyed", spark:[6,6,6,6,6,5,4], c:"--mkt"},
   {id:"repo", sym:null, name:"RBI Repo Rate", val:"5.25%", chg:"Held Aug 5", dir:"flat", meta:"Neutral · 4th straight pause", spark:[5,5,5,5,5,5,5], c:"--bank"},
   {id:"cpi", sym:null, name:"India CPI (Jun)", val:"4.38%", chg:"Above 4% target", dir:"down", meta:"Oil/food-led · Jul print due 12 Aug (est ~4.4%)", spark:[2,2,3,3,4,4,5], c:"--macro"},
-  {id:"usdinr", sym:"INR=X", fmt:"inr", name:"USD / INR", val:"₹95.28", chg:"−11p on firm crude", dir:"down", meta:"10 Aug close · fell 11 paise as Brent firms", spark:[6,6,7,7,7,7,7], c:"--intl"},
-  {id:"in10y", sym:null, name:"India 10Y Yield", val:"6.78%", chg:"Steady", dir:"flat", meta:"8 Aug · firm on crude; auction eyed", spark:[5,6,6,6,6,7,7], c:"--macro"},
+  {id:"usdinr", sym:"INR=X", fmt:"inr", name:"USD / INR", val:"₹95.30", chg:"Near record low", dir:"down", meta:"11 Aug · pressured by strong dollar, firm crude", spark:[6,6,7,7,7,7,7], c:"--intl"},
+  {id:"in10y", sym:null, name:"India 10Y Yield", val:"6.78%", chg:"Steady", dir:"flat", meta:"11 Aug · firm on crude; inflation data eyed", spark:[5,6,6,6,6,7,7], c:"--macro"},
 ];
 const KPI_GLOBAL=[
-  {id:"fed", sym:null, name:"US Fed Funds", val:"3.50–3.75%", chg:"Held Jul 29", dir:"flat", meta:"Sept hike odds ease to 44% on soft jobs", spark:[6,6,5,5,4,4,4], c:"--bank"},
+  {id:"fed", sym:null, name:"US Fed Funds", val:"3.50–3.75%", chg:"Held Jul 29", dir:"flat", meta:"US Jul CPI due 12 Aug; tariff pass-through eyed", spark:[6,6,5,5,4,4,4], c:"--bank"},
   {id:"imf", sym:null, name:"IMF Growth '26", val:"3.0%", chg:"Jul WEO", dir:"down", meta:"Global infl. 4.7%", spark:[6,5,5,4,4,3,3], c:"--intl"},
-  {id:"spx", sym:"^GSPC", fmt:"int", name:"S&P 500", val:"7,758", chg:"+0.62%", dir:"up", meta:"7 Aug · record close; jobs shock lifts stocks", spark:[5,5,6,6,6,7,7], c:"--bank"},
-  {id:"brent", sym:"BZ=F", fmt:"usd", name:"Brent Crude", val:"$84.7", chg:"+1.3% on Hormuz risk", dir:"up", meta:"$/bbl · 10 Aug · Strait-of-Hormuz talks", spark:[5,5,6,7,7,6,7], c:"--intl"},
+  {id:"spx", sym:"^GSPC", fmt:"int", name:"S&P 500", val:"7,753", chg:"−0.05%", dir:"flat", meta:"10 Aug · off record as oil, Iran risk weigh", spark:[6,6,7,7,7,7,7], c:"--bank"},
+  {id:"brent", sym:"BZ=F", fmt:"usd", name:"Brent Crude", val:"$87.4", chg:"−0.4% off highs", dir:"up", meta:"$/bbl · 11 Aug · near $88 on Hormuz risk", spark:[5,5,6,7,7,7,7], c:"--intl"},
 ];
 
 const T={agri:{label:"Agriculture & Rural",short:"🌾 Agriculture",c:"--agri"},bank:{label:"Banking, Monetary & Markets",short:"🏦 Banking & Markets",c:"--bank"},
@@ -206,25 +206,25 @@ const T={agri:{label:"Agriculture & Rural",short:"🌾 Agriculture",c:"--agri"},
 
 const TODAY={
  agri:[
-  {src:"Deccan Herald",op:0,h:"Agriculture stays at risk from regional rainfall disparities: CareEdge",p:"Uneven monsoon distribution across key belts keeps farm output and rural demand vulnerable, the ratings agency warns, with food prices a swing factor for the RBI's easing path.",u:"https://www.deccanherald.com/amp/story/india%2Fagriculture-sector-continues-to-remain-at-risk-due-to-regional-disparities-in-rainfall-careedge-ratings-3184342"},
-  {src:"Forbes India",op:1,h:"Can rural India weather a below-normal monsoon?",p:"Analysis: a weak, El Niño-tinged monsoon and costlier fertiliser could squeeze farm incomes and rural demand just as the RBI flags food-price risk to its 5% inflation call.",u:"https://www.forbesindia.com/article/news/deep-dive/can-rural-india-weather-a-weak-monsoon/2993450/1"},
-  {src:"Business Today",op:0,h:"Weak monsoon ahead? How it could feed into food prices",p:"A below-normal outlook raises the risk of firmer vegetable, pulses and cereal prices in the second half — the key upside threat to headline CPI now hovering above 4%.",u:"https://www.businesstoday.in/latest/economy/story/weak-monsoon-ahead-how-it-could-impact-food-prices-and-your-pocket-526724-2026-04-21"},
+  {src:"The Tribune",op:0,h:"India faces food-inflation risks ahead of Kharif despite $18.6 bn subsidy: FAO",p:"The FAO chief economist warns that Strait-of-Hormuz supply disruption and firm crude are lifting fertiliser and freight costs, keeping farm-gate and food prices at risk into the Kharif harvest.",u:"https://www.tribuneindia.com/news/business/india-faces-food-inflation-risks-ahead-of-kharif-despite-usd-18-6-bn-subsidy-as-hormuz-disruption-hits-supplies-fao-chief-economist/"},
+  {src:"Business Today",op:0,h:"Food inflation making a comeback as onions, vegetables lead price surge",p:"A fresh climb in perishables is the key upside threat to headline CPI, with the July print due 12 Aug watched for whether food-led pressure is rebuilding above the 4% target.",u:"https://www.businesstoday.in/latest/economy/story/food-inflation-making-a-comeback-why-onions-and-vegetables-are-leading-the-price-surge-545028-2026-07-24"},
+  {src:"Forbes India",op:1,h:"Can rural India weather a below-normal monsoon?",p:"Analysis: a weak, El Niño-tinged monsoon and costlier fertiliser could squeeze farm incomes and rural demand just as the RBI flags food-price risk to its inflation call.",u:"https://www.forbesindia.com/article/news/deep-dive/can-rural-india-weather-a-weak-monsoon/2993450/1"},
  ],
  bank:[
-  {src:"Business Standard",op:0,h:"Sensex ends up 43 at 78,542; Nifty at 24,584 as IT offsets PSU-bank drag",p:"Benchmarks eked out gains as TCS (+3.4%) and the IT pack rallied while the PSU Bank index fell nearly 2%; rising crude and Strait-of-Hormuz uncertainty capped the upside.",u:"https://www.business-standard.com/markets/news/stock-market-live-updates-10-august-nse-bse-sensex-today-nifty-gift-nifty-us-iran-tension-brent-crude-q1-result-share-market-today-126081000044_1.html"},
+  {src:"ANI",op:0,h:"Sensex ends 388 lower at 78,154; Nifty falls 112 to 24,472 amid crude surge",p:"Benchmarks slid ~0.5% as Brent near $88 rekindled inflation worries and financials dragged; a rebound in crude shifted market attention back to price-risk ahead of the July CPI print.",u:"https://aninews.in/news/business/sensex-ends-388-points-lower-nifty-falls-112-points-amid-crude-oil-surge20260811155648/"},
   {src:"IANS",op:0,h:"India Inc's Q1 FY27 earnings beat expectations; BFSI and metals lead",p:"Profits grew ~2% year-on-year versus a feared ~10% decline, powered by banking-financials (+20%) and metals (+53%); nearly half of companies topped estimates.",u:"https://ianslive.in/india-incs-q1-fy27-earnings-beat-expectations-bfsi-and-metals-lead-growth--20260806164409"},
-  {src:"Deccan Herald",op:0,h:"Rupee falls 11 paise to close at 95.28/$ on firm crude",p:"A rising oil bill and Strait-of-Hormuz uncertainty pushed the currency to a fresh low as the 10-year G-sec yield held near 6.78% ahead of a debt auction.",u:"https://www.deccanherald.com/business/markets/rupee-falls-11-paise-to-close-at-9528-against-us-dollar-on-firm-crude-oil-prices-4105692"},
+  {src:"Business Standard",op:0,h:"Sensex, Nifty drop amid weak global cues as European markets decline",p:"Rising oil and soft overseas sentiment weighed on Indian equities, with banking and financial names among the biggest laggards as the rupee hovered near a record low around 95.30/$.",u:"https://www.business-standard.com/markets/capital-market-news/sensex-nifty-drops-amid-weak-global-cues-european-mrkt-decline-126081100874_1.html"},
  ],
  macro:[
-  {src:"Trading Economics",op:0,h:"Brent firms to ~$84.7 as Strait-of-Hormuz talks drag on",p:"Crude rose ~1.3% on the day amid Iran–Oman negotiations over vessel access through the Strait — a persistent headwind for India's import bill and inflation path.",u:"https://tradingeconomics.com/commodity/brent-crude-oil"},
-  {src:"PIB",op:0,h:"June CPI stood at 4.38%; July print due 12 August",p:"Inflation has re-accelerated from multi-year lows on oil and food; the July reading, out this week, is watched for whether price pressure is building above the 4% target.",u:"https://www.pib.gov.in/PressReleasePage.aspx?PRID=2284125&reg=48&lang=1"},
-  {src:"Deccan Herald",op:0,h:"US tariff without exemptions could cost India ~$25 bn in exports",p:"GTRI warns the 25%-plus US levy, live from Aug 1, threatens labour-intensive exporters unless a trade deal carves out relief.",u:"https://www.deccanherald.com/amp/story/business%2Feconomy%2Fus-tariff-without-exemptions-threatens-25-bn-in-exports-gtri-3660510"},
+  {src:"Trading Economics",op:0,h:"Brent eases to ~$87.4 after nearing $88 on Strait-of-Hormuz risk",p:"Crude slipped 0.4% on the day but held near multi-week highs amid stalled US–Iran talks over vessel access — a persistent headwind for India's import bill and inflation path.",u:"https://tradingeconomics.com/commodity/brent-crude-oil"},
+  {src:"PIB",op:0,h:"India June CPI stood at 4.38%; July print due 12 August",p:"Inflation has re-accelerated from multi-year lows on oil and food; Tuesday's July reading is watched for whether price pressure is building above the 4% target.",u:"https://www.pib.gov.in/PressReleasePage.aspx?PRID=2284125&reg=48&lang=1"},
+  {src:"FXStreet",op:0,h:"US July CPI, due 12 Aug, seen edging up as tariff pass-through builds",p:"Economists expect firmer US consumer prices as import levies feed through, a print that will shape the Fed's path and global risk sentiment even amid data-quality concerns.",u:"https://www.fxstreet.com/analysis/us-cpi-yoy-us-consumer-prices-edged-up-in-july-amid-rising-data-quality-concerns-202508120709"},
   {src:"Business Standard",op:1,h:"BS Edit: inflation projections argue for guarding against premature easing",p:"Editorial: with oil and monsoon risks tilting prices up, the RBI is right to hold a neutral stance and resist calls for cuts until the trajectory is clearer.",u:"https://www.business-standard.com/opinion/editorial/policy-prospects-inflation-projections-demand-monetary-tightening-126080501769_1.html"},
  ],
  tech:[
-  {src:"Sunday Guardian",op:0,h:"IT stocks cushion the market as TCS jumps 3.4%, HCL and M&M rally",p:"Export-oriented tech names led Monday's gainers, offering a defensive cushion for the benchmarks even as financials and PSU banks weighed.",u:"https://sundayguardianlive.com/business/sensex-today-bse-sensex-nifty-slip-slightly-after-higher-open-as-rising-crude-hormuz-uncertainty-weigh-while-it-stocks-offer-support-257810/"},
-  {src:"Virginia Business",op:0,h:"Nasdaq at a record 26,690 as chip and software shares rally",p:"A soft US jobs report lifting rate-cut hopes powered a tech-led advance, with the Nasdaq closing at a record and the S&P posting its strongest week since April.",u:"https://virginiabusiness.com/sp-record-high-soft-us-jobs-report-rate-hike/"},
+  {src:"CNBC",op:0,h:"S&P 500 closes little changed at 7,753 as oil rises, Intel leads chips lower",p:"US benchmarks eased off record highs as energy gains stoked inflation worries and semiconductor names slipped, tempering the tech-led rally of early August.",u:"https://www.cnbc.com/2026/08/09/stock-market-today-live-updates.html"},
   {src:"Business Today",op:1,h:"AI disruption bites: top IT firms' market cap slips versus Reliance",p:"Analysis: automation and soft discretionary demand are reshaping India's IT majors even as select AI deals cushion the blow.",u:"https://www.businesstoday.in/markets/stocks/story/indian-it-stocks-fall-tcs-infosys-wipro-hcl-tech-reliance-market-cap-ai-impact-540988-2026-07-04"},
+  {src:"Virginia Business",op:0,h:"Nasdaq hit a record 26,690 last week as chip and software shares rallied",p:"A soft US jobs report lifting rate-cut hopes powered a tech-led advance, though gains have since cooled as oil and Iran risk return to the fore.",u:"https://virginiabusiness.com/sp-record-high-soft-us-jobs-report-rate-hike/"},
  ],
 };
 const WEEKLY={
@@ -238,8 +238,8 @@ const WEEKLY={
   {src:"Business Standard",op:0,h:"RBI draft norms bar NBFC revolving-credit; consumer-finance stocks wobble",p:"Draft rules limiting NBFCs to term loans hit Bajaj Finance and Finserv mid-week; by Monday the Sensex had recovered to 78,542 and the Nifty to 24,584.",u:"https://www.business-standard.com/finance/news/nbfcs-can-extend-term-loans-not-revolving-credit-products-rbi-draft-norms-126080602028_1.html"},
  ],
  macro:[
-  {src:"Virginia Business",op:0,h:"US July payrolls fall 23,000; S&P 500 and Nasdaq set records",p:"A shock jobs miss with heavy prior-month revisions cut Fed September-hike odds to ~44%, lifting the S&P to a record 7,758 and the Nasdaq to 26,690.",u:"https://virginiabusiness.com/sp-record-high-soft-us-jobs-report-rate-hike/"},
-  {src:"Deccan Herald",op:0,h:"Rupee slides to record-low 95.28/$ as Brent firms toward $85",p:"Renewed Strait-of-Hormuz risk pushed crude and the import bill higher through the week, dragging the currency down and firming the 10-year G-sec near 6.78%.",u:"https://www.deccanherald.com/business/markets/rupee-falls-11-paise-to-close-at-9528-against-us-dollar-on-firm-crude-oil-prices-4105692"},
+  {src:"Virginia Business",op:0,h:"US July payrolls fall 23,000; S&P 500 hits a record 7,758 before easing",p:"A shock jobs miss with heavy prior-month revisions cut Fed September-hike odds to ~44% and lifted the S&P to a record 7,758 mid-week, though it slipped back near 7,753 by 10 Aug as oil and Iran risk returned.",u:"https://virginiabusiness.com/sp-record-high-soft-us-jobs-report-rate-hike/"},
+  {src:"ANI",op:0,h:"Crude toward $88 revives inflation fears; Sensex ends 388 lower on 11 Aug",p:"Renewed Strait-of-Hormuz risk pushed Brent near $88 through the week, pressuring Indian equities and pinning the rupee near a record low around 95.30/$ as the 10-year G-sec held near 6.78%.",u:"https://aninews.in/news/business/sensex-ends-388-points-lower-nifty-falls-112-points-amid-crude-oil-surge20260811155648/"},
   {src:"Deccan Herald",op:1,h:"Tariff without exemptions could cost India ~$25 bn in exports",p:"Analysis: GTRI warns the 25%-plus US levy, live from Aug 1, threatens labour-intensive exporters absent a deal.",u:"https://www.deccanherald.com/amp/story/business%2Feconomy%2Fus-tariff-without-exemptions-threatens-25-bn-in-exports-gtri-3660510"},
  ],
  tech:[
