@@ -149,7 +149,7 @@
   <!-- TODAY -->
   <section class="page" id="today">
     <div class="ptitle">Today's Brief</div>
-    <div class="pwhen">Tuesday, 18 August 2026 · news &amp; editorials by topic</div>
+    <div class="pwhen">Wednesday, 19 August 2026 · news &amp; editorials by topic</div>
     <div id="todayTopics"></div>
     <div class="foot" id="sourcesFoot"></div>
   </section>
@@ -157,16 +157,16 @@
   <!-- WEEKLY -->
   <section class="page" id="weekly">
     <div class="ptitle">Weekly Wrap-up</div>
-    <div class="pwhen">Week of 12 – 18 August 2026</div>
-    <div class="summary">🔎 <b>The week in one line:</b> India's price data set the tone — July CPI printed at a 19-month-high 4.45% (from 4.38%) on 12 Aug while WPI eased to 9.78% on 14 Aug as fuel costs cooled, keeping the RBI's neutral hold at 5.25% in focus. Kharif sowing stayed about 2% behind last year (1,016.6 lh to 14 Aug), though August rains narrowed the gap and UBS played down fears of a rural-demand slump. But markets stayed heavy: firmer Brent above $90 and a record-low rupee (95.68/$) pushed the Sensex down to 77,235 and the Nifty to 24,155 by 18 Aug — a third straight fall — with IT among the weakest sectors and the 10-year G-sec near ~6.81% after the RBI moved to wind down its FCNR(B) forex-swap facility. Abroad, a cool US July CPI lifted the S&amp;P 500 to a record 7,784 on 12 Aug before Wall Street eased to 7,747 by 17 Aug on softer sentiment and retail-earnings caution.</div>
+    <div class="pwhen">Week of 13 – 19 August 2026</div>
+    <div class="summary">🔎 <b>The week in one line:</b> Markets stayed on the back foot — a firmer Brent above $91 and a rupee pinned near a record low (~95.77/$) dragged the Sensex down to 76,910 and the Nifty to 24,078 by 19 Aug, a seventh straight fall, with energy and FMCG the weakest and IT the lone gainer on rupee weakness. The RBI ended its FCNR(B) forex-swap facility a month early after $56.85bn of inflows, nudging the 10-year G-sec up to ~6.84% and weighing on bank stocks. On prices, July WPI eased to 9.78% even as CPI held at a 19-month-high 4.45%, keeping the RBI's neutral 5.25% stance in focus. Abroad, an AI- and semiconductor-led selloff (Nvidia, Micron, Broadcom) and rising Treasury yields pulled the S&amp;P 500 down to 7,692 by 18 Aug, while soft US retail sales trimmed September Fed-hike odds to ~30%.</div>
     <div id="weeklyTopics"></div>
   </section>
 
   <!-- MONTHLY -->
   <section class="page" id="monthly">
     <div class="ptitle">Monthly Wrap-up</div>
-    <div class="pwhen">Past 30 days · to 18 August 2026</div>
-    <div class="summary">🔎 <b>The month in one line:</b> India's price picture dominated — CPI re-accelerated to a 19-month-high 4.45% in July (from 4.38%) on oil and food, even as WPI eased to 9.78% on softer fuel costs; the RBI held repo at 5.25% for a fourth time on 5 Aug (FY27 growth 6.7%, inflation 5%), bank credit growth hit a two-year high of 18.6%, and Q1 FY27 earnings beat a feared decline as BFSI (+20%) and metals (+53%) led. August rains narrowed the kharif sowing gap, though acreage stayed ~2% below last year at 1,016.6 lh by 14 Aug. Yet a firm Brent above $90 and a record-low rupee (95.68/$) dragged the Sensex to 77,235 by 18 Aug and lifted the 10-year G-sec to ~6.81% after the RBI began winding down its FCNR(B) forex-swap facility, while a cool US July CPI powered the S&amp;P 500 to a record 7,784 on 12 Aug before Wall Street eased to 7,747 by 17 Aug.</div>
+    <div class="pwhen">Past 30 days · to 19 August 2026</div>
+    <div class="summary">🔎 <b>The month in one line:</b> India's price picture dominated — CPI re-accelerated to a 19-month-high 4.45% in July (from 4.38%) on oil and food, even as WPI eased to 9.78% on softer fuel costs; the RBI held repo at 5.25% for a fourth time on 5 Aug (FY27 growth 6.7%, inflation 5%), bank credit growth hit a two-year high of 18.6%, and Q1 FY27 earnings beat a feared decline as BFSI (+20%) and metals (+53%) led. August rains narrowed the kharif sowing gap, though acreage stayed ~2% below last year at 1,016.6 lh by 14 Aug. Yet a firm Brent above $91 and a rupee near a record low (~95.77/$) dragged the Sensex to 76,910 by 19 Aug in a seventh straight fall and lifted the 10-year G-sec to ~6.84% after the RBI ended its FCNR(B) forex-swap facility a month early. Abroad, a cool US July CPI powered the S&amp;P 500 to a record 7,784 on 12 Aug before an AI- and chip-led selloff pulled it back to 7,692 by 18 Aug.</div>
     <div id="monthlyTopics"></div>
   </section>
 
@@ -187,18 +187,18 @@ const CONFIG = { PROXIES:["https://api.allorigins.win/raw?url=","https://corspro
 
 /* ============ INDICATOR DATA (snapshot fallback; live symbols patch these) ============ */
 const KPI_INDIA=[
-  {id:"sensex", sym:"^BSESN", fmt:"int", name:"BSE Sensex", val:"77,235", chg:"−493 (0.63%)", dir:"down", meta:"18 Aug close · 3rd straight fall; crude, rupee, IT weigh", spark:[7,6,5,5,4,4,3], c:"--mkt"},
-  {id:"nifty", sym:"^NSEI", fmt:"int", name:"Nifty 50", val:"24,155", chg:"−133 (0.55%)", dir:"down", meta:"18 Aug close · 3rd day down; weak global cues", spark:[6,6,5,5,4,4,3], c:"--mkt"},
+  {id:"sensex", sym:"^BSESN", fmt:"int", name:"BSE Sensex", val:"76,910", chg:"−326 (0.42%)", dir:"down", meta:"19 Aug close · 7th straight fall; crude, rupee weigh", spark:[6,5,5,4,4,3,3], c:"--mkt"},
+  {id:"nifty", sym:"^NSEI", fmt:"int", name:"Nifty 50", val:"24,078", chg:"−77 (0.32%)", dir:"down", meta:"19 Aug close · 7th day down; energy, FMCG drag; IT up", spark:[6,5,5,4,4,3,3], c:"--mkt"},
   {id:"repo", sym:null, name:"RBI Repo Rate", val:"5.25%", chg:"Held Aug 5", dir:"flat", meta:"Neutral · 4th straight pause", spark:[5,5,5,5,5,5,5], c:"--bank"},
-  {id:"cpi", sym:null, name:"India CPI (Jul)", val:"4.45%", chg:"19-mo high", dir:"up", meta:"12 Aug print · oil/food-led; above 4% target", spark:[2,3,3,4,4,5,5], c:"--macro"},
-  {id:"usdinr", sym:"INR=X", fmt:"inr", name:"USD / INR", val:"₹95.68", chg:"Record low", dir:"down", meta:"18 Aug · −7 paise; crude, US yields, RBI move weigh", spark:[6,6,7,7,7,7,8], c:"--intl"},
-  {id:"in10y", sym:null, name:"India 10Y Yield", val:"6.81%", chg:"2-week high", dir:"up", meta:"17 Aug · RBI FCNR swap wind-down lifts yields", spark:[5,6,6,6,7,7,7], c:"--macro"},
+  {id:"cpi", sym:null, name:"India CPI (Jul)", val:"4.45%", chg:"19-mo high", dir:"up", meta:"12 Aug print · food-led; above 4% target", spark:[2,3,3,4,4,5,5], c:"--macro"},
+  {id:"usdinr", sym:"INR=X", fmt:"inr", name:"USD / INR", val:"₹95.77", chg:"Near record low", dir:"down", meta:"19 Aug · crude, US yields, FCNR swap end weigh", spark:[6,6,7,7,7,8,8], c:"--intl"},
+  {id:"in10y", sym:null, name:"India 10Y Yield", val:"6.84%", chg:"10-mo high", dir:"up", meta:"18 Aug · RBI FCNR(B) swap wind-down lifts yields", spark:[5,6,6,6,7,7,8], c:"--macro"},
 ];
 const KPI_GLOBAL=[
-  {id:"fed", sym:null, name:"US Fed Funds", val:"3.50–3.75%", chg:"Held Jul 29", dir:"flat", meta:"Next FOMC 16 Sep; July CPI came in cool", spark:[6,6,5,5,4,4,4], c:"--bank"},
+  {id:"fed", sym:null, name:"US Fed Funds", val:"3.50–3.75%", chg:"Held Jul 29", dir:"flat", meta:"Next FOMC 16 Sep; Sep-hike odds ~30% on soft US data", spark:[6,6,5,5,4,4,4], c:"--bank"},
   {id:"imf", sym:null, name:"IMF Growth '26", val:"3.0%", chg:"Jul WEO", dir:"down", meta:"Global infl. 4.7%", spark:[6,5,5,4,4,3,3], c:"--intl"},
-  {id:"spx", sym:"^GSPC", fmt:"int", name:"S&P 500", val:"7,747", chg:"−0.50% 17 Aug", dir:"down", meta:"US mkts · eased from 12 Aug record 7,784; retail-earnings caution", spark:[6,7,7,7,6,6,6], c:"--bank"},
-  {id:"brent", sym:"BZ=F", fmt:"usd", name:"Brent Crude", val:"$90.7", chg:"Above $90", dir:"up", meta:"$/bbl · 18 Aug · near 1-yr highs; +38% y/y, +1.7% m/m", spark:[5,6,6,7,7,7,7], c:"--intl"},
+  {id:"spx", sym:"^GSPC", fmt:"int", name:"S&P 500", val:"7,692", chg:"−0.70% 18 Aug", dir:"down", meta:"US mkts · 3rd day down; AI/chip selloff (Nvidia, Micron)", spark:[7,7,7,6,6,5,5], c:"--bank"},
+  {id:"brent", sym:"BZ=F", fmt:"usd", name:"Brent Crude", val:"$91.3", chg:"Above $91", dir:"up", meta:"$/bbl · 19 Aug · Iran risk; +37% y/y, +2.6% m/m", spark:[5,6,6,7,7,7,8], c:"--intl"},
 ];
 
 const T={agri:{label:"Agriculture & Rural",short:"🌾 Agriculture",c:"--agri"},bank:{label:"Banking, Monetary & Markets",short:"🏦 Banking & Markets",c:"--bank"},
@@ -208,23 +208,23 @@ const TODAY={
  agri:[
   {src:"Business Standard",op:0,h:"Kharif sowing down ~2% on year at 1,016.6 lakh hectares as of 14 Aug",p:"Agriculture Ministry data show acreage at 1,016.57 lh versus 1,037.52 lh a year ago (92% of the normal 1,104.46 lh) — August rains have narrowed the gap but a shortfall persists, keeping food output a swing risk for inflation.",u:"https://www.business-standard.com/markets/capital-market-news/kharif-sowing-down-marginally-on-year-126081800171_1.html"},
   {src:"USDA FAS",op:0,h:"Monsoon recovery fails to fully lift sluggish crop planting, USDA says",p:"Despite an August rainfall rebound, uneven distribution left kharif planting slower than usual across several belts — keeping farm output and food prices a swing risk for the inflation path.",u:"https://www.fas.usda.gov/data/gain/2026/08/india-monsoon-recovery-fails-boost-sluggish-crop-planting"},
-  {src:"Forbes India",op:1,h:"Can rural India weather a below-normal monsoon?",p:"Analysis: a weak, El Niño-tinged monsoon and costlier fertiliser could squeeze farm incomes and rural demand just as the RBI flags food-price risk to its inflation call.",u:"https://www.forbesindia.com/article/news/deep-dive/can-rural-india-weather-a-weak-monsoon/2993450/1"},
+  {src:"Policy Circle",op:1,h:"Deficient monsoon may squeeze India's rural economy",p:"Analysis: patchy rainfall and pricier inputs threaten farm incomes and rural demand, with pulses, oilseeds and coarse cereals the weakest kharif categories — a live upside risk to the RBI's food-inflation call.",u:"https://www.policycircle.org/economy/deficient-monsoon-rural-economy/"},
  ],
  bank:[
-  {src:"Business Standard",op:0,h:"Sensex ends 493 lower at 77,235; Nifty at 24,155 in a 3rd straight fall",p:"Benchmarks slid again on 18 Aug on weak global cues, firmer crude and a record-low rupee; Asian Paints, Infosys, HCL Tech and Bharti Airtel were among the biggest drags, extending the losing streak to three sessions.",u:"https://www.business-standard.com/markets/news/stock-market-live-18-august-nse-bse-sensex-today-nifty-gift-nifty-milky-mist-ipo-listing-share-market-today-126081800082_1.html"},
-  {src:"IANS",op:0,h:"India Inc's Q1 FY27 earnings beat expectations; BFSI and metals lead",p:"Profits grew ~2% year-on-year versus a feared ~10% decline, powered by banking-financials (+20%) and metals (+53%); nearly half of companies topped estimates.",u:"https://ianslive.in/india-incs-q1-fy27-earnings-beat-expectations-bfsi-and-metals-lead-growth--20260806164409"},
-  {src:"CNBC",op:0,h:"India's July CPI at 4.45% raises hopes of a rate hike later this year",p:"Inflation ticked above target on oil and food to a 19-month high, with markets reading the print as reducing near-term easing odds while the RBI holds its neutral stance.",u:"https://www.cnbc.com/2026/08/12/india-inflation-july-rbi-rate-oil-prices.html"},
+  {src:"ANI",op:0,h:"Sensex ends 326 lower at 76,910; Nifty at 24,078 in a 7th straight fall",p:"Benchmarks slipped again on 19 Aug (Sensex −0.42%, Nifty −0.32%) as firmer crude and a soft rupee weighed; media, chemicals, FMCG and oil & gas dragged while IT bucked the trend, extending the losing streak to seven sessions.",u:"https://aninews.in/news/business/sensex-falls-326-points-nifty-slips-03-amid-rising-crude-oil-prices20260819164042/"},
+  {src:"India Infoline",op:0,h:"RBI ends FCNR(B) swap facility a month early; bank stocks slip",p:"With inflows at $56.85bn (well above target), the RBI moved the deposit deadline to 31 Aug from 30 Sep; HDFC, ICICI, Kotak and SBI traded lower on worries over pricier overseas funding and excess liquidity.",u:"https://www.indiainfoline.com/news/companies/hdfc-axis-icici-sbi-trade-in-red-rbi-ends-fcnrb-swap-facility-early"},
+  {src:"Business Standard",op:0,h:"India's inflation rises to 4.45%, but unlikely to shift RBI's rate outlook",p:"July CPI hit a 19-month high on food and oil, yet economists see the RBI holding its neutral 5.25% stance near-term as the print stays within tolerance and growth momentum holds.",u:"https://www.business-standard.com/economy/news/india-s-inflation-rises-to-4-45-but-unlikely-to-shift-rbi-rate-outlook-126081201381_1.html"},
  ],
  macro:[
-  {src:"Business Recorder",op:0,h:"Rupee ends at record low 95.68/$ as RBI shields it from oil, yield strain",p:"The rupee slipped 7 paise on 18 Aug, pressured by Brent above $90 and rising US yields; the RBI's move to wind down its FCNR(B) forex-swap facility added strain even as the central bank intervened to limit the fall.",u:"https://www.brecorder.com/news/40435373/indian-rupee-ends-marginally-lower-as-central-bank-shields-from-oil-yield-strain"},
+  {src:"Business Recorder",op:0,h:"Rupee holds near record low ~95.77/$ as crude and US yields weigh",p:"The rupee stayed pinned near its all-time low on 19 Aug, pressured by Brent above $91, a firmer dollar and rising US yields, with the RBI's FCNR(B) swap wind-down adding to the strain.",u:"https://www.brecorder.com/news/40435373/indian-rupee-ends-marginally-lower-as-central-bank-shields-from-oil-yield-strain"},
+  {src:"Trading Economics",op:0,h:"Brent holds above $91, near one-year highs on Iran-risk premium",p:"Crude firmed to ~$91.3 on 19 Aug, up ~2.6% on the month and ~37% on the year as Iran tensions kept a war premium in place — a persistent headwind on India's import bill, rupee and inflation.",u:"https://tradingeconomics.com/commodity/brent-crude-oil"},
   {src:"Business Standard",op:0,h:"Wholesale inflation eases to 9.78% in July as fuel-price rise cools",p:"WPI slipped from 9.87% in June as fuel inflation fell to 20.05% from 27.41%, but food (6.65%) and manufactured goods (8.29%) hardened — leaving supply-side pressure in metals and food articles intact.",u:"https://www.business-standard.com/economy/news/wholesale-inflation-eases-to-9-78-in-july-as-fuel-price-rise-cools-126081400862_1.html"},
-  {src:"Trading Economics",op:0,h:"Brent holds above $90 at ~$90.7, near one-year highs",p:"Crude was little changed on 18 Aug (−0.2%) but up ~1.7% on the month and ~38% on the year, keeping a persistent headwind on India's import bill, rupee and inflation path.",u:"https://tradingeconomics.com/commodity/brent-crude-oil"},
   {src:"Business Standard",op:1,h:"BS Edit: inflation projections argue for guarding against premature easing",p:"Editorial: with oil and monsoon risks tilting prices up, the RBI is right to hold a neutral stance and resist calls for cuts until the trajectory is clearer.",u:"https://www.business-standard.com/opinion/editorial/policy-prospects-inflation-projections-demand-monetary-tightening-126080501769_1.html"},
  ],
  tech:[
-  {src:"Motley Fool",op:0,h:"S&P 500 eases to 7,747, Nasdaq to 26,647 as retail-earnings week looms",p:"US indices drifted just below record levels on 17 Aug (S&P −0.50%, Nasdaq −0.31%) with Treasury yields rising, as investors awaited results from Walmart, Home Depot, Target and Lowe's.",u:"https://www.fool.com/coverage/stock-market-today/2026/08/17/stock-market-today-aug-17-markets-inch-lower-and-treasury-yields-rise-as-investors-wait-for-retail-earnings/"},
-  {src:"Business Today",op:1,h:"AI disruption bites: top IT firms' market cap slips versus Reliance",p:"Analysis: automation and soft discretionary demand are reshaping India's IT majors even as select AI deals cushion the blow.",u:"https://www.businesstoday.in/markets/stocks/story/indian-it-stocks-fall-tcs-infosys-wipro-hcl-tech-reliance-market-cap-ai-impact-540988-2026-07-04"},
-  {src:"MetaTrading Club",op:0,h:"S&P 500 hit a record 7,784 on 12 Aug as a cool CPI print steadied tech",p:"An in-line US July CPI broke a two-day freeze, lifting the S&P 0.72% to a fresh high and the Nasdaq 0.85%, before Wall Street eased on softer consumer sentiment into 14 Aug.",u:"https://www.metatradingclub.com/market-close-august-12-2026-sp-500-record-cpi-ai/"},
+  {src:"Yahoo Finance",op:0,h:"S&P 500 falls to 7,692 as AI and chip stocks lead a third-day selloff",p:"US indices slid on 18 Aug (S&P −0.7%, Nasdaq −1.3%) as Nvidia, Micron and Broadcom dragged and the 10-year Treasury yield held near 4.70%, pulling Wall Street further from its record high.",u:"https://finance.yahoo.com/markets/live/stock-market-today-tuesday-august-18-dow-sp-500-nasdaq-080822735.html"},
+  {src:"Business Today",op:1,h:"AI disruption bites: top IT firms' market cap slips versus Reliance",p:"Analysis: automation and soft discretionary demand are reshaping India's IT majors even as select AI deals cushion the blow — though rupee weakness lent Nifty IT support on 19 Aug.",u:"https://www.businesstoday.in/markets/stocks/story/indian-it-stocks-fall-tcs-infosys-wipro-hcl-tech-reliance-market-cap-ai-impact-540988-2026-07-04"},
+  {src:"Rio Times",op:0,h:"China's July activity data underline sub-par growth as PPI stays negative",p:"Industrial output near 4.8% and retail sales just 1.5%, with producer prices down 3.5% y/y, point to an economy running below trend — a soft-demand signal for global commodity and export markets.",u:"https://www.riotimesonline.com/global-economy-briefing-august-17-2026/"},
  ],
 };
 const WEEKLY={
@@ -233,18 +233,18 @@ const WEEKLY={
   {src:"USDA FAS",op:0,h:"USDA: monsoon recovery fails to fully lift sluggish crop planting",p:"An August rainfall rebound was uneven across belts, leaving planting slower than usual — a reminder that food output and prices remain a swing factor for the RBI.",u:"https://www.fas.usda.gov/data/gain/2026/08/india-monsoon-recovery-fails-boost-sluggish-crop-planting"},
  ],
  bank:[
-  {src:"Business Standard",op:0,h:"RBI keeps repo at 5.25%, holds 'neutral' stance for a fourth meeting",p:"The month's policy anchor still framing the week: the MPC stood pat on 5 Aug, pegged FY27 growth at 6.7% and trimmed its inflation forecast to 5% amid a 'hazy' trade backdrop.",u:"https://www.business-standard.com/finance/news/rbi-mpc-meet-august-repo-rate-governor-sanjay-malhotra-inflation-growth-gdp-126080500231_1.html"},
+  {src:"India Infoline",op:0,h:"RBI ends FCNR(B) swap facility a month early after $56.85bn of inflows",p:"The week's banking headline: with foreign-currency deposits far above target, the RBI advanced the deadline to 31 Aug from 30 Sep; HDFC, ICICI, Kotak and SBI slipped on funding-cost and liquidity worries.",u:"https://www.indiainfoline.com/news/companies/hdfc-axis-icici-sbi-trade-in-red-rbi-ends-fcnrb-swap-facility-early"},
   {src:"IANS",op:0,h:"India Inc's Q1 FY27 earnings beat expectations; BFSI and metals lead",p:"Profits rose ~2% versus a feared ~10% drop, led by banking-financials (+20%) and metals (+53%) — a reassuring signal on domestic corporate health.",u:"https://ianslive.in/india-incs-q1-fy27-earnings-beat-expectations-bfsi-and-metals-lead-growth--20260806164409"},
-  {src:"Business Standard",op:0,h:"Sensex slides to 77,235 by 18 Aug in a third straight losing session",p:"Equities weakened through the week on mixed Q1 results, firmer crude and a record-low rupee, with the Nifty ending at 24,155 and IT among the biggest drags.",u:"https://www.business-standard.com/markets/news/stock-market-live-18-august-nse-bse-sensex-today-nifty-gift-nifty-milky-mist-ipo-listing-share-market-today-126081800082_1.html"},
+  {src:"ANI",op:0,h:"Sensex slides to 76,910 by 19 Aug in a seventh straight losing session",p:"Equities weakened through the week on firmer crude and a soft rupee, with the Nifty ending at 24,078; energy, FMCG and media dragged while IT outperformed on rupee weakness.",u:"https://aninews.in/news/business/sensex-falls-326-points-nifty-slips-03-amid-rising-crude-oil-prices20260819164042/"},
  ],
  macro:[
   {src:"Business Standard",op:0,h:"WPI eases to 9.78% in July as fuel-price rise cools; food and metals stay hot",p:"Wholesale inflation dipped from 9.87% in June as fuel inflation fell sharply, but food (6.65%) and manufactured goods (8.29%) firmed — underscoring sticky supply-side pressure.",u:"https://www.business-standard.com/economy/news/wholesale-inflation-eases-to-9-78-in-july-as-fuel-price-rise-cools-126081400862_1.html"},
-  {src:"CNBC",op:0,h:"India July CPI at 4.45% and crude above $90 revive inflation fears through the week",p:"Firmer inflation and a supply-risk oil premium pressured Indian equities, pushing the rupee to a record low 95.68/$ and the 10-year G-sec up to ~6.81% by 18 Aug.",u:"https://www.cnbc.com/2026/08/12/india-inflation-july-rbi-rate-oil-prices.html"},
-  {src:"MetaTrading Club",op:0,h:"S&P 500 sets a record 7,784 on cool US July CPI before easing",p:"An in-line US inflation print on 12 Aug lifted the S&P 0.72% to a fresh high and the Nasdaq 0.85%, though Wall Street slipped on softer consumer sentiment into the week's close.",u:"https://www.metatradingclub.com/market-close-august-12-2026-sp-500-record-cpi-ai/"},
+  {src:"Business Standard",op:0,h:"India CPI at 4.45% and crude above $91 revive inflation fears through the week",p:"Firmer inflation and a supply-risk oil premium pressured Indian equities, holding the rupee near a record low ~95.77/$ and the 10-year G-sec up around 6.84% by 19 Aug.",u:"https://www.business-standard.com/economy/news/india-s-inflation-rises-to-4-45-but-unlikely-to-shift-rbi-rate-outlook-126081201381_1.html"},
+  {src:"Rio Times",op:0,h:"Weak US retail sales cool September Fed-hike odds to ~30%",p:"The first drop in retail sales in nine months and softer sentiment trimmed rate-hike bets, nudging the 2-year Treasury yield to 4.16% even as elevated oil kept inflation risk in view.",u:"https://www.riotimesonline.com/global-economy-briefing-august-17-2026/"},
  ],
  tech:[
-  {src:"MetaTrading Club",op:0,h:"Cool CPI steadies US tech as the S&P and Nasdaq push to records",p:"Semiconductor and software gains helped break a two-day freeze on 12 Aug, keeping global risk appetite firm even as India's IT majors wobbled.",u:"https://www.metatradingclub.com/market-close-august-12-2026-sp-500-record-cpi-ai/"},
-  {src:"Business Today",op:1,h:"AI disruption reshapes India's IT majors even as select deals cushion",p:"Automation and soft discretionary demand pressured TCS, Infosys and Wipro, with AI-transformation wins offering partial support.",u:"https://www.businesstoday.in/markets/stocks/story/indian-it-stocks-fall-tcs-infosys-wipro-hcl-tech-reliance-market-cap-ai-impact-540988-2026-07-04"},
+  {src:"Yahoo Finance",op:0,h:"AI and chip stocks lead Wall Street lower as the S&P slips to 7,692",p:"Nvidia, Micron and Broadcom dragged US indices through the week (S&P −0.7%, Nasdaq −1.3% on 18 Aug) as rising Treasury yields pressured richly-valued tech.",u:"https://finance.yahoo.com/markets/live/stock-market-today-tuesday-august-18-dow-sp-500-nasdaq-080822735.html"},
+  {src:"Business Today",op:1,h:"AI disruption reshapes India's IT majors even as select deals cushion",p:"Automation and soft discretionary demand pressured TCS, Infosys and Wipro, with AI-transformation wins offering partial support and rupee weakness aiding exporters.",u:"https://www.businesstoday.in/markets/stocks/story/indian-it-stocks-fall-tcs-infosys-wipro-hcl-tech-reliance-market-cap-ai-impact-540988-2026-07-04"},
  ],
 };
 const MONTHLY={
@@ -264,7 +264,7 @@ const MONTHLY={
  ],
  tech:[
   {src:"Business Today",op:0,h:"AI disruption reshaped India's IT majors through the month",p:"Automation and soft discretionary demand pressured TCS, Infosys and Wipro even as select AI deals offered support.",u:"https://www.businesstoday.in/markets/stocks/story/indian-it-stocks-fall-tcs-infosys-wipro-hcl-tech-reliance-market-cap-ai-impact-540988-2026-07-04"},
-  {src:"Virginia Business",op:0,h:"US equities hit fresh records as a soft jobs report fuels rate-cut hopes",p:"The S&P 500 closed at a record 7,758 and the Nasdaq at 26,690 in early August after July payrolls fell 23,000, easing Fed-hike pressure.",u:"https://virginiabusiness.com/sp-record-high-soft-us-jobs-report-rate-hike/"},
+  {src:"Yahoo / MetaTrading",op:0,h:"US equities ran to records then pulled back as AI and chip stocks wobbled",p:"The S&P 500 hit a record 7,784 on 12 Aug on a cool July CPI, but a semiconductor-led selloff (Nvidia, Micron, Broadcom) and rising Treasury yields dragged it to 7,692 by 18 Aug.",u:"https://finance.yahoo.com/markets/live/stock-market-today-tuesday-august-18-dow-sp-500-nasdaq-080822735.html"},
  ],
 };
 
