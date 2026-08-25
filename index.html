@@ -149,7 +149,7 @@
   <!-- TODAY -->
   <section class="page" id="today">
     <div class="ptitle">Today's Brief</div>
-    <div class="pwhen">Friday, 21 August 2026 · news &amp; editorials by topic</div>
+    <div class="pwhen">Tuesday, 25 August 2026 · news &amp; editorials by topic</div>
     <div id="todayTopics"></div>
     <div class="foot" id="sourcesFoot"></div>
   </section>
@@ -157,7 +157,7 @@
   <!-- WEEKLY -->
   <section class="page" id="weekly">
     <div class="ptitle">Weekly Wrap-up</div>
-    <div class="pwhen">Week of 15 – 21 August 2026</div>
+    <div class="pwhen">Week of 19 – 25 August 2026</div>
     <div class="summary">🔎 <b>The week in one line:</b> Indian equities logged a second straight weekly loss (Sensex −0.6% to 77,541, Nifty −0.5% to 24,252) as unusually hawkish RBI minutes — markets now price a possible October rate hike — pushed the 10-year G-sec to a two-month-high 6.87% and dragged the rupee to a record ~95.8/$, with Brent near a one-year high ~$94 on US-Iran/Hormuz tension adding to the squeeze; metals and private banks held up while IT, FMCG and autos lagged. Abroad, the S&amp;P 500 fell 1.9% on the week (Nasdaq −2.5%) as US debt crossed $40tn and long-term Treasury yields surged (10Y ~4.7%, 30Y ~5.25%) despite Treasury Secretary Bessent doubling bond buybacks — attention now turns to the 28 Aug Jackson Hole symposium under Fed Chair Warsh, with September rate-hike odds easing to ~25%.</div>
     <div id="weeklyTopics"></div>
   </section>
@@ -165,8 +165,8 @@
   <!-- MONTHLY -->
   <section class="page" id="monthly">
     <div class="ptitle">Monthly Wrap-up</div>
-    <div class="pwhen">Past 30 days · to 21 August 2026</div>
-    <div class="summary">🔎 <b>The month in one line:</b> India's price picture dominated — CPI re-accelerated to a 19-month-high 4.45% in July (from 4.38%) on oil and food, even as WPI eased to 9.78% on softer fuel costs; the RBI held repo at 5.25% for a fourth time on 5 Aug (FY27 growth 6.7%, inflation 5%) but its 20 Aug minutes turned notably hawkish, with markets now pricing a possible October hike. Bank credit growth ran near a two-year high and Q1 FY27 earnings beat a feared decline as BFSI (+20%) and metals (+53%) led. Kharif acreage stayed ~1.5% below last year with the monsoon ~13% short. A firm Brent near $94 and hawkish minutes drove the 10-year G-sec to 6.87% and the rupee to a record ~95.8/$, leaving the Sensex with back-to-back weekly losses at 77,541. Abroad, a cool US July CPI powered the S&amp;P 500 to records mid-month before a surge in long-term Treasury yields (10Y ~4.7%) — as US debt crossed $40tn — pulled it into two straight weekly declines, near 7,674 by 21 Aug.</div>
+    <div class="pwhen">Past 30 days · to 25 August 2026</div>
+    <div class="summary">🔎 <b>The month in one line:</b> India's price picture dominated — CPI re-accelerated to a 19-month-high 4.45% in July (from 4.38%) on oil and food; the RBI held repo at 5.25% for a fourth time on 5 Aug (FY27 growth 6.7%, inflation 5%) but its 20 Aug minutes turned notably hawkish, with markets pricing a possible October hike. Bank credit growth ran near a two-year high and Q1 FY27 earnings beat a feared decline as BFSI (+20%) and metals (+53%) led; economists now peg the 29 Aug Q1 GDP print at a four-quarter-low ~7%. Kharif acreage closed to ~1.5% below last year as an August monsoon rebound lifted planting. Firm crude and hawkish minutes kept the 10-year G-sec near 6.87% and the rupee near a record ~95.8/$, though Brent eased from a one-year high ~$94 to ~$92 late in the month; the Sensex steadied around 77,656 by 25 Aug. Abroad, a cool US July CPI powered the S&amp;P 500 to records mid-month before surging long-term Treasury yields (10Y ~4.7%) — as US debt crossed $40tn — drove back-to-back weekly declines, near 7,650 by 24 Aug.</div>
     <div id="monthlyTopics"></div>
   </section>
 
@@ -187,18 +187,18 @@ const CONFIG = { PROXIES:["https://api.allorigins.win/raw?url=","https://corspro
 
 /* ============ INDICATOR DATA (snapshot fallback; live symbols patch these) ============ */
 const KPI_INDIA=[
-  {id:"sensex", sym:"^BSESN", fmt:"int", name:"BSE Sensex", val:"77,541", chg:"+3 (0.00%)", dir:"flat", meta:"21 Aug close · flat; 2nd straight weekly loss (−0.6%)", spark:[5,5,4,4,3,3,3], c:"--mkt"},
-  {id:"nifty", sym:"^NSEI", fmt:"int", name:"Nifty 50", val:"24,252", chg:"+20 (0.08%)", dir:"up", meta:"21 Aug close · −0.5% on week; metals, pvt banks lead", spark:[5,5,4,4,3,3,4], c:"--mkt"},
-  {id:"repo", sym:null, name:"RBI Repo Rate", val:"5.25%", chg:"Held Aug 5", dir:"flat", meta:"Neutral · 20 Aug minutes hawkish; Oct-hike risk", spark:[5,5,5,5,5,5,5], c:"--bank"},
-  {id:"cpi", sym:null, name:"India CPI (Jul)", val:"4.45%", chg:"19-mo high", dir:"up", meta:"12 Aug print · food-led; next print 12 Sep", spark:[2,3,3,4,4,5,5], c:"--macro"},
-  {id:"usdinr", sym:"INR=X", fmt:"inr", name:"USD / INR", val:"₹95.71", chg:"Record low", dir:"down", meta:"21 Aug · hit record ~95.80; crude, US yields, hawkish RBI", spark:[6,6,7,7,8,8,8], c:"--intl"},
-  {id:"in10y", sym:null, name:"India 10Y Yield", val:"6.87%", chg:"2-mo high", dir:"up", meta:"20 Aug · +5bp on hawkish MPC minutes; firm crude", spark:[5,6,6,6,7,7,8], c:"--macro"},
+  {id:"sensex", sym:"^BSESN", fmt:"int", name:"BSE Sensex", val:"77,656", chg:"+287 (0.37%)", dir:"up", meta:"25 Aug close · rebounded on F&O expiry; healthcare, PSU banks, IT lead", spark:[4,4,3,3,4,4,5], c:"--mkt"},
+  {id:"nifty", sym:"^NSEI", fmt:"int", name:"Nifty 50", val:"24,335", chg:"+116 (0.48%)", dir:"up", meta:"25 Aug close · erased losses, back above 24,300", spark:[4,4,3,3,4,4,5], c:"--mkt"},
+  {id:"repo", sym:null, name:"RBI Repo Rate", val:"5.25%", chg:"Held Aug 5", dir:"flat", meta:"Neutral · 4th straight hold; hawkish minutes keep Oct-hike risk", spark:[5,5,5,5,5,5,5], c:"--bank"},
+  {id:"cpi", sym:null, name:"India CPI (Jul)", val:"4.45%", chg:"19-mo high", dir:"up", meta:"12 Aug print · food-led (food ~5.5%); next print 12 Sep", spark:[2,3,3,4,4,5,5], c:"--macro"},
+  {id:"usdinr", sym:"INR=X", fmt:"inr", name:"USD / INR", val:"₹95.82", chg:"Near record", dir:"down", meta:"25 Aug · near record ~95.8; RBI smoothing; crude, US yields", spark:[7,7,7,8,8,8,8], c:"--intl"},
+  {id:"in10y", sym:null, name:"India 10Y Yield", val:"6.87%", chg:"2-mo high", dir:"up", meta:"24 Aug · near 2-mo high; firm crude, rate-hike bets", spark:[5,6,6,6,7,7,8], c:"--macro"},
 ];
 const KPI_GLOBAL=[
-  {id:"fed", sym:null, name:"US Fed Funds", val:"3.50–3.75%", chg:"Held Jul 29", dir:"flat", meta:"Jackson Hole 28 Aug (Warsh); Sep-hike odds ~25%", spark:[4,4,5,5,5,5,5], c:"--bank"},
+  {id:"fed", sym:null, name:"US Fed Funds", val:"3.50–3.75%", chg:"Held Jul 29", dir:"flat", meta:"Jackson Hole 28 Aug (Warsh); Sep move in focus", spark:[4,4,5,5,5,5,5], c:"--bank"},
   {id:"imf", sym:null, name:"IMF Growth '26", val:"3.0%", chg:"Jul WEO", dir:"down", meta:"Global infl. 4.7%", spark:[6,5,5,4,4,3,3], c:"--intl"},
-  {id:"spx", sym:"^GSPC", fmt:"int", name:"S&P 500", val:"7,674", chg:"−1.9% wk", dir:"down", meta:"US mkts · +0.4% Fri but −1.9% week as yields surged", spark:[7,7,6,6,5,5,6], c:"--bank"},
-  {id:"brent", sym:"BZ=F", fmt:"usd", name:"Brent Crude", val:"$94.09", chg:"1-yr high", dir:"up", meta:"$/bbl · 21 Aug · ~$94; +40% y/y; Iran/Hormuz risk", spark:[5,6,6,7,7,8,8], c:"--intl"},
+  {id:"spx", sym:"^GSPC", fmt:"int", name:"S&P 500", val:"7,651", chg:"−0.3% Mon", dir:"down", meta:"US mkts · 24 Aug · chip-stock selloff; Nasdaq −0.8%, Dow +0.3%", spark:[7,7,6,6,6,5,6], c:"--bank"},
+  {id:"brent", sym:"BZ=F", fmt:"usd", name:"Brent Crude", val:"$92.40", chg:"Off 1-yr high", dir:"down", meta:"$/bbl · 25 Aug · ~$92, eased from ~$94; Iran sanctions, Hormuz risk", spark:[6,7,7,8,8,7,7], c:"--intl"},
 ];
 
 const T={agri:{label:"Agriculture & Rural",short:"🌾 Agriculture",c:"--agri"},bank:{label:"Banking, Monetary & Markets",short:"🏦 Banking & Markets",c:"--bank"},
@@ -206,24 +206,24 @@ const T={agri:{label:"Agriculture & Rural",short:"🌾 Agriculture",c:"--agri"},
 
 const TODAY={
  agri:[
-  {src:"Rural Voice",op:0,h:"Kharif sowing trails last year by 1.5% as rainfall deficit persists",p:"As of 21 Aug planted area was 1,056.7 lakh ha, down 1.50% y/y, with cumulative monsoon 13% below the long-period average; rice (−3.15%), maize (−4.06%) and ragi (−27%) lagged while pulses rose 1.33% — keeping food-price risk on the RBI's radar.",u:"https://eng.ruralvoice.in/national/india-kharif-sowing-trails-last-year-by-1.50-percent-as-rainfall-deficit-persists.html"},
+  {src:"Business Standard",op:0,h:"Kharif sowing reaches near-2025 levels, just 1.5% lower till 21 Aug",p:"An August monsoon rebound lifted planting close to last year's pace — total kharif area was only ~1.5% below a year ago by 21 Aug as pulses and cotton recovered, though rice and coarse cereals still lagged, easing some of the food-inflation worry.",u:"https://www.business-standard.com/industry/agriculture/kharif-sowing-reaches-near-2025-levels-just-1-5-lower-till-august-21-126082401374_1.html"},
   {src:"USDA FAS",op:0,h:"Monsoon recovery fails to fully lift sluggish crop planting, USDA says",p:"Despite an August rainfall rebound, uneven distribution left kharif planting slower than usual across several belts — keeping farm output and food prices a swing risk for the inflation path.",u:"https://www.fas.usda.gov/data/gain/2026/08/india-monsoon-recovery-fails-boost-sluggish-crop-planting"},
   {src:"Cropin",op:1,h:"Kharif 2026: what the patchy monsoon recovery means for farmers",p:"Analysis: an uneven August recovery leaves pockets of stress in rice, coarse cereals and oilseeds even as pulses hold up — a caution for farm incomes, rural demand and the food-inflation trajectory.",u:"https://www.cropin.com/blogs/kharif-2026-monsoon-recovery-india/"},
  ],
  bank:[
-  {src:"Business Standard",op:0,h:"Bond yields rise as hawkish RBI minutes, firm crude trigger market sell-off",p:"The 20 Aug MPC minutes read more hawkish than the policy presser — markets now price at least a 20bp hike at the October review; the 10-year G-sec rose 5bp to 6.87% and the 1-year OIS jumped 13bp to 5.94% as crude near $94 added to the strain.",u:"https://www.business-standard.com/economy/news/bond-yields-rise-as-hawkish-mpc-minutes-firm-crude-trigger-market-sell-off-126082001240_1.html"},
-  {src:"Business Standard",op:0,h:"Rupee under pressure, bond yields rise on crude, hawkish MPC signals",p:"The rupee slipped to ~95.71/$ and bond yields firmed as traders repriced RBI rate-hike odds; HDFC, ICICI and SBI came under pressure even as domestic credit growth stayed strong.",u:"https://www.business-standard.com/finance/news/rupee-under-pressure-bond-yields-rise-on-crude-hawkish-mpc-signals-126082101219_1.html"},
+  {src:"Business Standard",op:0,h:"Sensex rebounds 287 pts on F&O expiry day; Nifty reclaims 24,300",p:"Benchmarks erased early losses to close green on 25 Aug — Sensex +0.37% to 77,656 and Nifty +0.48% to 24,335 — as healthcare, PSU banks and IT led buying at lower levels, though breadth stayed negative ahead of the monthly derivatives expiry.",u:"https://www.business-standard.com/markets/capital-market-news/sensex-settles-287-pts-higher-nifty-ends-above-24-300-level-126082500830_1.html"},
+  {src:"Business Standard",op:0,h:"Bond yields hold near two-month highs as crude, hawkish MPC signals weigh",p:"The 10-year G-sec stayed near 6.87% and the rupee lingered close to a record ~95.8/$ as traders kept RBI October-hike odds alive; the 20 Aug MPC minutes had read markedly hawkish versus the steady 5.25% repo.",u:"https://www.business-standard.com/finance/news/rupee-under-pressure-bond-yields-rise-on-crude-hawkish-mpc-signals-126082101219_1.html"},
   {src:"Business Today",op:1,h:"RBI's hawkish minutes vs the repo hold: what markets should read",p:"Analysis: the gap between a steady 5.25% repo and unusually hawkish minutes signals the MPC is guarding against oil- and monsoon-driven price risks — and keeping an October move firmly on the table.",u:"https://www.businesstoday.in/latest/economy/story/rbis-hawkish-minutes-vs-repo-rate-hold-what-markets-should-read-between-the-lines-550198-2026-08-20"},
  ],
  macro:[
-  {src:"Vantage",op:0,h:"Brent holds near a one-year high ~$94 on US-Iran Hormuz standoff",p:"Crude traded around $94/bbl on 21 Aug, up ~40% y/y, as the Strait of Hormuz standoff kept a war premium in place — a persistent headwind for India's import bill, the rupee and the inflation path.",u:"https://www.vantagemarkets.com/market-analysis/brent-crude-wti-oil-price-today-august-21-2026/"},
-  {src:"Deccan Herald",op:0,h:"Rupee crashes to a record 95.80/$, settles near all-time low ~95.66",p:"The rupee hit a fresh intraday record on 21 Aug on firm crude, a stronger dollar and hawkish RBI signals before closing near 95.7/$, with the central bank seen smoothing volatility rather than defending a level.",u:"https://www.deccanherald.com/amp/story/business/markets/rupee-crashes-to-record-9580-against-usd-settles-near-all-time-low-at-9566-4001257"},
-  {src:"Euronews",op:0,h:"US debt tops $40 trillion as Treasury doubles bond buybacks to calm markets",p:"With long-term Treasury yields surging (10Y ~4.7%, 30Y ~5.25%), Secretary Bessent doubled buybacks to steady the market — but yields rebounded, keeping global borrowing costs and emerging-market currencies under pressure.",u:"https://www.euronews.com/business/2026/08/20/us-debt-tops-40-trillion-as-treasury-doubles-bond-buybacks-to-calm-markets"},
+  {src:"Business Standard",op:0,h:"Weak rains, services likely eased Q1 FY27 growth to a four-quarter low",p:"Ahead of the 29 Aug print, economists peg April-June GDP growth near a four-quarter low ~7-7.2% as a patchy monsoon and softer services offset resilient manufacturing — a key read on demand as the RBI weighs inflation risks.",u:"https://www.business-standard.com/economy/news/weak-rains-services-likely-eased-q1-fy27-growth-to-4-quarter-low-126082401125_1.html"},
+  {src:"HDFC Sky",op:0,h:"Brent eases to ~$92 as markets shrug off fresh US sanctions on Iran",p:"Crude slipped from a one-year high near $94 to ~$92.4 on 25 Aug; new US secondary sanctions on Iran and a tanker strike near Oman kept a war premium in place, but a muted reaction eased pressure on India's import bill and the rupee.",u:"https://hdfcsky.com/news/brent-crude-oil-price-today-august-25-2026-crude-ticks-up-to-92-4-per-barrel-as-iran-hit-with-fresh-us-sanctions"},
+  {src:"Euronews",op:0,h:"US debt tops $40 trillion as Treasury doubles bond buybacks to calm markets",p:"With long-term Treasury yields surging (10Y ~4.7%, 30Y ~5.25%), Secretary Bessent doubled buybacks to steady the market — but yields rebounded, keeping global borrowing costs and emerging-market currencies including the rupee under pressure.",u:"https://www.euronews.com/business/2026/08/20/us-debt-tops-40-trillion-as-treasury-doubles-bond-buybacks-to-calm-markets"},
  ],
  tech:[
-  {src:"India Infoline",op:0,h:"Nifty IT falls ~40% from peak as OpenAI-led AI disruption hits TCS, Infosys",p:"The AI-driven derating deepened, with IT among the week's worst sectors as automation and soft discretionary demand weigh on India's software majors — though rupee weakness offers exporters partial cushion.",u:"https://www.indiainfoline.com/news/companies/nifty-it-falls-nearly-40-from-peak-as-openai-led-ai-disruption-triggers-selloff-in-tcs-infosys-shares"},
-  {src:"Yahoo Finance",op:0,h:"US stocks trim a shaky week's losses; S&P +0.4% Friday to 7,674",p:"Wall Street rose on 21 Aug (Dow +0.98% to 53,277, Nasdaq +0.43% to 26,180) but still logged a second straight weekly loss (S&P −1.9%) as long-dated Treasury yields stayed elevated.",u:"https://finance.yahoo.com/markets/world-indices/articles/major-us-stock-indexes-fared-202316400.html"},
-  {src:"CNN Business",op:1,h:"Global bond yields are surging — here's why it matters",p:"Explainer: the jump in US long-term yields to decade-highs raises the discount rate on high-growth tech and pressures rate-sensitive assets worldwide, from the Nasdaq to Indian IT and the rupee.",u:"https://us.cnn.com/2026/08/21/economy/bond-market-explainer"},
+  {src:"Yahoo Finance",op:0,h:"US stocks slip as chip selloff hits Nasdaq; fresh Iran sanctions unveiled",p:"Wall Street opened the week lower on 24 Aug — S&P −0.3%, Nasdaq −0.8% on a chip-stock selloff, while the Dow eked out +0.3% — as Washington announced new secondary sanctions targeting Iran's economy.",u:"https://finance.yahoo.com/markets/live/stock-market-today-monday-august-24-dow-sp-500-nasdaq-080306047.html"},
+  {src:"India Infoline",op:0,h:"Nifty IT falls ~40% from peak as OpenAI-led AI disruption hits TCS, Infosys",p:"The AI-driven derating deepened, with IT among recent weeks' worst sectors as automation and soft discretionary demand weigh on India's software majors — though rupee weakness offers exporters partial cushion.",u:"https://www.indiainfoline.com/news/companies/nifty-it-falls-nearly-40-from-peak-as-openai-led-ai-disruption-triggers-selloff-in-tcs-infosys-shares"},
+  {src:"Vanguard",op:1,h:"Oil shock complicates central-bank rate outlooks",p:"Analysis: a renewed crude spike revives the classic dilemma for the Fed, RBI and peers — support growth or guard against a fresh inflation impulse — just as long-end government-bond yields stay stubbornly elevated.",u:"https://corporate.vanguard.com/content/corporatesite/us/en/corp/vemo/oil-shock-complicates-central-bank-outlooks.html"},
  ],
 };
 const WEEKLY={
@@ -234,16 +234,16 @@ const WEEKLY={
  bank:[
   {src:"Business Standard",op:0,h:"Hawkish RBI minutes and firm crude trigger a bond and equity sell-off",p:"The week's banking headline: the 20 Aug MPC minutes read markedly hawkish, with markets now pricing at least a 20bp hike at the October review; the 10-year G-sec rose to 6.87% and financials slipped.",u:"https://www.business-standard.com/economy/news/bond-yields-rise-as-hawkish-mpc-minutes-firm-crude-trigger-market-sell-off-126082001240_1.html"},
   {src:"Outlook Business",op:0,h:"Rate hike back on the RBI's radar? MPC minutes sound hawkish",p:"Several members flagged upside inflation risks from oil and the monsoon, signalling the neutral 5.25% hold may be a pause rather than a peak — a hawkish tilt that repriced rate-hike odds.",u:"https://www.outlookbusiness.com/news/rate-hike-back-on-rbis-radar-mpc-minutes-sound-hawkish"},
-  {src:"Business Standard",op:0,h:"Sensex logs a 2nd straight weekly loss; Nifty ends the week at 24,252",p:"Benchmarks were choppy and closed lower on the week (Sensex −0.6%, Nifty −0.5%) as hawkish RBI minutes, a record-low rupee and firm crude weighed; metals and private banks held up while IT, FMCG and autos lagged.",u:"https://www.tradingview.com/news/moodys:2415d3cb23489:0-sensex-nifty-50-end-flat-extend-losses-for-second-consecutive-week/"},
+  {src:"Business Standard",op:0,h:"Sensex steadies near 77,656; Nifty holds 24,300 after a choppy week",p:"After back-to-back weekly losses, benchmarks found their feet — the Sensex closed 25 Aug at 77,656 (+0.37%) and Nifty at 24,335 (+0.48%) on lower-level buying, though hawkish RBI minutes, a near-record rupee and firm crude kept sentiment cautious.",u:"https://www.business-standard.com/markets/capital-market-news/sensex-settles-287-pts-higher-nifty-ends-above-24-300-level-126082500830_1.html"},
  ],
  macro:[
-  {src:"Vantage",op:0,h:"Brent climbs to a one-year high near $94 on Iran/Hormuz risk",p:"Crude held around $94/bbl through the week, up ~40% on the year, as the Strait of Hormuz standoff kept a war premium in place — pressuring India's import bill, the rupee and the inflation path.",u:"https://www.vantagemarkets.com/market-analysis/brent-crude-wti-oil-price-today-august-21-2026/"},
+  {src:"Vantage",op:0,h:"Brent spikes to a one-year high near $94, then eases toward $92",p:"Crude touched a one-year high around $94/bbl mid-week — up ~40% on the year on the Strait of Hormuz standoff — before slipping to ~$92 by 25 Aug as markets shrugged off fresh US sanctions on Iran, a marginal relief for India's import bill and the rupee.",u:"https://www.vantagemarkets.com/market-analysis/brent-crude-wti-oil-price-today-august-21-2026/"},
   {src:"Euronews",op:0,h:"US debt tops $40 trillion as Treasury doubles bond buybacks to calm markets",p:"Long-term Treasury yields surged to decade-highs (10Y ~4.7%, 30Y ~5.25%); Secretary Bessent doubled buybacks to steady the market, but yields rebounded, keeping global borrowing costs and EM currencies under pressure.",u:"https://www.euronews.com/business/2026/08/20/us-debt-tops-40-trillion-as-treasury-doubles-bond-buybacks-to-calm-markets"},
   {src:"Deccan Herald",op:0,h:"Rupee crashes to a record 95.80/$ before settling near 95.66",p:"Firmer crude, a strong dollar and hawkish RBI signals drove the rupee to a fresh all-time low during the week, with the central bank seen smoothing volatility rather than defending a level.",u:"https://www.deccanherald.com/amp/story/business/markets/rupee-crashes-to-record-9580-against-usd-settles-near-all-time-low-at-9566-4001257"},
  ],
  tech:[
   {src:"India Infoline",op:0,h:"Nifty IT falls ~40% from peak as OpenAI-led AI disruption hits TCS, Infosys",p:"The AI-driven derating deepened, leaving IT among the week's worst sectors as automation and soft discretionary demand weigh on India's software majors even as rupee weakness cushions exporters.",u:"https://www.indiainfoline.com/news/companies/nifty-it-falls-nearly-40-from-peak-as-openai-led-ai-disruption-triggers-selloff-in-tcs-infosys-shares"},
-  {src:"Yahoo Finance",op:0,h:"US stocks post a 2nd straight weekly loss as bond yields stay elevated",p:"The S&P 500 fell 1.9% on the week (Nasdaq −2.5%) as surging long-dated Treasury yields hit rate-sensitive growth stocks, before a Friday bounce (S&P +0.4% to 7,674) trimmed the damage.",u:"https://finance.yahoo.com/markets/world-indices/articles/major-us-stock-indexes-fared-202316400.html"},
+  {src:"Yahoo Finance",op:0,h:"US stocks stay soft as a chip selloff opens the week; S&P near 7,650",p:"After a Friday bounce to 7,674, Wall Street slipped again on 24 Aug (S&P −0.3%, Nasdaq −0.8%) on a semiconductor selloff and fresh Iran sanctions, keeping elevated long-dated Treasury yields as the overhang for rate-sensitive growth stocks.",u:"https://finance.yahoo.com/markets/live/stock-market-today-monday-august-24-dow-sp-500-nasdaq-080306047.html"},
  ],
 };
 const MONTHLY={
@@ -263,7 +263,7 @@ const MONTHLY={
  ],
  tech:[
   {src:"India Infoline",op:0,h:"Nifty IT falls ~40% from peak as OpenAI-led AI disruption grips TCS, Infosys",p:"The AI-driven derating dominated India's tech story through the month, as automation and soft discretionary demand pressured software majors even as select deals and rupee weakness offered partial support.",u:"https://www.indiainfoline.com/news/companies/nifty-it-falls-nearly-40-from-peak-as-openai-led-ai-disruption-triggers-selloff-in-tcs-infosys-shares"},
-  {src:"Yahoo Finance",op:0,h:"US equities hit records early, then fell into back-to-back weekly losses",p:"The S&P 500 touched records mid-month on a cool July CPI before a surge in long-term Treasury yields drove two straight weekly declines, leaving the index near 7,674 by 21 Aug (Dow ~53,277).",u:"https://finance.yahoo.com/markets/world-indices/articles/major-us-stock-indexes-fared-202316400.html"},
+  {src:"Yahoo Finance",op:0,h:"US equities hit records early, then fell into back-to-back weekly losses",p:"The S&P 500 touched records mid-month on a cool July CPI before a surge in long-term Treasury yields and a late chip-stock selloff drove two straight weekly declines, leaving the index near 7,650 by 24 Aug (Dow ~53,400).",u:"https://finance.yahoo.com/markets/live/stock-market-today-monday-august-24-dow-sp-500-nasdaq-080306047.html"},
  ],
 };
 
